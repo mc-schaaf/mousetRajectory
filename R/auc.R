@@ -11,8 +11,6 @@
 #' @param y_start y-coordinate of the start point of the ideal trajectory
 #' @param x_end x-coordinate of the end point of the ideal trajectory
 #' @param y_end y-coordinate of the end point of the ideal trajectory
-#' @param cumulative Whether one single number (cumulative=F)
-#' or an array of cumulative AUCs should be returned
 #' @param geometric Whether the sign of areas that stem from a movement in the
 #' reverse direction of the ideal trajectory should be reversed.
 #' Defaults to FALSE, indicating an time-based instead of geometric
@@ -39,7 +37,6 @@ auc <- function(x_vector,
                 y_start = NULL,
                 x_end = NULL,
                 y_end = NULL,
-                cumulative = FALSE,
                 geometric = FALSE) {
   # check for optional parameters
   if (is.null(x_start)) {
@@ -81,8 +78,5 @@ auc <- function(x_vector,
   # cumulate over it
   c_AUC <- cumsum(AUC_increment)
 
-  if (cumulative) {
-    return(c(0, c_AUC))
-  }
   return(c_AUC[length(c_AUC)])
 }

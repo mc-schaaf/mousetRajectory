@@ -11,7 +11,6 @@ auc(
   y_start = NULL,
   x_end = NULL,
   y_end = NULL,
-  cumulative = FALSE,
   geometric = FALSE
 )
 }
@@ -27,9 +26,6 @@ auc(
 \item{x_end}{x-coordinate of the end point of the ideal trajectory}
 
 \item{y_end}{y-coordinate of the end point of the ideal trajectory}
-
-\item{cumulative}{Whether one single number (cumulative=F)
-or an array of cumulative AUCs should be returned}
 
 \item{geometric}{Whether the sign of areas that stem from a movement in the
 reverse direction of the ideal trajectory should be reversed.
