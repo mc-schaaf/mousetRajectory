@@ -9,7 +9,7 @@
 #' @param y0 y-value at the start point of your choosing.
 #' @param y1 y-value at the end point of your choosing.
 #' @param swap_x_y Whether to compute the angle relative to the x or y axis.
-#' defaults to the y axis.
+#' Defaults to TRUE, indicating that the angle is relative to the y axis.
 #'
 #' @return Angle in degrees with \eqn{-180 <= angle <= 180}.
 #'

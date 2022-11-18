@@ -16,7 +16,7 @@ starting_angle(x0, x1, y0, y1, swap_x_y = TRUE)
 \item{y1}{y-value at the end point of your choosing.}
 
 \item{swap_x_y}{Whether to compute the angle relative to the x or y axis.
-defaults to the y axis.}
+Defaults to TRUE, indicating that the angle is relative to the y axis.}
 }
 \value{
 Angle in degrees with \eqn{-180 <= angle <= 180}.

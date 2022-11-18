@@ -12,7 +12,7 @@ auc(
   x_end = NULL,
   y_end = NULL,
   cumulative = FALSE,
-  RP_style = FALSE
+  geometric = FALSE
 )
 }
 \arguments{
@@ -31,8 +31,10 @@ auc(
 \item{cumulative}{Whether one single number (cumulative=F)
 or an array of cumulative AUCs should be returned}
 
-\item{RP_style}{Should areas that stem from a change of direction be added
-or subtracted?}
+\item{geometric}{Whether the sign of areas that stem from a movement in the
+reverse direction of the ideal trajectory should be reversed.
+Defaults to FALSE, indicating an time-based instead of geometric
+interpretation.}
 }
 \value{
 AUC as single number or as vector of cumulative AUCs.
@@ -42,7 +44,6 @@ Computes the (cumulative) AUC of a point defined by x and y
 coordinates, as compared to an ideal trajectory, defined by the
 start and end points.
 Importantly, the ideal trajectory is thought of as being of infinite length.
-Works via matrix-rotation.
 }
 \examples{
 data("dat_one_trajectory")

@@ -4,7 +4,6 @@
 #' coordinates, as compared to an ideal trajectory, defined by the
 #' start and end points.
 #' Importantly, the ideal trajectory is thought of as being of infinite length.
-#' Works via matrix-rotation.
 #'
 #' @param x_vector Vector of the x-coordinates of the executed trajectory
 #' @param y_vector Vector of the y-coordinates of the executed trajectory
@@ -14,8 +13,10 @@
 #' @param y_end y-coordinate of the end point of the ideal trajectory
 #' @param cumulative Whether one single number (cumulative=F)
 #' or an array of cumulative AUCs should be returned
-#' @param RP_style Should areas that stem from a change of direction be added
-#' or subtracted?
+#' @param geometric Whether the sign of areas that stem from a movement in the
+#' reverse direction of the ideal trajectory should be reversed.
+#' Defaults to FALSE, indicating an time-based instead of geometric
+#' interpretation.
 #'
 #' @returns AUC as single number or as vector of cumulative AUCs.
 #'
@@ -39,7 +40,7 @@ auc <- function(x_vector,
                 x_end = NULL,
                 y_end = NULL,
                 cumulative = FALSE,
-                RP_style = FALSE) {
+                geometric = FALSE) {
   # check for optional parameters
   if (is.null(x_start)) {
     x_start <- x_vector[1]
@@ -70,7 +71,7 @@ auc <- function(x_vector,
   d_x <- x_rot[2:length(x_rot)] - x_rot[1:(length(x_rot) - 1)]
   d_y <- y_rot[2:length(y_rot)] - y_rot[1:(length(y_rot) - 1)]
 
-  if (RP_style) {
+  if (!geometric) {
     d_x <- abs(d_x)
   }
 
