@@ -1,7 +1,7 @@
 #' @title Area Under the Curve
 #'
-#' @description Computes the (cumulative) AUC of a point defined by x and y
-#' coordinates, as compared to an ideal trajectory, defined by the
+#' @description Computes the (cumulative) AUC of trajectory points, defined by
+#' x and y coordinates, as compared to an ideal trajectory, defined by the
 #' start and end points.
 #' Importantly, the ideal trajectory is thought of as being of infinite length.
 #'
@@ -16,7 +16,7 @@
 #' Defaults to FALSE, indicating an time-based instead of geometric
 #' interpretation.
 #'
-#' @returns AUC as single number or as vector of cumulative AUCs.
+#' @returns cumulative AUC as single number.
 #'
 #' @references Wirth, R., Foerster, A., Kunde, W., & Pfister, R. (2020).
 #' Design choices: Empirical recommendations for designing two-dimensional

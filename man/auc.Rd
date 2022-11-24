@@ -33,11 +33,11 @@ Defaults to FALSE, indicating an time-based instead of geometric
 interpretation.}
 }
 \value{
-AUC as single number or as vector of cumulative AUCs.
+cumulative AUC as single number.
 }
 \description{
-Computes the (cumulative) AUC of a point defined by x and y
-coordinates, as compared to an ideal trajectory, defined by the
+Computes the (cumulative) AUC of trajectory points, defined by
+x and y coordinates, as compared to an ideal trajectory, defined by the
 start and end points.
 Importantly, the ideal trajectory is thought of as being of infinite length.
 }
