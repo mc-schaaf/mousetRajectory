@@ -1,15 +1,17 @@
 #' @title Time-point of maximum acceleration
 #'
 #' @description Computes the index of the peak acceleration of a trajectory,
-#' defined by arrays of x and y coordinates, and assumed to be equidistant
+#' defined by vectors of x and y coordinates, and assumed to be equidistant
 #' in time.
 #'
-#' @param x_vector Vector of the x-coordinates of the executed trajectory.
-#' @param y_vector Vector of the y-coordinates of the executed trajectory.
+#' @param x_vector x-coordinates of the executed trajectory.
+#' @param y_vector y-coordinates of the executed trajectory.
 #' @param absolute Should negative accelerations (i.e., deceleration)
-#' be included?
+#' be included? Defaults to \code{FALSE}.
 #'
 #' @return Single number indicating the index of peak acceleration.
+#'
+#' @details The order of the supplied vectors indicates timeadjacency.
 #'
 #' @references Wirth, R., Foerster, A., Kunde, W., & Pfister, R. (2020).
 #' Design choices: Empirical recommendations for designing two-dimensional

@@ -1,15 +1,15 @@
 #' @title Starting angle
 #'
 #' @description Computes the angle (in degrees) between a line,
-#' defined by two points p0 and p1 with coordinates (\code{x0}, \code{y0})
+#' defined by two points with coordinates (\code{x0}, \code{y0})
 #' and (\code{x1}, \code{y1}), and the specified axis.
 #'
-#' @param x0 x-value at the start point of your choosing.
-#' @param x1 x-value at the end point of your choosing.
-#' @param y0 y-value at the start point of your choosing.
-#' @param y1 y-value at the end point of your choosing.
+#' @param x0 x-value of the first point.
+#' @param x1 x-value of the second point.
+#' @param y0 y-value of the first point.
+#' @param y1 y-value of the second point.
 #' @param swap_x_y Whether to compute the angle relative to the x or y axis.
-#' Defaults to TRUE, indicating that the angle is relative to the y axis.
+#' Defaults to \code{TRUE}, indicating that the angle is relative to the y axis.
 #'
 #' @return Angle in degrees with \eqn{-180 <= angle <= 180}.
 #'
@@ -21,6 +21,7 @@
 #' Design choices: Empirical recommendations for designing two-dimensional
 #' finger tracking experiments. Behavior Research Methods, 52, 2394 - 2416.
 #' \doi{10.3758/s13428-020-01409-0}
+#'
 #'
 #' @examples
 #' starting_angle(0, 1, 0, 1)

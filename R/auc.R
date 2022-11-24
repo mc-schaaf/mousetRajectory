@@ -3,20 +3,29 @@
 #' @description Computes the (cumulative) AUC of trajectory points, defined by
 #' x and y coordinates, as compared to an ideal trajectory, defined by the
 #' start and end points.
-#' Importantly, the ideal trajectory is thought of as being of infinite length.
 #'
-#' @param x_vector Vector of the x-coordinates of the executed trajectory
-#' @param y_vector Vector of the y-coordinates of the executed trajectory
-#' @param x_start x-coordinate of the start point of the ideal trajectory
-#' @param y_start y-coordinate of the start point of the ideal trajectory
-#' @param x_end x-coordinate of the end point of the ideal trajectory
-#' @param y_end y-coordinate of the end point of the ideal trajectory
+#' @param x_vector x-coordinates of the executed trajectory
+#' @param y_vector y-coordinates of the executed trajectory
+#' @param x_start x-coordinate of the start point of the ideal trajectory.
+#' Defaults to the first value in \code{x_vector}.
+#' @param y_start y-coordinate of the start point of the ideal trajectory.
+#' Defaults to the first value in \code{y_vector}.
+#' @param x_end x-coordinate of the end point of the ideal trajectory.
+#' Defaults to the last value in \code{x_vector}.
+#' @param y_end y-coordinate of the end point of the ideal trajectory.
+#' Defaults to the last value in \code{y_vector}.
 #' @param geometric Whether the sign of areas that stem from a movement in the
 #' reverse direction of the ideal trajectory should be reversed.
-#' Defaults to FALSE, indicating an time-based instead of geometric
+#' Defaults to \code{FALSE}, indicating an time-based instead of geometric
 #' interpretation.
 #'
 #' @returns cumulative AUC as single number.
+#'
+#' @details The ideal trajectory is thought of as being of infinite length and
+#' the order of the supplied vectors indicates timeadjacency.
+#' Counterclockwise deviations from the ideal trajectory are considered
+#' positive, clockwise deviations as negative for the computation of the AUC.
+#' Thus, negative AUCs are possible.
 #'
 #' @references Wirth, R., Foerster, A., Kunde, W., & Pfister, R. (2020).
 #' Design choices: Empirical recommendations for designing two-dimensional

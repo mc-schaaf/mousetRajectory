@@ -2,14 +2,14 @@
 #'
 #' @description Checks how often a number sequence changes from decreasing
 #' monotonically to increasing monotonically (or vice versa).
-#' The order of the array indicates timeadjacency.
 #'
-#' @param numeric_array array of numbers ordered by their time of appearance.
+#' @param numeric_vector Numbers, ordered by their time of appearance.
 #'
-#' @return Single number indicating how often \code{numeric_array}
+#' @return Single number indicating how often \code{numeric_vector}
 #' changes direction.
 #'
-#' @details Values do not have to be strictly monotonically in-/decreasing.
+#' @details The order of the supplied vectors indicates timeadjacency.
+#' Values do not have to be strictly monotonically in-/decreasing.
 #' I.e., \code{c(0, 1, 1, 2)} would return 0,
 #' as \eqn{x_n >= x_n-1} is satisfied for \eqn{2 <= n <= length(c(0, 1, 1, 2))}.
 #'
@@ -27,23 +27,23 @@
 #' @export
 #'
 
-direction_changes <- function(numeric_array) {
+direction_changes <- function(numeric_vector) {
   # input check
-  if (length(numeric_array) <= 3) {
-    if (length(numeric_array) != 0) {
+  if (length(numeric_vector) <= 3) {
+    if (length(numeric_vector) != 0) {
       warning("Less than three values supplied!")
     }
     return(NA)
   }
 
   # compute first derivative
-  d1 <- numeric_array[2:length(numeric_array)] -
-    numeric_array[1:(length(numeric_array) - 1)]
+  d1 <- numeric_vector[2:length(numeric_vector)] -
+    numeric_vector[1:(length(numeric_vector) - 1)]
 
   # throw out cases where consecutive values are the same
   d1 <- d1[d1 != 0]
 
-  # compute array of booleans indicating if numeric_array inceases or decreases
+  # compute array of booleans indicating if numeric_vector inceases or decreases
   bool1 <- d1 > 0
 
   # compute if consecutive bools differ, and sum up how often this happens

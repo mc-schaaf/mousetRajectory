@@ -1,13 +1,15 @@
 #' @title Number of times a point is crossed
 #'
-#' @description Checks how often a certain point is being crossed by an number
-#' sequence where the order of the array indicates timeadjacency.
+#' @description Checks how often a number (\code{relevant_point}) is being
+#' crossed by an number sequence (\code{numeric_array}).
 #'
 #' @param numeric_array Array of numbers ordered by their time of appearance.
 #' @param relevant_point Number which has to be crossed.
 #'
 #' @returns Number of times that \code{numeric_array} crosses
 #' the \code{relevant_point}.
+#'
+#' @details The order of the supplied vectors indicates timeadjacency.
 #'
 #' @references Wirth, R., Foerster, A., Kunde, W., & Pfister, R. (2020).
 #' Design choices: Empirical recommendations for designing two-dimensional
