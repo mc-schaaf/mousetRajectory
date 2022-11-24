@@ -4,21 +4,21 @@
 \alias{direction_changes}
 \title{xFlips}
 \usage{
-direction_changes(numeric_array)
+direction_changes(numeric_vector)
 }
 \arguments{
-\item{numeric_array}{array of numbers ordered by their time of appearance.}
+\item{numeric_vector}{Numbers, ordered by their time of appearance.}
 }
 \value{
-Single number indicating how often \code{numeric_array}
+Single number indicating how often \code{numeric_vector}
 changes direction.
 }
 \description{
 Checks how often a number sequence changes from decreasing
 monotonically to increasing monotonically (or vice versa).
-The order of the array indicates timeadjacency.
 }
 \details{
+The order of the supplied vectors indicates timeadjacency.
 Values do not have to be strictly monotonically in-/decreasing.
 I.e., \code{c(0, 1, 1, 2)} would return 0,
 as \eqn{x_n >= x_n-1} is satisfied for \eqn{2 <= n <= length(c(0, 1, 1, 2))}.

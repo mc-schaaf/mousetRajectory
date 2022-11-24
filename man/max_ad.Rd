@@ -2,7 +2,7 @@
 % Please edit documentation in R/max_ad.R
 \name{max_ad}
 \alias{max_ad}
-\title{Maximum Absolute Deviation}
+\title{(signed) Maximum Absolute Deviation}
 \usage{
 max_ad(
   x_vector,
@@ -14,26 +14,36 @@ max_ad(
 )
 }
 \arguments{
-\item{x_vector}{Vector of the x-coordinates of the executed trajectory.}
+\item{x_vector}{x-coordinates of the executed trajectory}
 
-\item{y_vector}{Vector of the y-coordinates of the executed trajectory.}
+\item{y_vector}{y-coordinates of the executed trajectory}
 
-\item{x_start}{x-coordinate of the start point of the ideal trajectory.}
+\item{x_start}{x-coordinate of the start point of the ideal trajectory.
+Defaults to the first value in \code{x_vector}.}
 
-\item{y_start}{y-coordinate of the start point of the ideal trajectory.}
+\item{y_start}{y-coordinate of the start point of the ideal trajectory.
+Defaults to the first value in \code{y_vector}.}
 
-\item{x_end}{x-coordinate of the end point of the ideal trajectory.}
+\item{x_end}{x-coordinate of the end point of the ideal trajectory.
+Defaults to the last value in \code{x_vector}.}
 
-\item{y_end}{y-coordinate of the end point of the ideal trajectory.}
+\item{y_end}{y-coordinate of the end point of the ideal trajectory.
+Defaults to the last value in \code{y_vector}.}
 }
 \value{
-MAD as single number. Can be negative or positive.
+MAD as single number.
 }
 \description{
 Computes the maximum absolute deviation of a vector of points,
 defined by vectors of x and y coordinates, as compared to an ideal
 trajectory, defined by the coordinated of start and end points.
-Importantly, the ideal trajectory is thought of as being of infinite length.
+}
+\details{
+The ideal trajectory is thought of as being of infinite length and
+the order of the supplied vectors indicates timeadjacency.
+Counterclockwise deviations from the ideal trajectory are considered
+positive, clockwise deviations as negative for the computation of the MAD.
+Thus, negative MADs are possible.
 }
 \examples{
 data("dat_one_trajectory")

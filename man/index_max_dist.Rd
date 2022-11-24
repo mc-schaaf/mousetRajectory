@@ -7,17 +7,20 @@
 index_max_dist(x_vector, y_vector)
 }
 \arguments{
-\item{x_vector}{Vector of the x-coordinates of the executed trajectory.}
+\item{x_vector}{x-coordinates of the executed trajectory.}
 
-\item{y_vector}{Vector of the y-coordinates of the executed trajectory.}
+\item{y_vector}{y-coordinates of the executed trajectory.}
 }
 \value{
 Single number indicating the index of peak velocity.
 }
 \description{
 Computes the index of the peak velocity of a trajectory,
-defined by arrays of x and y coordinates, and assumed to be equidistant in
+defined by vectors of x and y coordinates, and assumed to be equidistant in
 time.
+}
+\details{
+The order of the supplied vectors indicates timeadjacency.
 }
 \examples{
 data("dat_one_trajectory")

@@ -7,17 +7,20 @@
 curvature(x_vector, y_vector)
 }
 \arguments{
-\item{x_vector}{vector of the x-coordinates of the executed trajectory.}
+\item{x_vector}{x-coordinates of the executed trajectory.}
 
-\item{y_vector}{vector of the y-coordinates of the executed trajectory.}
+\item{y_vector}{y-coordinates of the executed trajectory.}
 }
 \value{
 Single number indicating the curvature.
 }
 \description{
-Computes the curvature of a trajectory, defined by arrays
+Computes the curvature of a trajectory, defined by vectors
 of x and y coordinates, as compared to an ideal trajectory,
 as defined by the start and end points of the trajectory.
+}
+\details{
+The order of the supplied vectors indicates timeadjacency.
 }
 \examples{
 data("dat_one_trajectory")

@@ -7,23 +7,23 @@
 starting_angle(x0, x1, y0, y1, swap_x_y = TRUE)
 }
 \arguments{
-\item{x0}{x-value at the start point of your choosing.}
+\item{x0}{x-value of the first point.}
 
-\item{x1}{x-value at the end point of your choosing.}
+\item{x1}{x-value of the second point.}
 
-\item{y0}{y-value at the start point of your choosing.}
+\item{y0}{y-value of the first point.}
 
-\item{y1}{y-value at the end point of your choosing.}
+\item{y1}{y-value of the second point.}
 
 \item{swap_x_y}{Whether to compute the angle relative to the x or y axis.
-Defaults to TRUE, indicating that the angle is relative to the y axis.}
+Defaults to \code{TRUE}, indicating that the angle is relative to the y axis.}
 }
 \value{
 Angle in degrees with \eqn{-180 <= angle <= 180}.
 }
 \description{
 Computes the angle (in degrees) between a line,
-defined by two points p0 and p1 with coordinates (\code{x0}, \code{y0})
+defined by two points with coordinates (\code{x0}, \code{y0})
 and (\code{x1}, \code{y1}), and the specified axis.
 }
 \details{

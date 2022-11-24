@@ -16,8 +16,11 @@ Number of times that \code{numeric_array} crosses
 the \code{relevant_point}.
 }
 \description{
-Checks how often a certain point is being crossed by an number
-sequence where the order of the array indicates timeadjacency.
+Checks how often a number (\code{relevant_point}) is being
+crossed by an number sequence (\code{numeric_array}).
+}
+\details{
+The order of the supplied vectors indicates timeadjacency.
 }
 \examples{
 data("dat_one_trajectory")
