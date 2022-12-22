@@ -45,8 +45,10 @@ functions in R that, however, are distributed in binary or need source
 compilation, see Chen et al. (2019) <\doi{10.1093/biomethods/bpz016}>.
 }
 \examples{
-data("dat_one_trajectory")
-sampen(dat_one_trajectory$xvals)
+x_vals <- c(-1, 1, -1, 1, -1, 1)
+sampen(x_vals)
+sampen(x_vals)
+sampen(x_vals)
 
 }
 \references{

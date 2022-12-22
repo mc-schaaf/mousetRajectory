@@ -21,6 +21,6 @@ head(dat_one_trajectory)
 
 }
 \references{
-this dataset was artificially created for the rainR package
+This dataset was artificially created for the wuelib package.
 }
 \keyword{datasets}

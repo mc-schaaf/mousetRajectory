@@ -1,11 +1,11 @@
 #' @title Area Under the Curve
 #'
-#' @description Computes the (cumulative) AUC of trajectory points, defined by
-#' x and y coordinates, as compared to an ideal trajectory, defined by the
+#' @description Computes the (cumulative) AUC of a trajectory, defined by vectors
+#' of x and y coordinates, as compared to an ideal trajectory, defined by the
 #' start and end points.
 #'
-#' @param x_vector x-coordinates of the executed trajectory
-#' @param y_vector y-coordinates of the executed trajectory
+#' @param x_vector x-coordinates of the executed trajectory.
+#' @param y_vector y-coordinates of the executed trajectory.
 #' @param x_start x-coordinate of the start point of the ideal trajectory.
 #' Defaults to the first value in \code{x_vector}.
 #' @param y_start y-coordinate of the start point of the ideal trajectory.
@@ -19,7 +19,7 @@
 #' Defaults to \code{FALSE}, indicating an time-based instead of geometric
 #' interpretation.
 #'
-#' @returns cumulative AUC as single number.
+#' @returns Cumulative AUC as single number.
 #'
 #' @details The ideal trajectory is thought of as being of infinite length and
 #' the order of the supplied vectors indicates timeadjacency.
@@ -34,8 +34,29 @@
 #'
 #'
 #' @examples
-#' data("dat_one_trajectory")
-#' auc(dat_one_trajectory$xvals, dat_one_trajectory$yvals)
+#' x_vals <- c(0, 0, 0, 1, 2)
+#' y_vals <- c(0, 1, 2, 2, 2)
+#' plot(x_vals, y_vals, type = "l")
+#' auc(x_vals, y_vals) # counterclockwise deviation: positive
+#'
+#' x_vals <- c(0, 1, 2, 2, 2)
+#' y_vals <- c(0, 0, 0, 1, 2)
+#' auc(x_vals, y_vals) # clockwise deviation: negative
+#' x_vals <- -x_vals
+#' auc(x_vals, y_vals) # now it is counterclockwise again
+#'
+#' x_vals <- c(0, 0, 1, 2, 2)
+#' y_vals <- c(0, 1, 1, 1, 2)
+#' auc(x_vals, y_vals) # will create small rounding errors
+#'
+#' x_vals <- c(0, 0, 1, 2, 2, 1, 1)
+#' y_vals <- c(0, 2, 2, 2, 1, 1, 0)
+#' plot(x_vals, y_vals, type = "l")
+#' lines(c(x_vals[1], x_vals[length(x_vals)]),
+#'       c(y_vals[1], y_vals[length(y_vals)]),
+#'       col = "green")
+#' auc(x_vals, y_vals)
+#' auc(x_vals, y_vals, geometric = TRUE) # note the difference
 #'
 #' @export
 #'

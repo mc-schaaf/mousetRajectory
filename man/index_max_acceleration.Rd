@@ -2,7 +2,7 @@
 % Please edit documentation in R/index_max_acceleration.R
 \name{index_max_acceleration}
 \alias{index_max_acceleration}
-\title{Time-point of maximum acceleration}
+\title{Time point of maximum acceleration}
 \usage{
 index_max_acceleration(x_vector, y_vector, absolute = FALSE)
 }
@@ -26,8 +26,9 @@ in time.
 The order of the supplied vectors indicates timeadjacency.
 }
 \examples{
-data("dat_one_trajectory")
-index_max_acceleration(dat_one_trajectory$xvals, dat_one_trajectory$yvals)
+x_vals <- c(0, 1, 2, 3, 6, 10, 12, 14, 15)
+y_vals <- c(0, 0, 0, 0, 0,  0,  0,  0,  0)
+index_max_acceleration(x_vals, y_vals)
 
 }
 \references{

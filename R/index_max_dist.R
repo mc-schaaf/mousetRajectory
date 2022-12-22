@@ -1,4 +1,4 @@
-#' @title Time-point of maximum velocity
+#' @title Time point of maximum velocity
 #'
 #' @description Computes the index of the peak velocity of a trajectory,
 #' defined by vectors of x and y coordinates, and assumed to be equidistant in
@@ -18,8 +18,9 @@
 #'
 #'
 #' @examples
-#' data("dat_one_trajectory")
-#' index_max_dist(dat_one_trajectory$xvals, dat_one_trajectory$yvals)
+#' x_vals <- c(0, 1, 2, 3, 6, 10, 12, 14, 15)
+#' y_vals <- c(0, 0, 0, 0, 0,  0,  0,  0,  0)
+#' index_max_dist(x_vals, y_vals)
 #'
 #' @export
 #'

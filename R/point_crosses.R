@@ -18,23 +18,26 @@
 #'
 #'
 #' @examples
-#' data("dat_one_trajectory")
-#' point_crosses(dat_one_trajectory$xvals)
+#' x_vals <- c(-1, 1, -1, 1, -1, 1)
+#' point_crosses(x_vals, 0)
+#' point_crosses(x_vals, 1)
+#' point_crosses(x_vals, -1)
 #'
 #' @export
 #'
 
 point_crosses <- function(numeric_array, relevant_point = 0) {
-  if (length(numeric_array) < 3) {
+  if (length(numeric_array) < 3 |
+      length(numeric_array[numeric_array != relevant_point]) < 3) {
     if (length(numeric_array) != 0) {
-      warning("Less than three values supplied!")
+      warning("Too few values supplied!")
     }
     return(NA)
   }
 
 
   # compute array of booleans indicating if value is greater than relevant_point
-  bool_a <- numeric_array > relevant_point
+  bool_a <- numeric_array[numeric_array != relevant_point] > relevant_point
 
   # compute if consecutive bools differ, and sum up how often this happens
   bool_b <- bool_a[1:(length(bool_a) - 1)] != bool_a[2:length(bool_a)]

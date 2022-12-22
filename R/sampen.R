@@ -31,8 +31,10 @@
 #'
 #'
 #' @examples
-#' data("dat_one_trajectory")
-#' sampen(dat_one_trajectory$xvals)
+#' x_vals <- c(-1, 1, -1, 1, -1, 1)
+#' sampen(x_vals)
+#' sampen(x_vals)
+#' sampen(x_vals)
 #'
 #' @export
 #' @importFrom stats "sd"
@@ -85,5 +87,6 @@ sampen <- function(timeseries_array,
     }
   }
 
+  if(mat_m == 0){return(NA)}
   return(-log(mat_m1 / mat_m))
 }

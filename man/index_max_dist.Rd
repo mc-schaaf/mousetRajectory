@@ -2,7 +2,7 @@
 % Please edit documentation in R/index_max_dist.R
 \name{index_max_dist}
 \alias{index_max_dist}
-\title{Time-point of maximum velocity}
+\title{Time point of maximum velocity}
 \usage{
 index_max_dist(x_vector, y_vector)
 }
@@ -23,8 +23,9 @@ time.
 The order of the supplied vectors indicates timeadjacency.
 }
 \examples{
-data("dat_one_trajectory")
-index_max_dist(dat_one_trajectory$xvals, dat_one_trajectory$yvals)
+x_vals <- c(0, 1, 2, 3, 6, 10, 12, 14, 15)
+y_vals <- c(0, 0, 0, 0, 0,  0,  0,  0,  0)
+index_max_dist(x_vals, y_vals)
 
 }
 \references{

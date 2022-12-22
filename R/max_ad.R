@@ -1,11 +1,11 @@
 #' @title (signed) Maximum Absolute Deviation
 #'
-#' @description Computes the maximum absolute deviation of a vector of points,
-#' defined by vectors of x and y coordinates, as compared to an ideal
-#' trajectory, defined by the coordinated of start and end points.
+#' @description Computes the maximum absolute deviation of a trajectory,
+#' defined by vectors of x and y coordinates, from an ideal
+#' trajectory, defined by the coordinates of the start and end points.
 #'
-#' @param x_vector x-coordinates of the executed trajectory
-#' @param y_vector y-coordinates of the executed trajectory
+#' @param x_vector x-coordinates of the executed trajectory.
+#' @param y_vector y-coordinates of the executed trajectory.
 #' @param x_start x-coordinate of the start point of the ideal trajectory.
 #' Defaults to the first value in \code{x_vector}.
 #' @param y_start y-coordinate of the start point of the ideal trajectory.
@@ -30,8 +30,20 @@
 #'
 #'
 #' @examples
-#' data("dat_one_trajectory")
-#' max_ad(dat_one_trajectory$xvals, dat_one_trajectory$yvals)
+#' x_vals <- c(0, 0, 0, 1, 2)
+#' y_vals <- c(0, 1, 2, 2, 2)
+#' plot(x_vals, y_vals, type = "l")
+#' max_ad(x_vals, y_vals) # counterclockwise deviation: positive
+#'
+#' x_vals <- c(0, 1, 2, 2, 2)
+#' y_vals <- c(0, 0, 0, 1, 2)
+#' max_ad(x_vals, y_vals) # clockwise deviation: negative
+#' x_vals <- -x_vals
+#' max_ad(x_vals, y_vals) # now it is counterclockwise again
+#'
+#' x_vals <- c(0, 0, 1, 2, 3, 6, 3)
+#' y_vals <- c(0, 2, 2, 2, 2, 1, 0)
+#' max_ad(x_vals, y_vals) # the ideal trajectory has infinite length
 #'
 #' @export
 #'

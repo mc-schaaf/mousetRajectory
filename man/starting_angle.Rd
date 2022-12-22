@@ -32,10 +32,14 @@ changes are counted as positive. If the angle is computed relative to the
 y axis, clockwise changes are counted as positive.
 }
 \examples{
-starting_angle(0, 1, 0, 1)
-starting_angle(0, -1, 0, 1)
-starting_angle(0, 1, 0, 1, FALSE)
-starting_angle(0, -1, 0, 1, FALSE)
+# Note that not the mathematical definition of angle is used by default:
+starting_angle(0, 1, 0, 0)
+starting_angle(0, 1, 0, 0, swap_x_y = FALSE)
+# angles are clockwise and relative to the y-axis.
+
+# Note that return values are in the range [-180, 180], not [0, 360]:
+starting_angle(0, -1, 0, -1)
+starting_angle(0, 1, 0, -1, swap_x_y = FALSE)
 
 }
 \references{

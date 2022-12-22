@@ -15,9 +15,9 @@ auc(
 )
 }
 \arguments{
-\item{x_vector}{x-coordinates of the executed trajectory}
+\item{x_vector}{x-coordinates of the executed trajectory.}
 
-\item{y_vector}{y-coordinates of the executed trajectory}
+\item{y_vector}{y-coordinates of the executed trajectory.}
 
 \item{x_start}{x-coordinate of the start point of the ideal trajectory.
 Defaults to the first value in \code{x_vector}.}
@@ -37,11 +37,11 @@ Defaults to \code{FALSE}, indicating an time-based instead of geometric
 interpretation.}
 }
 \value{
-cumulative AUC as single number.
+Cumulative AUC as single number.
 }
 \description{
-Computes the (cumulative) AUC of trajectory points, defined by
-x and y coordinates, as compared to an ideal trajectory, defined by the
+Computes the (cumulative) AUC of a trajectory, defined by vectors
+of x and y coordinates, as compared to an ideal trajectory, defined by the
 start and end points.
 }
 \details{
@@ -52,8 +52,29 @@ positive, clockwise deviations as negative for the computation of the AUC.
 Thus, negative AUCs are possible.
 }
 \examples{
-data("dat_one_trajectory")
-auc(dat_one_trajectory$xvals, dat_one_trajectory$yvals)
+x_vals <- c(0, 0, 0, 1, 2)
+y_vals <- c(0, 1, 2, 2, 2)
+plot(x_vals, y_vals, type = "l")
+auc(x_vals, y_vals) # counterclockwise deviation: positive
+
+x_vals <- c(0, 1, 2, 2, 2)
+y_vals <- c(0, 0, 0, 1, 2)
+auc(x_vals, y_vals) # clockwise deviation: negative
+x_vals <- -x_vals
+auc(x_vals, y_vals) # now it is counterclockwise again
+
+x_vals <- c(0, 0, 1, 2, 2)
+y_vals <- c(0, 1, 1, 1, 2)
+auc(x_vals, y_vals) # will create small rounding errors
+
+x_vals <- c(0, 0, 1, 2, 2, 1, 1)
+y_vals <- c(0, 2, 2, 2, 1, 1, 0)
+plot(x_vals, y_vals, type = "l")
+lines(c(x_vals[1], x_vals[length(x_vals)]),
+      c(y_vals[1], y_vals[length(y_vals)]),
+      col = "green")
+auc(x_vals, y_vals)
+auc(x_vals, y_vals, geometric = TRUE) # note the difference
 
 }
 \references{

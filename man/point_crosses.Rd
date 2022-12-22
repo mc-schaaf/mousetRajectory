@@ -23,8 +23,10 @@ crossed by an number sequence (\code{numeric_array}).
 The order of the supplied vectors indicates timeadjacency.
 }
 \examples{
-data("dat_one_trajectory")
-point_crosses(dat_one_trajectory$xvals)
+x_vals <- c(-1, 1, -1, 1, -1, 1)
+point_crosses(x_vals, 0)
+point_crosses(x_vals, 1)
+point_crosses(x_vals, -1)
 
 }
 \references{

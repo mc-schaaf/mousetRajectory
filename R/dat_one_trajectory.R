@@ -8,7 +8,7 @@
 #'
 #' @format An object of class \code{"data.frame"}
 #'
-#' @references this dataset was artificially created for the rainR package
+#' @references This dataset was artificially created for the wuelib package.
 #' @keywords datasets
 #'
 #' @examples

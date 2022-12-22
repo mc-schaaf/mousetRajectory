@@ -1,4 +1,4 @@
-#' @title Time-point of maximum acceleration
+#' @title Time point of maximum acceleration
 #'
 #' @description Computes the index of the peak acceleration of a trajectory,
 #' defined by vectors of x and y coordinates, and assumed to be equidistant
@@ -20,8 +20,9 @@
 #'
 #'
 #' @examples
-#' data("dat_one_trajectory")
-#' index_max_acceleration(dat_one_trajectory$xvals, dat_one_trajectory$yvals)
+#' x_vals <- c(0, 1, 2, 3, 6, 10, 12, 14, 15)
+#' y_vals <- c(0, 0, 0, 0, 0,  0,  0,  0,  0)
+#' index_max_acceleration(x_vals, y_vals)
 #'
 #' @export
 #'
