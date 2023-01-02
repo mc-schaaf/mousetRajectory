@@ -1,8 +1,8 @@
 #' @title Area Under the Curve
 #'
-#' @description Computes the (cumulative) AUC of a trajectory, defined by vectors
-#' of x and y coordinates, as compared to an ideal trajectory, defined by the
-#' start and end points.
+#' @description Computes the (cumulative) Area Under the Curve (AUC) of a
+#' trajectory, defined by vectors of x and y coordinates, as compared to an
+#' ideal trajectory, defined by the start and end points.
 #'
 #' @param x_vector x-coordinates of the executed trajectory.
 #' @param y_vector y-coordinates of the executed trajectory.

@@ -1,6 +1,6 @@
 #' @title (signed) Maximum Absolute Deviation
 #'
-#' @description Computes the maximum absolute deviation of a trajectory,
+#' @description Computes the Maximum Absolute Deviation (MAD) of a trajectory,
 #' defined by vectors of x and y coordinates, from an ideal
 #' trajectory, defined by the coordinates of the start and end points.
 #'

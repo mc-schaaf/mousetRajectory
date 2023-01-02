@@ -1,17 +1,17 @@
-#' @title SAMPle ENtropy
+#' @title Sample entropy
 #'
-#' @description Computes the sample Entropy, as given by
+#' @description Computes the sample entropy (sampen), as given by
 #' Richman & Moorman (2000) <\doi{10.1152/ajpheart.2000.278.6.H2039}>.
 #'
-#' @param timeseries_array Array of numbers over which the sampEn is to be
+#' @param timeseries_array Array of numbers over which the sampen is to be
 #' computed.
 #' @param dimensions Number of embedding dimensions for which to compute the
-#' sampEn. Sometimes also called "template length".
+#' sampen. Sometimes also called "template length".
 #' @param tolerance Tolerance for the comparisons of two number sequences.
 #' @param standardize Whether to standardize the timeseries_array.
 #' @param use_diff Whether to use the differences between adjacent points.
 #'
-#' @return Single number indicating the sample entropy for the given parameters.
+#' @return Single number indicating the sampen for the given parameters.
 #'
 #' @details As suggested by Richman & Moorman (2000)
 #' <\doi{10.1152/ajpheart.2000.278.6.H2039}>, the last vector of length
@@ -20,7 +20,7 @@
 #' introduced by the length of the \code{timeseries_array}.
 #' The function was deliberately implemented in R with C-style code. While this
 #' makes the function rather slow for large \code{timeseries_array}s,
-#' it enables maximal transparency. For an overview over faster samPen
+#' it enables maximal transparency. For an overview over faster sampen
 #' functions in R that, however, are distributed in binary or need source
 #' compilation, see Chen et al. (2019) <\doi{10.1093/biomethods/bpz016}>.
 #'
