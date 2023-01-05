@@ -7,13 +7,13 @@
 #' @param x_vector x-coordinates of the executed trajectory.
 #' @param y_vector y-coordinates of the executed trajectory.
 #' @param x_start x-coordinate of the start point of the ideal trajectory.
-#' Defaults to the first value in \code{x_vector}.
+#' Defaults to the first value in `x_vector`.
 #' @param y_start y-coordinate of the start point of the ideal trajectory.
-#' Defaults to the first value in \code{y_vector}.
+#' Defaults to the first value in `y_vector`.
 #' @param x_end x-coordinate of the end point of the ideal trajectory.
-#' Defaults to the last value in \code{x_vector}.
+#' Defaults to the last value in `x_vector`.
 #' @param y_end y-coordinate of the end point of the ideal trajectory.
-#' Defaults to the last value in \code{y_vector}.
+#' Defaults to the last value in `y_vector`.
 #'
 #' @returns MAD as single number.
 #'

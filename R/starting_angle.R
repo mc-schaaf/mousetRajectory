@@ -1,15 +1,15 @@
 #' @title Starting angle
 #'
 #' @description Computes the angle (in degrees) between a line,
-#' defined by two points with coordinates (\code{x0}, \code{y0})
-#' and (\code{x1}, \code{y1}), and the specified axis.
+#' defined by two points with coordinates (`x0`, `y0`)
+#' and (`x1`, `y1`), and the specified axis.
 #'
 #' @param x0 x-value of the first point.
 #' @param x1 x-value of the second point.
 #' @param y0 y-value of the first point.
 #' @param y1 y-value of the second point.
 #' @param swap_x_y Whether to compute the angle relative to the x or y axis.
-#' Defaults to \code{TRUE}, indicating that the angle is relative to the y axis.
+#' Defaults to `TRUE`, indicating that the angle is relative to the y axis.
 #'
 #' @return Angle in degrees with \eqn{-180 <= angle <= 180}.
 #'

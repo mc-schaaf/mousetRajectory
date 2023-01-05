@@ -34,7 +34,7 @@ Defaults to the last value in \code{y_vector}.}
 MAD as single number.
 }
 \description{
-Computes the maximum absolute deviation of a trajectory,
+Computes the Maximum Absolute Deviation (MAD) of a trajectory,
 defined by vectors of x and y coordinates, from an ideal
 trajectory, defined by the coordinates of the start and end points.
 }

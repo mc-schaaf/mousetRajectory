@@ -7,7 +7,7 @@
 #' @param x_vector x-coordinates of the executed trajectory.
 #' @param y_vector y-coordinates of the executed trajectory.
 #' @param absolute Should negative accelerations (i.e., deceleration)
-#' be included? Defaults to \code{FALSE}.
+#' be included? Defaults to `FALSE`.
 #'
 #' @return Single number indicating the index of peak acceleration.
 #'

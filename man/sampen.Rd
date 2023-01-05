@@ -2,7 +2,7 @@
 % Please edit documentation in R/sampen.R
 \name{sampen}
 \alias{sampen}
-\title{SAMPle ENtropy}
+\title{Sample entropy}
 \usage{
 sampen(
   timeseries_array,
@@ -13,11 +13,11 @@ sampen(
 )
 }
 \arguments{
-\item{timeseries_array}{Array of numbers over which the sampEn is to be
+\item{timeseries_array}{Array of numbers over which the sampen is to be
 computed.}
 
 \item{dimensions}{Number of embedding dimensions for which to compute the
-sampEn. Sometimes also called "template length".}
+sampen. Sometimes also called "template length".}
 
 \item{tolerance}{Tolerance for the comparisons of two number sequences.}
 
@@ -26,23 +26,23 @@ sampEn. Sometimes also called "template length".}
 \item{use_diff}{Whether to use the differences between adjacent points.}
 }
 \value{
-Single number indicating the sample entropy for the given parameters.
+Single number indicating the sampen for the given parameters.
 }
 \description{
-Computes the sample Entropy, as given by
-Richman & Moorman (2000) <\doi{10.1152/ajpheart.2000.278.6.H2039}>.
+Computes the sample entropy (sampen), as given by
+Richman & Moorman (2000), \doi{10.1152/ajpheart.2000.278.6.H2039}.
 }
 \details{
-As suggested by Richman & Moorman (2000)
-<\doi{10.1152/ajpheart.2000.278.6.H2039}>, the last vector of length
+As suggested by Richman & Moorman (2000),
+\doi{10.1152/ajpheart.2000.278.6.H2039}, the last vector of length
 \code{dimensions} is not considered because it has no corresponding vector of
-length \code{dimensions + 1}, ensuring a sampEn estimation with a low bias
+length \code{dimensions + 1}, ensuring a sampen estimation with a low bias
 introduced by the length of the \code{timeseries_array}.
 The function was deliberately implemented in R with C-style code. While this
 makes the function rather slow for large \code{timeseries_array}s,
-it enables maximal transparency. For an overview over faster samPen
+it enables maximal transparency. For an overview over faster sampen
 functions in R that, however, are distributed in binary or need source
-compilation, see Chen et al. (2019) <\doi{10.1093/biomethods/bpz016}>.
+compilation, see Chen et al. (2019), \doi{10.1093/biomethods/bpz016}.
 }
 \examples{
 x_vals <- rep(c(0,0,0,0,0,1), 20)

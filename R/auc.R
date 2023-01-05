@@ -7,16 +7,16 @@
 #' @param x_vector x-coordinates of the executed trajectory.
 #' @param y_vector y-coordinates of the executed trajectory.
 #' @param x_start x-coordinate of the start point of the ideal trajectory.
-#' Defaults to the first value in \code{x_vector}.
+#' Defaults to the first value in `x_vector`.
 #' @param y_start y-coordinate of the start point of the ideal trajectory.
-#' Defaults to the first value in \code{y_vector}.
+#' Defaults to the first value in `y_vector`.
 #' @param x_end x-coordinate of the end point of the ideal trajectory.
-#' Defaults to the last value in \code{x_vector}.
+#' Defaults to the last value in `x_vector`.
 #' @param y_end y-coordinate of the end point of the ideal trajectory.
-#' Defaults to the last value in \code{y_vector}.
+#' Defaults to the last value in `y_vector`.
 #' @param geometric Whether the sign of areas that stem from a movement in the
 #' reverse direction of the ideal trajectory should be reversed.
-#' Defaults to \code{FALSE}, indicating an time-based instead of geometric
+#' Defaults to `FALSE`, indicating an time-based instead of geometric
 #' interpretation.
 #'
 #' @returns Cumulative AUC as single number.

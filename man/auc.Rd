@@ -40,9 +40,9 @@ interpretation.}
 Cumulative AUC as single number.
 }
 \description{
-Computes the (cumulative) AUC of a trajectory, defined by vectors
-of x and y coordinates, as compared to an ideal trajectory, defined by the
-start and end points.
+Computes the (cumulative) Area Under the Curve (AUC) of a
+trajectory, defined by vectors of x and y coordinates, as compared to an
+ideal trajectory, defined by the start and end points.
 }
 \details{
 The ideal trajectory is thought of as being of infinite length and

@@ -2,7 +2,6 @@ Type: Package
 Package: wuelib
 Title: Trajectory Analyses for Cognitive Psychologists
 Version: 0.1.0
-Date: 2022-12-23
 Authors@R: c(
     person("Robert", "Wirth", role = "aut", 
     email = "robert.wirth@uni-wuerzburg.de"),
@@ -16,13 +15,14 @@ Maintainer: Moritz Schaaf <moritz.schaaf@uni-wuerzburg.de>
 Description: 
   Bundles together several functions that are useful for analyzing mouse 
   movement (and other 2-D trajectory) data in the context of cognitive 
-  psychology. It is maintained by the Cognition & Behaviour team of the 
-  University of Wuerzburg.
+  psychology. 'wuelib' is a library that is maintained by the Cognition & 
+  Behaviour team of the University of Wuerzburg.
 URL: https://github.com/mc-schaaf/wuelib
 BugReports: https://github.com/mc-schaaf/wuelib/issues
 Depends:
     R (>= 3.5.0)
 Language: en-US
-License: GPL-3
+License: GPL (>= 3)
 RoxygenNote: 7.2.1
+Roxygen: list(markdown = TRUE)
 Encoding: UTF-8

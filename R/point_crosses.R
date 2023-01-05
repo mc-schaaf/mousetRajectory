@@ -1,13 +1,13 @@
 #' @title Number of times a point is crossed
 #'
-#' @description Checks how often a number (\code{relevant_point}) is being
-#' crossed by an number sequence (\code{numeric_array}).
+#' @description Checks how often a number (`relevant_point`) is being
+#' crossed by an number sequence (`numeric_array`).
 #'
 #' @param numeric_array Array of numbers ordered by their time of appearance.
 #' @param relevant_point Number which has to be crossed.
 #'
-#' @returns Number of times that \code{numeric_array} crosses
-#' the \code{relevant_point}.
+#' @returns Number of times that `numeric_array` crosses
+#' the `relevant_point`.
 #'
 #' @details The order of the supplied vectors indicates timeadjacency.
 #'

@@ -1,7 +1,7 @@
 #' @title Sample entropy
 #'
 #' @description Computes the sample entropy (sampen), as given by
-#' Richman & Moorman (2000) <\doi{10.1152/ajpheart.2000.278.6.H2039}>.
+#' Richman & Moorman (2000), \doi{10.1152/ajpheart.2000.278.6.H2039}.
 #'
 #' @param timeseries_array Array of numbers over which the sampen is to be
 #' computed.
@@ -13,16 +13,16 @@
 #'
 #' @return Single number indicating the sampen for the given parameters.
 #'
-#' @details As suggested by Richman & Moorman (2000)
-#' <\doi{10.1152/ajpheart.2000.278.6.H2039}>, the last vector of length
-#' \code{dimensions} is not considered because it has no corresponding vector of
-#' length \code{dimensions + 1}, ensuring a sampEn estimation with a low bias
-#' introduced by the length of the \code{timeseries_array}.
+#' @details As suggested by Richman & Moorman (2000),
+#' \doi{10.1152/ajpheart.2000.278.6.H2039}, the last vector of length
+#' `dimensions` is not considered because it has no corresponding vector of
+#' length `dimensions + 1`, ensuring a sampen estimation with a low bias
+#' introduced by the length of the `timeseries_array`.
 #' The function was deliberately implemented in R with C-style code. While this
-#' makes the function rather slow for large \code{timeseries_array}s,
+#' makes the function rather slow for large `timeseries_array`s,
 #' it enables maximal transparency. For an overview over faster sampen
 #' functions in R that, however, are distributed in binary or need source
-#' compilation, see Chen et al. (2019) <\doi{10.1093/biomethods/bpz016}>.
+#' compilation, see Chen et al. (2019), \doi{10.1093/biomethods/bpz016}.
 #'
 #' @references Wirth, R., Foerster, A., Kunde, W., & Pfister, R. (2020).
 #' Design choices: Empirical recommendations for designing two-dimensional
