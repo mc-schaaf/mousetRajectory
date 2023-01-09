@@ -3,12 +3,12 @@ Package: wuelib
 Title: Trajectory Analyses for Cognitive Psychologists
 Version: 0.1.0
 Authors@R: c(
-    person("Solveig", "Tonn", role = "aut", 
-    email = "solveig.tonn@uni-wuerzburg.de"),
     person("Robert", "Wirth", role = "aut", 
     email = "robert.wirth@uni-wuerzburg.de"),
     person("Moritz", "Schaaf", role = c("aut", "cre"), 
     email = "moritz.schaaf@uni-wuerzburg.de"),
+    person("Solveig", "Tonn", role = "aut", 
+    email = "solveig.tonn@uni-wuerzburg.de"),
     person("Roland", "Pfister", role = "aut", 
     email = "mail@roland-pfister.net")
   )
