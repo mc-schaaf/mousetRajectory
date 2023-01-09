@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# Trajectory Analyses for Cognitive Psychologists
+# wuelib: Trajectory Analyses for Cognitive Psychologists
 
 <!-- badges: start -->
 <!-- badges: end -->

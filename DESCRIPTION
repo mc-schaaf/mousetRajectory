@@ -3,6 +3,8 @@ Package: wuelib
 Title: Trajectory Analyses for Cognitive Psychologists
 Version: 0.1.0
 Authors@R: c(
+    person("Solveig", "Tonn", role = "aut", 
+    email = "solveig.tonn@uni-wuerzburg.de"),
     person("Robert", "Wirth", role = "aut", 
     email = "robert.wirth@uni-wuerzburg.de"),
     person("Moritz", "Schaaf", role = c("aut", "cre"), 
@@ -10,7 +12,8 @@ Authors@R: c(
     person("Roland", "Pfister", role = "aut", 
     email = "mail@roland-pfister.net")
   )
-Author: Robert Wirth [aut], Moritz Schaaf [aut, cre], Roland Pfister [aut]
+Author: Solveig Tonn [aut], Robert Wirth [aut], 
+    Moritz Schaaf [aut, cre], Roland Pfister [aut]
 Maintainer: Moritz Schaaf <moritz.schaaf@uni-wuerzburg.de>
 Description: 
   Bundles together several functions that are useful for analyzing mouse 

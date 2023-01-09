@@ -21,6 +21,7 @@ Useful links:
 
 Authors:
 \itemize{
+  \item Solveig Tonn \email{solveig.tonn@uni-wuerzburg.de}
   \item Robert Wirth \email{robert.wirth@uni-wuerzburg.de}
   \item Roland Pfister \email{mail@roland-pfister.net}
 }
