@@ -26,7 +26,8 @@ sampen. Sometimes also called "template length".}
 \item{use_diff}{Whether to use the differences between adjacent points.}
 }
 \value{
-Single number indicating the sampen for the given parameters.
+Single number indicating the sampen for the given parameters
+(0 to +Inf).
 }
 \description{
 Computes the sample entropy (sampen), as given by

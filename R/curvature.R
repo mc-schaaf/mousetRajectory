@@ -7,9 +7,9 @@
 #' @param x_vector x-coordinates of the executed trajectory.
 #' @param y_vector y-coordinates of the executed trajectory.
 #'
-#' @return Single number indicating the curvature.
+#' @return Single number indicating the curvature (1 to +Inf).
 #'
-#' @details The order of the supplied vectors indicates timeadjacency.
+#' @details The supplied vectors are assumed to be ordered by time.
 #'
 #' @references Wirth, R., Foerster, A., Kunde, W., & Pfister, R. (2020).
 #' Design choices: Empirical recommendations for designing two-dimensional

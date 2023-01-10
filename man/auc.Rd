@@ -37,7 +37,7 @@ Defaults to \code{FALSE}, indicating an time-based instead of geometric
 interpretation.}
 }
 \value{
-Cumulative AUC as single number.
+Cumulative AUC as single number (-Inf to +Inf).
 }
 \description{
 Computes the (cumulative) Area Under the Curve (AUC) of a
@@ -46,7 +46,7 @@ ideal trajectory, defined by the start and end points.
 }
 \details{
 The ideal trajectory is thought of as being of infinite length and
-the order of the supplied vectors indicates timeadjacency.
+the supplied vectors are assumed to be ordered by time.
 Counterclockwise deviations from the ideal trajectory are considered
 positive, clockwise deviations as negative for the computation of the AUC.
 Thus, negative AUCs are possible.
@@ -65,16 +65,28 @@ auc(x_vals, y_vals) # now it is counterclockwise again
 
 x_vals <- c(0, 0, 1, 2, 2)
 y_vals <- c(0, 1, 1, 1, 2)
-auc(x_vals, y_vals) # will create small rounding errors
+plot(x_vals, y_vals, type = "l")
+auc(x_vals, y_vals) # might create small rounding errors; this should be 0
+all.equal(0, auc(x_vals, y_vals)) # indeed interpreted by R as basically 0
 
-x_vals <- c(0, 0, 1, 2, 2, 1, 1)
-y_vals <- c(0, 2, 2, 2, 1, 1, 0)
+x_vals <- c(0, 1, 2, 1)
+y_vals <- c(0, 1, 1, 0)
 plot(x_vals, y_vals, type = "l")
 lines(c(x_vals[1], x_vals[length(x_vals)]),
       c(y_vals[1], y_vals[length(y_vals)]),
       col = "green")
 auc(x_vals, y_vals)
 auc(x_vals, y_vals, geometric = TRUE) # note the difference
+
+# Inspired by a German kids' riddle:
+x_vals <- c(0, 0, 1, 0, 1, 0, 0.5, 1, 1)
+y_vals <- c(0, 1, 1, 0, 0, 1, 1.5, 1, 0)
+auc(x_vals, y_vals)
+auc(x_vals, y_vals, geometric = TRUE)
+plot(x_vals, y_vals, type = "l")
+lines(c(x_vals[1], x_vals[length(x_vals)]),
+      c(y_vals[1], y_vals[length(y_vals)]),
+      col = "green")
 
 }
 \references{

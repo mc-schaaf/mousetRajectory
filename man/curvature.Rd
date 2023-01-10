@@ -12,7 +12,7 @@ curvature(x_vector, y_vector)
 \item{y_vector}{y-coordinates of the executed trajectory.}
 }
 \value{
-Single number indicating the curvature.
+Single number indicating the curvature (1 to +Inf).
 }
 \description{
 Computes the curvature of a trajectory, defined by vectors
@@ -20,7 +20,7 @@ of x and y coordinates, as compared to an ideal trajectory,
 as defined by the start and end points of the trajectory.
 }
 \details{
-The order of the supplied vectors indicates timeadjacency.
+The supplied vectors are assumed to be ordered by time.
 }
 \examples{
 x_vals <- c(0, 0, 0, 1, 2)

@@ -11,14 +11,14 @@ direction_changes(numeric_vector)
 }
 \value{
 Single number indicating how often \code{numeric_vector}
-changes direction.
+changes direction (0 to +Inf).
 }
 \description{
 Checks how often a number sequence changes from decreasing
 monotonically to increasing monotonically (or vice versa).
 }
 \details{
-The order of the supplied vectors indicates timeadjacency.
+The supplied vectors are assumed to be ordered by time.
 Values do not have to be strictly monotonically in-/decreasing.
 I.e., \code{c(0, 1, 1, 2)} would return 0,
 as \eqn{x_n >= x_n-1} is satisfied for \eqn{2 <= n <= length(c(0, 1, 1, 2))}.

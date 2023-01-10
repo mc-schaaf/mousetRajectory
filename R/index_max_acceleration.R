@@ -9,9 +9,10 @@
 #' @param absolute Should negative accelerations (i.e., deceleration)
 #' be included? Defaults to `FALSE`.
 #'
-#' @return Single number indicating the index of peak acceleration.
+#' @return Single number indicating the index of peak acceleration (1 to +Inf).
 #'
-#' @details The order of the supplied vectors indicates timeadjacency.
+#' @details The supplied vectors are assumed to be ordered by time with similar
+#' time differences.
 #'
 #' @references Wirth, R., Foerster, A., Kunde, W., & Pfister, R. (2020).
 #' Design choices: Empirical recommendations for designing two-dimensional
@@ -22,7 +23,7 @@
 #' @examples
 #' x_vals <- c(0, 1, 2, 3, 6, 10, 12, 14, 15)
 #' y_vals <- c(0, 0, 0, 0, 0,  0,  0,  0,  0)
-#' index_max_acceleration(x_vals, y_vals)
+#' index_max_acceleration(x_vals, y_vals) # acceleration maximal between x_vals[4] and x_vals[5]
 #'
 #' @export
 #'
@@ -45,5 +46,5 @@ index_max_acceleration <- function(x_vector, y_vector, absolute = FALSE) {
       accelerations <- abs(accelerations)
     }
 
-    return(which.max(accelerations))
+    return(which.max(accelerations)+1)
   }

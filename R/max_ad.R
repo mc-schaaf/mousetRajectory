@@ -15,13 +15,14 @@
 #' @param y_end y-coordinate of the end point of the ideal trajectory.
 #' Defaults to the last value in `y_vector`.
 #'
-#' @returns MAD as single number.
+#' @returns (signed) MAD as single number (-Inf to +Inf).
 #'
 #' @details The ideal trajectory is thought of as being of infinite length and
-#' the order of the supplied vectors indicates timeadjacency.
+#' the supplied vectors are assumed to be ordered by time.
 #' Counterclockwise deviations from the ideal trajectory are considered
 #' positive, clockwise deviations as negative for the computation of the MAD.
-#' Thus, negative MADs are possible.
+#' Thus, negative MADs are possible. If more than one value is
+#' considered maximal, the first maximal value is returned.
 #'
 #' @references Wirth, R., Foerster, A., Kunde, W., & Pfister, R. (2020).
 #' Design choices: Empirical recommendations for designing two-dimensional
@@ -44,6 +45,12 @@
 #' x_vals <- c(0, 0, 1, 2, 3, 6, 3)
 #' y_vals <- c(0, 2, 2, 2, 2, 1, 0)
 #' max_ad(x_vals, y_vals) # the ideal trajectory has infinite length
+#'
+#' x_vals <- c(0, 1, 2, 3)
+#' y_vals <- c(0, 1, -1, 0)
+#' max_ad(x_vals, y_vals)
+#' max_ad(x_vals, -y_vals) # the "first" maximal value is returned
+#'
 #'
 #' @export
 #'

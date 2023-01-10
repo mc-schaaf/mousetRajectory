@@ -1,15 +1,16 @@
 #' @title Time point of maximum velocity
 #'
 #' @description Computes the index of the peak velocity of a trajectory,
-#' defined by vectors of x and y coordinates, and assumed to be equidistant in
-#' time.
+#' defined by vectors of x and y coordinates, and assumed to be equidistant
+#' in time.
 #'
 #' @param x_vector x-coordinates of the executed trajectory.
 #' @param y_vector y-coordinates of the executed trajectory.
 #'
-#' @return Single number indicating the index of peak velocity.
+#' @return Single number indicating the index of peak velocity (1 to +Inf).
 #'
-#' @details The order of the supplied vectors indicates timeadjacency.
+#' @details The supplied vectors are assumed to be ordered by time with similar
+#' time differences.
 #'
 #' @references Wirth, R., Foerster, A., Kunde, W., & Pfister, R. (2020).
 #' Design choices: Empirical recommendations for designing two-dimensional
@@ -20,13 +21,13 @@
 #' @examples
 #' x_vals <- c(0, 1, 2, 3, 6, 10, 12, 14, 15)
 #' y_vals <- c(0, 0, 0, 0, 0,  0,  0,  0,  0)
-#' index_max_dist(x_vals, y_vals)
+#' index_max_velocity(x_vals, y_vals) # velocity maximal between x_vals[5] and x_vals[6]
 #'
 #' @export
 #'
 
-index_max_dist <- function(x_vector, y_vector) {
-  # distances
+index_max_velocity <- function(x_vector, y_vector) {
+  # distances = velocity if time-difference stays constant
   ds_real <-
     sqrt(
       (x_vector[2:length(x_vector)] - x_vector[1:(length(x_vector)-1)])^2 +

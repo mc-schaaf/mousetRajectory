@@ -6,9 +6,9 @@
 #' @param numeric_vector Numbers, ordered by their time of appearance.
 #'
 #' @return Single number indicating how often `numeric_vector`
-#' changes direction.
+#' changes direction (0 to +Inf).
 #'
-#' @details The order of the supplied vectors indicates timeadjacency.
+#' @details The supplied vectors are assumed to be ordered by time.
 #' Values do not have to be strictly monotonically in-/decreasing.
 #' I.e., `c(0, 1, 1, 2)` would return 0,
 #' as \eqn{x_n >= x_n-1} is satisfied for \eqn{2 <= n <= length(c(0, 1, 1, 2))}.

@@ -31,7 +31,7 @@ Defaults to the last value in \code{x_vector}.}
 Defaults to the last value in \code{y_vector}.}
 }
 \value{
-MAD as single number.
+(signed) MAD as single number (-Inf to +Inf).
 }
 \description{
 Computes the Maximum Absolute Deviation (MAD) of a trajectory,
@@ -40,10 +40,11 @@ trajectory, defined by the coordinates of the start and end points.
 }
 \details{
 The ideal trajectory is thought of as being of infinite length and
-the order of the supplied vectors indicates timeadjacency.
+the supplied vectors are assumed to be ordered by time.
 Counterclockwise deviations from the ideal trajectory are considered
 positive, clockwise deviations as negative for the computation of the MAD.
-Thus, negative MADs are possible.
+Thus, negative MADs are possible. If more than one value is
+considered maximal, the first maximal value is returned.
 }
 \examples{
 x_vals <- c(0, 0, 0, 1, 2)
@@ -60,6 +61,12 @@ max_ad(x_vals, y_vals) # now it is counterclockwise again
 x_vals <- c(0, 0, 1, 2, 3, 6, 3)
 y_vals <- c(0, 2, 2, 2, 2, 1, 0)
 max_ad(x_vals, y_vals) # the ideal trajectory has infinite length
+
+x_vals <- c(0, 1, 2, 3)
+y_vals <- c(0, 1, -1, 0)
+max_ad(x_vals, y_vals)
+max_ad(x_vals, -y_vals) # the "first" maximal value is returned
+
 
 }
 \references{

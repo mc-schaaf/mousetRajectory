@@ -15,7 +15,7 @@ index_max_acceleration(x_vector, y_vector, absolute = FALSE)
 be included? Defaults to \code{FALSE}.}
 }
 \value{
-Single number indicating the index of peak acceleration.
+Single number indicating the index of peak acceleration (1 to +Inf).
 }
 \description{
 Computes the index of the peak acceleration of a trajectory,
@@ -23,12 +23,13 @@ defined by vectors of x and y coordinates, and assumed to be equidistant
 in time.
 }
 \details{
-The order of the supplied vectors indicates timeadjacency.
+The supplied vectors are assumed to be ordered by time with similar
+time differences.
 }
 \examples{
 x_vals <- c(0, 1, 2, 3, 6, 10, 12, 14, 15)
 y_vals <- c(0, 0, 0, 0, 0,  0,  0,  0,  0)
-index_max_acceleration(x_vals, y_vals)
+index_max_acceleration(x_vals, y_vals) # acceleration maximal between x_vals[4] and x_vals[5]
 
 }
 \references{

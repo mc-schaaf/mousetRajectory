@@ -11,7 +11,8 @@
 #' @param standardize Whether to standardize the timeseries_array.
 #' @param use_diff Whether to use the differences between adjacent points.
 #'
-#' @return Single number indicating the sampen for the given parameters.
+#' @return Single number indicating the sampen for the given parameters
+#' (0 to +Inf).
 #'
 #' @details As suggested by Richman & Moorman (2000),
 #' \doi{10.1152/ajpheart.2000.278.6.H2039}, the last vector of length

@@ -4,23 +4,23 @@
 \alias{point_crosses}
 \title{Number of times a point is crossed}
 \usage{
-point_crosses(numeric_array, relevant_point = 0)
+point_crosses(numeric_vector, relevant_point = 0)
 }
 \arguments{
-\item{numeric_array}{Array of numbers ordered by their time of appearance.}
+\item{numeric_vector}{Numbers, ordered by their time of appearance.}
 
 \item{relevant_point}{Number which has to be crossed.}
 }
 \value{
-Number of times that \code{numeric_array} crosses
-the \code{relevant_point}.
+Number of times that \code{numeric_vector} crosses
+the \code{relevant_point} (0 to +Inf).
 }
 \description{
 Checks how often a number (\code{relevant_point}) is being
-crossed by an number sequence (\code{numeric_array}).
+crossed by an number sequence (\code{numeric_vector}).
 }
 \details{
-The order of the supplied vectors indicates timeadjacency.
+The supplied vectors are assumed to be ordered by time.
 }
 \examples{
 x_vals <- c(-1, 1, -1, 1, -1, 1)
