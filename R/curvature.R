@@ -26,6 +26,10 @@
 #' y_vals <- c(0, 0, 0, 1, 2)
 #' curvature(x_vals, y_vals)
 #'
+#' x_vals <- c(0, 0, 1, 2, 2)
+#' y_vals <- c(0, 1, 1, 1, 2)
+#' curvature(x_vals, y_vals)
+#'
 #' @export
 #'
 
