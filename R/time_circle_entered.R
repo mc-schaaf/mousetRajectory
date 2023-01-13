@@ -2,7 +2,7 @@
 #'
 #' @description TODO
 #'
-#' @inheritParams time_circle_left.
+#' @inheritParams time_circle_left
 #'
 #' @references Wirth, R., Foerster, A., Kunde, W., & Pfister, R. (2020).
 #' Design choices: Empirical recommendations for designing two-dimensional
