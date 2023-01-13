@@ -4,14 +4,13 @@
 #' defined by vectors of x and y coordinates, and assumed to be equidistant
 #' in time.
 #'
-#' @param x_vector x-coordinates of the executed trajectory.
-#' @param y_vector y-coordinates of the executed trajectory.
+#' @inheritParams auc
 #' @param absolute Should negative accelerations (i.e., deceleration)
 #' be included? Defaults to `FALSE`.
 #'
 #' @return Single number indicating the index of peak acceleration (1 to +Inf).
 #'
-#' @details The supplied vectors are assumed to be ordered by time with similar
+#' @details The supplied vectors are assumed to be ordered by time with equal
 #' time differences.
 #'
 #' @references Wirth, R., Foerster, A., Kunde, W., & Pfister, R. (2020).

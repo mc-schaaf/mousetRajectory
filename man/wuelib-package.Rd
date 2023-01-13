@@ -6,7 +6,7 @@
 \alias{wuelib-package}
 \title{wuelib: Trajectory Analyses for Cognitive Psychologists}
 \description{
-Bundles together several functions that are useful for analyzing mouse movement (and other 2-D trajectory) data in the context of cognitive psychology. 'wuelib' is a library that is maintained by the Cognition & Behaviour team of the University of Wuerzburg.
+Bundles together several functions that are useful for analyzing mouse movement (and other 2-D trajectory) data in the context of cognitive psychology. 'wuelib' is a package that is maintained by the Cognition & Behaviour team of the University of Wuerzburg.
 }
 \seealso{
 Useful links:
@@ -17,13 +17,13 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Moritz Schaaf \email{moritz.schaaf@uni-wuerzburg.de}
+\strong{Maintainer}: Moritz Schaaf \email{moritz.schaaf@uni-wuerzburg.de} (\href{https://orcid.org/0000-0002-9959-2928}{ORCID})
 
 Authors:
 \itemize{
-  \item Robert Wirth \email{robert.wirth@uni-wuerzburg.de}
-  \item Solveig Tonn \email{solveig.tonn@uni-wuerzburg.de}
-  \item Roland Pfister \email{mail@roland-pfister.net}
+  \item Robert Wirth \email{robert.wirth@uni-wuerzburg.de} (\href{https://orcid.org/0000-0001-8446-1880}{ORCID})
+  \item Solveig Tonn \email{solveig.tonn@uni-wuerzburg.de} (\href{https://orcid.org/0000-0001-5254-8391}{ORCID})
+  \item Roland Pfister \email{mail@roland-pfister.net} (\href{https://orcid.org/0000-0002-4429-1052}{ORCID})
 }
 
 }

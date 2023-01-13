@@ -4,16 +4,7 @@
 #' defined by vectors of x and y coordinates, from an ideal
 #' trajectory, defined by the coordinates of the start and end points.
 #'
-#' @param x_vector x-coordinates of the executed trajectory.
-#' @param y_vector y-coordinates of the executed trajectory.
-#' @param x_start x-coordinate of the start point of the ideal trajectory.
-#' Defaults to the first value in `x_vector`.
-#' @param y_start y-coordinate of the start point of the ideal trajectory.
-#' Defaults to the first value in `y_vector`.
-#' @param x_end x-coordinate of the end point of the ideal trajectory.
-#' Defaults to the last value in `x_vector`.
-#' @param y_end y-coordinate of the end point of the ideal trajectory.
-#' Defaults to the last value in `y_vector`.
+#' @inheritParams auc
 #'
 #' @returns (signed) MAD as single number (-Inf to +Inf).
 #'

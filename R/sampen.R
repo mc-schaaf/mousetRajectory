@@ -39,7 +39,6 @@
 #' sampen(x_vals, dimensions = 3, tolerance = 1, standardize = FALSE)
 #'
 #' @export
-#' @importFrom stats "sd"
 #'
 
 sampen <- function(timeseries_array,
@@ -63,7 +62,7 @@ sampen <- function(timeseries_array,
   # possibly: standardization
   if (standardize) {
     y <- y - mean(y)
-    y <- y / sd(y)
+    y <- y / stats::sd(y)
   }
 
   N <- length(y) - M

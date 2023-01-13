@@ -4,8 +4,7 @@
 #' of x and y coordinates, as compared to an ideal trajectory,
 #' as defined by the start and end points of the trajectory.
 #'
-#' @param x_vector x-coordinates of the executed trajectory.
-#' @param y_vector y-coordinates of the executed trajectory.
+#' @inheritParams auc
 #'
 #' @return Single number indicating the curvature (1 to +Inf).
 #'

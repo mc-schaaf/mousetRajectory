@@ -1,7 +1,13 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^.*\.gitignore
-^.*\.Rproj.user
 ^.*\.git
-^LICENSE\.md$
+^\.github$
+
 ^README\.Rmd$
+^LICENSE\.md$
+^cran-comments\.md$
+
+^data-raw$
+^pkgdown$
+^_pkgdown\.yml$

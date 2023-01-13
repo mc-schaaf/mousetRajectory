@@ -23,7 +23,7 @@ defined by vectors of x and y coordinates, and assumed to be equidistant
 in time.
 }
 \details{
-The supplied vectors are assumed to be ordered by time with similar
+The supplied vectors are assumed to be ordered by time with equal
 time differences.
 }
 \examples{
