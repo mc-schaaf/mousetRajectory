@@ -7,6 +7,7 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
+
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -18,9 +19,9 @@ knitr::opts_chunk$set(
 
 ## Motivation
 
-Within the community of cognitive scientists, the analysis of mouse-tracking data is becoming more and more popular. While continuous measurements promise insights that experiments relying on reaction times cannot provide, researchers conducting their first tracking experiment may feel overwhelmed by the novel data handling requirements. Consequently, they often resort to out-of-the-box software restricting their analysis choices or poorly documented code snippets from colleagues. Thus, time is spend learning peculiarities of certain software (or colleagues) that could also be invested in learning overarching principles of data analysis or the development of own analysis routines. 
+Within the community of cognitive scientists, the analysis of mouse-tracking data is becoming more and more popular. While continuous measurements promise insights that reaction times cannot provide, researchers conducting their first tracking experiment may feel overwhelmed by the novel data handling requirements. Consequently, they often resort to out-of-the-box software restricting their analysis choices or poorly documented code snippets from colleagues. Thus, time is spend learning peculiarities of certain software (or colleagues) that could also be invested in learning overarching principles of data analysis or the development of own analysis routines. 
 
-The aim of `wuelib` is to provide cognitive psychologists with an easy-to-understand and modular introduction to the analysis of mouse-tracking data. While `wuelib` should provide most functions needed to analyze your first experiment, we strongly encourage you to extend and/or replace certain modules with own code; a deeper understanding of the analysis process will naturally lead to better interpretations of the results. Therefore, we tried to make the source code as easy to understand as possible even when leads to slower function execution. We strongly encourage you to inspect and understand the functions you are executing (if you are using RStudio on a Windows Machine, hit `F2` to inspect source code of functions).
+The aim of `wuelib` is to provide cognitive psychologists with an easy-to-understand and modular introduction to the analysis of mouse-tracking data. While `wuelib` should provide most functions needed to analyze your first experiment, we strongly encourage you to extend and/or replace certain modules with own code; a deeper understanding of the analysis process will naturally lead to better interpretations of the results. Therefore, we tried to make the source code as easy to understand as possible even when this leads to slower function execution. We strongly encourage you to inspect and understand the functions you are executing (if you are using RStudio on a Windows Machine, hit `F2` to inspect source code of functions).
 
 
 
@@ -35,9 +36,6 @@ if(!require("devtools")){install.packages("devtools")}
 devtools::install_github("mc-schaaf/wuelib")
 ``` 
 
-If you spot any bugs, please let us know by filing an issue at  [github.com/mc-schaaf/wuelib/issues](https://github.com/mc-schaaf/wuelib/issues).
-
-
 
 
 ## Function Overview
@@ -46,12 +44,12 @@ Currently, the following functions are featured:
 
 * Preprocessing:
   * `is_monotonic` checks whether your timestamps make sense and warns you if they don't.
-  * `time_circle_left` tells you the time at which the starting area was left. TODO.
-  * `time_circle_entered` tells you the time at which the end area was entered. TODO.
+  * `time_circle_left` tells you the time at which the starting area was left.
+  * `time_circle_entered` tells you the time at which the end area was entered.
   * `point_crosses` tells you how often a certain value on the x or y axis is crossed. 
   * `direction_changes` tells you how often the direction along the x or y axis changes.  
   * `interp1` directs you to the interpolation function from the awesome `signal` package available to you without having to call `library("signal")`.
-  * `interp2` is a wrapper to `interp1` that rescales the time for you. TODO. 
+  * `interp2` is a wrapper to `interp1` that rescales the time for you.
 * Spatial measures:
   * `starting_angle` computes (not only starting) angles.
   * `auc` computes the (signed) Area Under the Curve.
@@ -72,7 +70,7 @@ library(ggplot2)
 library(dplyr)
 ```
 
-Let us assume we are conducting a simple experiment. In out setup, participants must respond by moving a mouse cursor from a starting position (bottom circle, coordinates (0,0)) to one of two end positions (top circles, coordinates (-1,1) and (1,1)):
+Let us assume we are conducting a simple experiment. In our setup, participants must respond by moving a mouse cursor from a starting position (bottom circle, coordinates (0,0)) to one of two end positions (top circles, coordinates (-1,1) and (1,1)):
 
 ```{r draw_exp_layout, echo=FALSE}
 draw_background <- function() {
@@ -83,10 +81,10 @@ draw_background <- function() {
   
   p1 <- ggplot() + theme_void() + coord_equal()
   
-  p1 <- p1 + geom_path(data = rectangle, aes(2*x, 0.5+y), linewidth = 2) 
-  p1 <- p1 + geom_path(data = circle, aes(0 + 0.2*x, 0 + 0.2*y), linewidth = sqrt(2))  # home 
-  p1 <- p1 + geom_path(data = circle, aes(1 + 0.2*x, 1 + 0.2*y), linewidth = sqrt(2))  # right target
-  p1 <- p1 + geom_path(data = circle, aes(-1 + 0.2*x, 1 + 0.2*y), linewidth = sqrt(2)) # left target
+  p1 <- p1 + geom_path(data = rectangle, aes(2*x, 0.5+y)) 
+  p1 <- p1 + geom_path(data = circle, aes(0 + 0.2*x, 0 + 0.2*y))  # home 
+  p1 <- p1 + geom_path(data = circle, aes(1 + 0.2*x, 1 + 0.2*y))  # right target
+  p1 <- p1 + geom_path(data = circle, aes(-1 + 0.2*x, 1 + 0.2*y)) # left target
   
   return(p1)
 }
@@ -94,7 +92,7 @@ draw_background() + geom_path(aes(x = c(0, 1, 1, 1, 0.9), y = c(0, 1, 0.9, 1, 1)
 
 ```
 
-`dat` stores simple toy data that may reflect our pilot results. Let's inspect the data: 
+`dat` stores simple toy data that may reflect our pilot results. Let's inspect the structure of the data: 
 
 ```{r define_trajectories, echo=FALSE}
 dat <- data.frame(
@@ -130,20 +128,20 @@ gg_background + geom_path(data = dat, aes(x_coord, y_coord, group = Trial))
 ```
 
 
-In this example, `Time` reflects the time passed since the onset of the imperative stimulus. A sensible first pre-processing step would be to double-check the order of your data via `is_monotonic` applied to `Time`. Further, we will recode the coordinates so we can treat movements to the left and to the right in the same way:
+In this example, `Time` reflects the time passed since the onset of the imperative stimulus and always increases by 1 arbitrary unit. In a real experiment, a sensible first pre-processing step would be to double-check the order of your data via `is_monotonic` applied to `Time`.
 
 ```{r recode_x_coords}
 dat <- dat %>% group_by(Trial) %>% mutate(
-  is_ok = is_monotonic(Time),
-  x_coord = ifelse(Target == "left", -x_coord, x_coord)
+  is_ok = is_monotonic(Time)
 )
 ```
 
 
-Next, we may want to restrict the trajectories to their relevant parts, i.e., after the home was left and before the target has been reached. This also allows us to extract our first dependent measures, `InitiationTime` and `MovementTime`:
+As a next step, we will recode the coordinates so we can treat movements to the left and to the right in the same way. This enables us to restrict the trajectories to their relevant parts, i.e., after the home was left and before the target has been reached. This also allows us to extract our first dependent measures, `InitiationTime` and `MovementTime`:
 
 ```{r filter_data}
 dat <- dat %>% group_by(Trial) %>% mutate(
+  x_coord = ifelse(Target == "left", -x_coord, x_coord),
   InitiationTime = time_circle_left(x_coord, y_coord, Time, xMid = 0, yMid = 0, radius = 0.2),
   CompletionTime = time_circle_entered(x_coord, y_coord, Time, xMid = 1, yMid = 1, radius = 0.2),
   MovementTime = CompletionTime - InitiationTime
@@ -155,36 +153,38 @@ gg_background + geom_path(data = dat, aes(x_coord, y_coord, group = Trial))
 ```
 
 
-Note that this leads to an unequal amount of data points for each trajectory. This is bad news when you want to display average trajectories! One solution for this problem is linear interpolation, and it has been proposed that this be done prior to the computation of MAD, AUC, etc. So let's do this via `signal::interp1`. This function has been attached by the `library(wuelib)` call, so we can omit the package reference:
+Note that this leads to an unequal amount of data points for each trajectory. This is bad news when you want to display average trajectories! One solution for this problem is linear interpolation, and it has been proposed that this should be done prior to the computation of MAD, AUC, etc. So let's do this via `interp2`, a convenient wrapper to `signal::interp1`:
 
 ```{r interpolate, message=FALSE}
 dat_int <- dat %>% group_by(Trial) %>% summarise( 
-  # note the rather hackish use of summarize here
+  # note the rather hackish use of summarise here
   Time_new = 0:100,
   x_new = interp2(Time, x_coord, 101),
   y_new = interp2(Time, y_coord, 101),
 )
+```
 
+Now we are ready to compute dependent measures like AUC and MAD. As a last step, you may want to plot your average trajectory:
+
+```{r plot_avg}
 dat_int %>% group_by(Trial) %>% summarize(
   MAD = max_ad(x_new, y_new),
   AUC = auc(x_new, y_new),
   CUR = curvature(x_new, y_new)
 )
 
-```
-
-Finally, you may want to plot your average trajectory:
-
-```{r plot_avg}
 dat_avg <- dat_int %>% group_by(Time_new) %>% summarise(
   x_avg = mean(x_new),
   y_avg = mean(y_new)
 )
 
 gg_background + geom_path(data = dat_avg, aes(x_avg, y_avg)) +
-  geom_path(aes(c(0,1), c(0,1)), color="green") # ideal trajectory
+  geom_path(aes(c(0,1), c(0,1)), linetype = "dashed") # ideal trajectory
 
 ```
 
 Congratulations, you worked trough your first mouse-tracking analysis!
+
+
+As a final note: This package is currently under development. If you spot any bugs, or have other improvement suggestions, please let us know by filing an issue at  [github.com/mc-schaaf/wuelib/issues](https://github.com/mc-schaaf/wuelib/issues).
 
