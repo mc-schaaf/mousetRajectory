@@ -1,6 +1,6 @@
 #' @title Completion Time
 #'
-#' @description TODO
+#' @description Checks when the specified circle was first entered.
 #'
 #' @inheritParams time_circle_left
 #'
@@ -34,7 +34,7 @@ time_circle_entered <- function(x_vector,
   }
   index <- which.max(isIn)
   if (index == 1) {
-    warning("The first point was already in the circle!")
+    warning("The first point was already in the circle! Returning the first entry of t_vector.")
   }
   return(t_vector[index])
 }

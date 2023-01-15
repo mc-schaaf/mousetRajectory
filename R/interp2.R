@@ -1,8 +1,8 @@
 #' @title Interpolation aka Time-Normalization
 #'
-#' @description Wrapper to [`signal::interp1()`], applying linear interpolation.
-#' Assumes that you interpolated values of `xy_old` at `n_xy_new` equidistant
-#' data points of `time_old`.
+#' @description Convenient wrapper to [`signal::interp1()`] for linear
+#' interpolation. Assumes that you want interpolated values of
+#' `xy_old` at `n_xy_new` equidistant data points of `time_old`.
 #'
 #' @param time_old Timestamps of the `xy_old` coordinates.
 #' @param xy_old To-be normalized x or y coordinates.

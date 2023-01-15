@@ -1,5 +1,3 @@
-# -----------------------------------------------------------------------------
-# specify behaviour when this package is loaded
 
 # -----------------------------------------------------------------------------
 # internal function helping with the handling of parameters

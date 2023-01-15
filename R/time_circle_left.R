@@ -1,6 +1,6 @@
 #' @title Initiation Time
 #'
-#' @description TODO
+#' @description Checks when the specified circle was first left.
 #'
 #' @inheritParams auc
 #' @param t_vector Timestamps of the executed trajectory.
@@ -38,7 +38,7 @@ time_circle_left <- function(x_vector,
     isOut <- dSquare >= radius ^ 2
   }
   if (isOut[1]) {
-    warning("The first point was not in the circle! Returning the first time point.")
+    warning("The first point was not in the circle! Returning the first entry of t_vector.")
   }
   if (all(!isOut)) {
     return(NA)

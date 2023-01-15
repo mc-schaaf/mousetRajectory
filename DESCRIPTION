@@ -15,11 +15,11 @@ Authors@R: c(
 Author: Robert Wirth [aut], Moritz Schaaf [aut, cre], Solveig Tonn [aut],
     Roland Pfister [aut]
 Maintainer: Moritz Schaaf <moritz.schaaf@uni-wuerzburg.de>
-Description: Bundles together several functions that are useful for
-    analyzing mouse movement (and other 2-D trajectory) data in the
-    context of cognitive psychology. 'wuelib' is a package that is
-    maintained by the Cognition & Behaviour team of the University of
-    Wuerzburg.
+Description: Tool helping psychologists and other behavioural scientists
+    analyze mouse movement (and other 2-D trajectory) data. Bundles together 
+    several functions that compute spatial measures (MAD, AUC) or provide 
+    a shorthand for often-used procedures. 'wuelib' is maintained by the 
+    Cognition & Behaviour team of the University of Wuerzburg.
 License: GPL (>= 3)
 URL: https://github.com/mc-schaaf/wuelib
 BugReports: https://github.com/mc-schaaf/wuelib/issues

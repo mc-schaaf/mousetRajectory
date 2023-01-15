@@ -1,8 +1,8 @@
 ---
-title: "Introduction to 'wuelib'"
+title: "wuelib"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Introduction to 'wuelib'}
+  %\VignetteIndexEntry{wuelib}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -82,12 +82,13 @@ draw_background <- function() {
   p1 <- ggplot() + theme_void() + coord_equal()
   
   p1 <- p1 + geom_path(data = rectangle, aes(2*x, 0.5+y)) 
-  p1 <- p1 + geom_path(data = circle, aes(0 + 0.2*x, 0 + 0.2*y))  # home 
-  p1 <- p1 + geom_path(data = circle, aes(1 + 0.2*x, 1 + 0.2*y))  # right target
-  p1 <- p1 + geom_path(data = circle, aes(-1 + 0.2*x, 1 + 0.2*y)) # left target
+  p1 <- p1 + geom_path(data = circle, aes(0  + 0.2*x, 0 + 0.2*y))  # home 
+  p1 <- p1 + geom_path(data = circle, aes(1  + 0.2*x, 1 + 0.2*y))  # right target
+  p1 <- p1 + geom_path(data = circle, aes(-1 + 0.2*x, 1 + 0.2*y))  # left target
   
   return(p1)
 }
+
 draw_background() + geom_path(aes(x = c(0, 1, 1, 1, 0.9), y = c(0, 1, 0.9, 1, 1)))
 
 ```
@@ -132,7 +133,7 @@ In this example, `Time` reflects the time passed since the onset of the imperati
 
 ```{r recode_x_coords}
 dat <- dat %>% group_by(Trial) %>% mutate(
-  is_ok = is_monotonic(Time)
+  is_ok = is_monotonic(Time) # will throw a warning if times are not monotonically increasing
 )
 ```
 
@@ -164,15 +165,19 @@ dat_int <- dat %>% group_by(Trial) %>% summarise(
 )
 ```
 
-Now we are ready to compute dependent measures like AUC and MAD. As a last step, you may want to plot your average trajectory:
+Now we are ready to compute dependent measures like AUC and MAD: 
 
-```{r plot_avg}
+```{r compute_DVs}
 dat_int %>% group_by(Trial) %>% summarize(
   MAD = max_ad(x_new, y_new),
   AUC = auc(x_new, y_new),
   CUR = curvature(x_new, y_new)
 )
+```
 
+As a last step, you may want to plot your average trajectory:
+
+```{r plot_avg}
 dat_avg <- dat_int %>% group_by(Time_new) %>% summarise(
   x_avg = mean(x_new),
   y_avg = mean(y_new)
@@ -186,5 +191,5 @@ gg_background + geom_path(data = dat_avg, aes(x_avg, y_avg)) +
 Congratulations, you worked trough your first mouse-tracking analysis!
 
 
-As a final note: This package is currently under development. If you spot any bugs, or have other improvement suggestions, please let us know by filing an issue at  [github.com/mc-schaaf/wuelib/issues](https://github.com/mc-schaaf/wuelib/issues).
+As a final note: This package is currently under development. If you spot any bugs or have other improvement suggestions, please let us know by filing an issue at  [github.com/mc-schaaf/wuelib/issues](https://github.com/mc-schaaf/wuelib/issues).
 

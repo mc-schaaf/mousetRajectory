@@ -15,7 +15,7 @@
 #' @details All objects of length 0 or 1 are monotonic. Data with missing
 #' values will not pass the check.
 #'
-#' @returns A length-one Boolean, indicating whether the vector is monotonic.
+#' @returns A length-one logical, indicating whether the vector is monotonic.
 #'
 #' @references Wirth, R., Foerster, A., Kunde, W., & Pfister, R. (2020).
 #' Design choices: Empirical recommendations for designing two-dimensional
