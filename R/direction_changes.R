@@ -29,10 +29,9 @@
 
 direction_changes <- function(numeric_vector) {
   # input check
+  stopifnot(is_n_v(numeric_vector))
   if (length(numeric_vector) <= 3) {
-    if (length(numeric_vector) != 0) {
-      warning("Less than three values supplied!")
-    }
+    warning("Less than three values supplied!")
     return(NA)
   }
 
@@ -43,7 +42,7 @@ direction_changes <- function(numeric_vector) {
   # throw out cases where consecutive values are the same
   d1 <- d1[d1 != 0]
 
-  # compute array of booleans indicating if numeric_vector inceases or decreases
+  # compute array of booleans indicating if numeric_vector increases or decreases
   bool1 <- d1 > 0
 
   # compute if consecutive bools differ, and sum up how often this happens

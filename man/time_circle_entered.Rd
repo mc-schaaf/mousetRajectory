@@ -31,7 +31,7 @@ time_circle_entered(
 included in the circle. Defaults to \code{TRUE}.}
 }
 \description{
-TODO
+Checks when the specified circle was first entered.
 }
 \examples{
 time_circle_entered(0:10, 0:10, 0:10)

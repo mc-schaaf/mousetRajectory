@@ -46,6 +46,15 @@ sampen <- function(timeseries_array,
                    tolerance = 0.2,
                    standardize = TRUE,
                    use_diff = FALSE) {
+  # check inputs
+  stopifnot(
+    is_n_v(timeseries_array),
+    is_n_a(dimensions),
+    is_n_a(tolerance),
+    is_l_a(standardize),
+    is_l_a(use_diff)
+  )
+
   # input conversion for shorter variable names
   y <- timeseries_array
   M <- dimensions

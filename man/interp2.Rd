@@ -18,12 +18,12 @@ Defaults to 101.}
 Vector of length \code{n_xy_new} with interpolated xy-values.
 }
 \description{
-Wrapper to \code{\link[signal:interp1]{signal::interp1()}}, applying linear interpolation.
-Assumes that you interpolated values of \code{xy_old} at \code{n_xy_new} equidistant
-data points of \code{time_old}.
+Convenient wrapper to \code{\link[signal:interp1]{signal::interp1()}} for linear
+interpolation. Assumes that you want interpolated values of
+\code{xy_old} at \code{n_xy_new} equidistant data points of \code{time_old}.
 }
 \examples{
-interp2(0:10, (1:10)^2)
+interp2(0:10, (0:10)^2)
 
 }
 \references{

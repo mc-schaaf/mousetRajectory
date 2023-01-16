@@ -37,6 +37,15 @@
 #'
 
 starting_angle <- function(x0, x1, y0, y1, swap_x_y = TRUE){
+  # check inputs
+  stopifnot(
+    is_n_a(x0),
+    is_n_a(x1),
+    is_n_a(y0),
+    is_n_a(y1),
+    is_l_a(swap_x_y)
+  )
+
   if (!swap_x_y) {
     atan2_in_rad <- atan2(y1-y0, x1-x0)
   } else {

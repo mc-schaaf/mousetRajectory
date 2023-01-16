@@ -1,10 +1,42 @@
-
 # -----------------------------------------------------------------------------
 # internal function helping with the handling of parameters
-check_input_length_is_1 <- function(in1){
-  if (is.null(in1) || length(in1) > 1){
+
+#' checks whether something is numeric vector
+#' returns `FALSE` when `NA` values are present
+#' @noRd
+is_n_v <- function(in1){
+  if (is.null(in1) | length(in1) <= 1 | !class(in1) %in% c("numeric", "integer") | any(is.na(in1))) {
     return(FALSE)
   }
   return(TRUE)
 }
 
+#' checks whether two vectors are of equal length and numeric
+#' returns `FALSE` when `NA` values are present
+#' @noRd
+is_xy_v <- function(in1, in2){
+  if (!is_n_v(in1) | !is_n_v(in1) | length(in1) != length(in2)) {
+    return(FALSE)
+  }
+  return(TRUE)
+}
+
+#' checks whether something is a atomic numeric value or vector with all equal values
+#' returns `FALSE` when `NA` values are present
+#' @noRd
+is_n_a <- function(in1){
+  if (is.null(in1) | length(unique(in1)) != 1 | !class(in1) %in% c("numeric", "integer") | any(is.na(in1))) {
+    return(FALSE)
+  }
+  return(TRUE)
+}
+
+#' checks whether something is a atomic logical value or vector with all equal values
+#' returns `FALSE` when `NA` values are present
+#' @noRd
+is_l_a <- function(in1){
+  if (is.null(in1) | length(unique(in1)) != 1 | class(in1) != "logical" | any(is.na(in1))) {
+    return(FALSE)
+  }
+  return(TRUE)
+}

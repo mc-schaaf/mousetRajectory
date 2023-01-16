@@ -19,7 +19,7 @@ indicating that a strict, not a weak definition of monotony is applied.}
 monotonic? Defaults to \code{TRUE}.}
 }
 \value{
-A length-one Boolean, indicating whether the vector is monotonic.
+A length-one logical, indicating whether the vector is monotonic.
 }
 \description{
 Checks if a \code{numeric_vector} is monotonically in-/decreasing.

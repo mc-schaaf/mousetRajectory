@@ -28,22 +28,24 @@
 #'
 
 index_max_acceleration <- function(x_vector, y_vector, absolute = FALSE) {
+  # check inputs
+  stopifnot(is_xy_v(x_vector, y_vector), is_l_a(absolute))
 
-    # distances
-    distances <-
-      sqrt(
-        (x_vector[2:length(x_vector)] - x_vector[1:(length(x_vector)-1)])^2 +
-        (y_vector[2:length(y_vector)] - y_vector[1:(length(y_vector)-1)])^2
-        )
+  # distances
+  distances <-
+    sqrt(
+      (x_vector[2:length(x_vector)] - x_vector[1:(length(x_vector)-1)])^2 +
+      (y_vector[2:length(y_vector)] - y_vector[1:(length(y_vector)-1)])^2
+      )
 
-    # acceleration = difference in velocity
-    #              = differences in distances of time-equidistant timepoints
-    accelerations <- distances[2:length(distances)] -
-      distances[1:(length(distances) - 1)]
+  # acceleration = difference in velocity
+  #              = differences in distances of time-equidistant timepoints
+  accelerations <- distances[2:length(distances)] -
+    distances[1:(length(distances) - 1)]
 
-    if (absolute) {
-      accelerations <- abs(accelerations)
-    }
-
-    return(which.max(accelerations)+1)
+  if (absolute) {
+    accelerations <- abs(accelerations)
   }
+
+  return(which.max(accelerations)+1)
+}

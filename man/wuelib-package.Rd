@@ -6,7 +6,7 @@
 \alias{wuelib-package}
 \title{wuelib: Trajectory Analyses for Cognitive Psychologists}
 \description{
-Bundles together several functions that are useful for analyzing mouse movement (and other 2-D trajectory) data in the context of cognitive psychology. 'wuelib' is a package that is maintained by the Cognition & Behaviour team of the University of Wuerzburg.
+Tool helping psychologists and other behavioural scientists analyze mouse movement (and other 2-D trajectory) data. Bundles together several functions that compute spatial measures (MAD, AUC) or provide a shorthand for often-used procedures. 'wuelib' is maintained by the Cognition & Behaviour team of the University of Wuerzburg.
 }
 \seealso{
 Useful links:

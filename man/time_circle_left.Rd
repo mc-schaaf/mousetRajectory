@@ -34,7 +34,7 @@ included in the circle. Defaults to \code{TRUE}.}
 Value of \code{t_vector} at the first time the circle is left.
 }
 \description{
-TODO
+Checks when the specified circle was first left.
 }
 \examples{
 time_circle_left(0:10, 0:10, 0:10)
