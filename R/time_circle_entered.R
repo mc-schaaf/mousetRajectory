@@ -4,6 +4,9 @@
 #'
 #' @inheritParams time_circle_left
 #'
+#' @return Value of `t_vector` at the first time at which the trajectory
+#' is in the circle.
+#'
 #' @references Wirth, R., Foerster, A., Kunde, W., & Pfister, R. (2020).
 #' Design choices: Empirical recommendations for designing two-dimensional
 #' finger tracking experiments. Behavior Research Methods, 52, 2394 - 2416.
@@ -11,8 +14,8 @@
 #'
 #'
 #' @examples
-#' time_circle_entered(0:10, 0:10, 0:10)
-#' time_circle_entered(0:10, 0:10, 0:10, include_radius = TRUE)
+#' time_circle_entered(0:10, rep(0,11), 0:10, xMid=10, yMid=0, radius=1)
+#' time_circle_entered(0:10, rep(0,11), 0:10, xMid=10, yMid=0, radius=1, include_radius = FALSE)
 #'
 #' @export
 

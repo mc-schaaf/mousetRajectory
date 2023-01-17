@@ -50,20 +50,28 @@ considered maximal, the first maximal value is returned.
 x_vals <- c(0, 0, 0, 1, 2)
 y_vals <- c(0, 1, 2, 2, 2)
 plot(x_vals, y_vals, type = "l")
+lines(c(0,2), c(0,2), lty="dashed", lwd=2) # ideal
 max_ad(x_vals, y_vals) # counterclockwise deviation: positive
 
 x_vals <- c(0, 1, 2, 2, 2)
 y_vals <- c(0, 0, 0, 1, 2)
+plot(x_vals, y_vals, type = "l")
+lines(c(0,2), c(0,2), lty="dashed", lwd=2) # ideal
 max_ad(x_vals, y_vals) # clockwise deviation: negative
 x_vals <- -x_vals
 max_ad(x_vals, y_vals) # now it is counterclockwise again
 
 x_vals <- c(0, 0, 1, 2, 3, 6, 3)
 y_vals <- c(0, 2, 2, 2, 2, 1, 0)
+plot(x_vals, y_vals, type = "l")
+lines(c(0,3), c(0,0), lty="dashed", lwd=2) # ideal
 max_ad(x_vals, y_vals) # the ideal trajectory has infinite length
 
 x_vals <- c(0, 1, 2, 3)
 y_vals <- c(0, 1, -1, 0)
+plot(x_vals, y_vals, type = "l")
+lines(x_vals, -y_vals, col="red")
+lines(c(0,3), c(0,0), lty="dashed", lwd=2) # ideal
 max_ad(x_vals, y_vals)
 max_ad(x_vals, -y_vals) # the "first" maximal value is returned
 

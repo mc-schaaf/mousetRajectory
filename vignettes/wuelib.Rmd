@@ -19,9 +19,9 @@ knitr::opts_chunk$set(
 
 ## Motivation
 
-Within the community of cognitive scientists, the analysis of mouse-tracking data is becoming more and more popular. While continuous measurements promise insights that reaction times cannot provide, researchers conducting their first tracking experiment may feel overwhelmed by the novel data handling requirements. Consequently, they often resort to out-of-the-box software restricting their analysis choices or poorly documented code snippets from colleagues. Thus, time is spend learning peculiarities of certain software (or colleagues) that could also be invested in learning overarching principles of data analysis or the development of own analysis routines. 
+Within the community of cognitive scientists, the analysis of movement data is becoming more and more popular. While continuous measurements promise insights that reaction times cannot provide, researchers conducting their first tracking experiment may feel overwhelmed by the novel data handling requirements. Consequently, they often resort to out-of-the-box software restricting their analysis choices or poorly documented code snippets from colleagues. Thus, time is spend learning peculiarities of certain software (or colleagues) that could also be invested in learning overarching principles of data analysis or the development of own analysis routines. 
 
-The aim of `wuelib` is to provide cognitive psychologists with an easy-to-understand and modular introduction to the analysis of mouse-tracking data. While `wuelib` should provide most functions needed to analyze your first experiment, we strongly encourage you to extend and/or replace certain modules with own code; a deeper understanding of the analysis process will naturally lead to better interpretations of the results. Therefore, we tried to make the source code as easy to understand as possible even when this leads to slower function execution. We strongly encourage you to inspect and understand the functions you are executing (if you are using RStudio on a Windows Machine, hit `F2` to inspect source code of functions).
+The aim of `wuelib` is to provide scientists with an easy-to-understand and modular introduction to the analysis of mouse-tracking and other 2D movement data. While `wuelib` should provide most functions needed to analyze your first experiment, we strongly encourage you to extend and/or replace certain modules with own code; a deeper understanding of the analysis process will naturally lead to better interpretations of the results. Therefore, we tried to make the source code as easy to understand as possible even when this leads to slower function execution. We strongly encourage you to inspect and understand the functions you are executing (if you are using RStudio on a Windows Machine, hit `F2` to inspect source code of functions).
 
 
 
@@ -52,13 +52,13 @@ Currently, the following functions are featured:
   * `interp2` is a wrapper to `interp1` that rescales the time for you.
 * Spatial measures:
   * `starting_angle` computes (not only starting) angles.
-  * `auc` computes the (signed) Area Under the Curve.
-  * `max_ad` computes the (signed) Maximum Absolute Deviation.
+  * `auc` computes the (signed) Area Under the Curve (AUC).
+  * `max_ad` computes the (signed) Maximum Absolute Deviation (MAD).
   * `curvature` computes the curvature.
-  * `index_max_velocity` computes the time to peak velocity, assuming you have already interpolated your data.
-  * `index_max_acceleration` computes the time to peak acceleration, assuming you have already interpolated your data.
+  * `index_max_velocity` computes the time to peak velocity, assuming equidistant times between data points.
+  * `index_max_acceleration` computes the time to peak acceleration, assuming equidistant times between data points.
 * Other measures
-  * `sampen` computes the Sample Entropy.
+  * `sampen` computes the sample entropy.
 
 
 ## A Simple Example
@@ -154,7 +154,7 @@ gg_background + geom_path(data = dat, aes(x_coord, y_coord, group = Trial))
 ```
 
 
-Note that this leads to an unequal amount of data points for each trajectory. This is bad news when you want to display average trajectories! One solution for this problem is linear interpolation, and it has been proposed that this should be done prior to the computation of MAD, AUC, etc. So let's do this via `interp2`, a convenient wrapper to `signal::interp1`:
+Note that filtering the data to the relevant part leads to an unequal amount of data points for each trajectory (column `n`). This is bad news when you want to display average trajectories! One solution for this problem is linear interpolation, and it has been proposed that this should be done prior to the computation of MAD, AUC, etc. So let's do this via `interp2`, a convenient wrapper to `signal::interp1`:
 
 ```{r interpolate, message=FALSE}
 dat_int <- dat %>% group_by(Trial) %>% summarise( 

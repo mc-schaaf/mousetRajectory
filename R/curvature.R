@@ -19,14 +19,20 @@
 #' @examples
 #' x_vals <- c(0, 0, 0, 1, 2)
 #' y_vals <- c(0, 1, 2, 2, 2)
+#' plot(x_vals, y_vals, type = "l")
+#' lines(c(0,2), c(0,2), lty="dashed", lwd=2) # ideal
 #' curvature(x_vals, y_vals)
 #'
 #' x_vals <- c(0, 1, 2, 2, 2)
 #' y_vals <- c(0, 0, 0, 1, 2)
+#' plot(x_vals, y_vals, type = "l")
+#' lines(c(0,2), c(0,2), lty="dashed", lwd=2) # ideal
 #' curvature(x_vals, y_vals)
 #'
 #' x_vals <- c(0, 0, 1, 2, 2)
 #' y_vals <- c(0, 1, 1, 1, 2)
+#' plot(x_vals, y_vals, type = "l")
+#' lines(c(0,2), c(0,2), lty="dashed", lwd=2) # ideal
 #' curvature(x_vals, y_vals)
 #'
 #' @export

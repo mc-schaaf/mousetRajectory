@@ -31,14 +31,15 @@ time_circle_left(
 included in the circle. Defaults to \code{TRUE}.}
 }
 \value{
-Value of \code{t_vector} at the first time the circle is left.
+Value of \code{t_vector} at the first time at which the trajectory
+is out of the circle.
 }
 \description{
 Checks when the specified circle was first left.
 }
 \examples{
-time_circle_left(0:10, 0:10, 0:10)
-time_circle_left(0:10, 0:10, 0:10, include_radius = TRUE)
+time_circle_left(0:10, rep(0,10), 0:10)
+time_circle_left(0:10, rep(0,10), 0:10, include_radius = TRUE)
 
 }
 \references{

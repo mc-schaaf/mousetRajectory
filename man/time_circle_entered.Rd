@@ -30,12 +30,16 @@ time_circle_entered(
 \item{include_radius}{Whether points lying exactly on the radius should be
 included in the circle. Defaults to \code{TRUE}.}
 }
+\value{
+Value of \code{t_vector} at the first time at which the trajectory
+is in the circle.
+}
 \description{
 Checks when the specified circle was first entered.
 }
 \examples{
-time_circle_entered(0:10, 0:10, 0:10)
-time_circle_entered(0:10, 0:10, 0:10, include_radius = TRUE)
+time_circle_entered(0:10, rep(0,11), 0:10, xMid=10, yMid=0, radius=1)
+time_circle_entered(0:10, rep(0,11), 0:10, xMid=10, yMid=0, radius=1, include_radius = FALSE)
 
 }
 \references{

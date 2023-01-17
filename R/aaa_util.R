@@ -1,11 +1,11 @@
 # -----------------------------------------------------------------------------
 # internal function helping with the handling of parameters
 
-#' checks whether something is numeric vector
+#' checks whether something is numeric vector or numeric atomic value
 #' returns `FALSE` when `NA` values are present
 #' @noRd
 is_n_v <- function(in1){
-  if (is.null(in1) | length(in1) <= 1 | !class(in1) %in% c("numeric", "integer") | any(is.na(in1))) {
+  if (is.null(in1) | length(in1) < 1 | !class(in1) %in% c("numeric", "integer") | any(is.na(in1))) {
     return(FALSE)
   }
   return(TRUE)

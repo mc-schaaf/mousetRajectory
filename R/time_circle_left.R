@@ -10,7 +10,8 @@
 #' @param include_radius Whether points lying exactly on the radius should be
 #' included in the circle. Defaults to `TRUE`.
 #'
-#' @return Value of `t_vector` at the first time the circle is left.
+#' @return Value of `t_vector` at the first time at which the trajectory
+#' is out of the circle.
 #'
 #' @references Wirth, R., Foerster, A., Kunde, W., & Pfister, R. (2020).
 #' Design choices: Empirical recommendations for designing two-dimensional
@@ -19,8 +20,8 @@
 #'
 #'
 #' @examples
-#' time_circle_left(0:10, 0:10, 0:10)
-#' time_circle_left(0:10, 0:10, 0:10, include_radius = TRUE)
+#' time_circle_left(0:10, rep(0,10), 0:10)
+#' time_circle_left(0:10, rep(0,10), 0:10, include_radius = TRUE)
 #'
 #' @export
 
