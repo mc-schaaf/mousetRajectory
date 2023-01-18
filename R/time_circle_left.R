@@ -20,8 +20,8 @@
 #'
 #'
 #' @examples
-#' time_circle_left(0:10, rep(0,10), 0:10)
-#' time_circle_left(0:10, rep(0,10), 0:10, include_radius = TRUE)
+#' time_circle_left(0:10, rep(0,11), 0:10)
+#' time_circle_left(0:10, rep(0,11), 0:10, include_radius = FALSE)
 #'
 #' @export
 

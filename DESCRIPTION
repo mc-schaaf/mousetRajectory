@@ -21,7 +21,8 @@ Description: Tool helping psychologists and other behavioural scientists
     a shorthand for often-used procedures. 'wuelib' is maintained by the 
     Cognition & Behaviour team of the University of Wuerzburg.
 License: GPL (>= 3)
-URL: https://github.com/mc-schaaf/wuelib
+URL: https://github.com/mc-schaaf/wuelib,
+    https://mc-schaaf.github.io/wuelib/
 BugReports: https://github.com/mc-schaaf/wuelib/issues
 Depends:
     R (>= 3.5.0)
