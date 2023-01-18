@@ -27,7 +27,8 @@ BugReports: https://github.com/mc-schaaf/wuelib/issues
 Depends:
     R (>= 3.5.0)
 Imports:
-    signal (>= 0.7)
+    signal (>= 0.7),
+    methods
 Suggests: 
     knitr,
     rmarkdown,

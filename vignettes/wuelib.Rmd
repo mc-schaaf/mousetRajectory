@@ -168,7 +168,7 @@ dat_int <- dat %>% group_by(Trial) %>% summarise(
 Now we are ready to compute dependent measures like AUC and MAD: 
 
 ```{r compute_DVs}
-dat_int %>% group_by(Trial) %>% summarize(
+dat_int %>% group_by(Trial) %>% summarise(
   MAD = max_ad(x_new, y_new),
   AUC = auc(x_new, y_new),
   CUR = curvature(x_new, y_new)

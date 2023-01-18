@@ -5,7 +5,7 @@
 #' returns `FALSE` when `NA` values are present
 #' @noRd
 is_n_v <- function(in1){
-  if (is.null(in1) | length(in1) < 1 | !class(in1) %in% c("numeric", "integer") | any(is.na(in1))) {
+  if (is.null(in1) | length(in1) < 1 | !methods::is(in1, "numeric") | any(is.na(in1))) {
     return(FALSE)
   }
   return(TRUE)
@@ -25,7 +25,7 @@ is_xy_v <- function(in1, in2){
 #' returns `FALSE` when `NA` values are present
 #' @noRd
 is_n_a <- function(in1){
-  if (is.null(in1) | length(unique(in1)) != 1 | !class(in1) %in% c("numeric", "integer") | any(is.na(in1))) {
+  if (is.null(in1) | length(unique(in1)) != 1 | !methods::is(in1, "numeric") | any(is.na(in1))) {
     return(FALSE)
   }
   return(TRUE)
@@ -35,7 +35,7 @@ is_n_a <- function(in1){
 #' returns `FALSE` when `NA` values are present
 #' @noRd
 is_l_a <- function(in1){
-  if (is.null(in1) | length(unique(in1)) != 1 | class(in1) != "logical" | any(is.na(in1))) {
+  if (is.null(in1) | length(unique(in1)) != 1 | !methods::is(in1, "logical") | any(is.na(in1))) {
     return(FALSE)
   }
   return(TRUE)

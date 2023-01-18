@@ -12,6 +12,7 @@ Tool helping psychologists and other behavioural scientists analyze mouse moveme
 Useful links:
 \itemize{
   \item \url{https://github.com/mc-schaaf/wuelib}
+  \item \url{https://mc-schaaf.github.io/wuelib/}
   \item Report bugs at \url{https://github.com/mc-schaaf/wuelib/issues}
 }
 
