@@ -121,55 +121,55 @@ with the devtools package:</p>
 <li>Preprocessing:
 <ul>
 <li>
-<code>is_monotonic</code> checks whether your timestamps make sense
-and warns you if they don’t.</li>
+<code><a href="../reference/is_monotonic.html">is_monotonic()</a></code> checks whether your timestamps make
+sense and warns you if they don’t.</li>
 <li>
-<code>time_circle_left</code> tells you the time at which the
+<code><a href="../reference/time_circle_left.html">time_circle_left()</a></code> tells you the time at which the
 starting area was left.</li>
 <li>
-<code>time_circle_entered</code> tells you the time at which the end
-area was entered.</li>
+<code><a href="../reference/time_circle_entered.html">time_circle_entered()</a></code> tells you the time at which the
+end area was entered.</li>
 <li>
-<code>point_crosses</code> tells you how often a certain value on
+<code><a href="../reference/point_crosses.html">point_crosses()</a></code> tells you how often a certain value on
 the x or y axis is crossed.</li>
 <li>
-<code>direction_changes</code> tells you how often the direction
+<code><a href="../reference/direction_changes.html">direction_changes()</a></code> tells you how often the direction
 along the x or y axis changes.<br>
 </li>
 <li>
-<code>interp1</code> directs you to the interpolation function from
-the awesome <code>signal</code> package available to you without having
-to call <code><a href="https://rdrr.io/r/base/library.html" class="external-link">library("signal")</a></code>.</li>
+<code><a href="https://rdrr.io/pkg/signal/man/interp1.html" class="external-link">interp1()</a></code> directs you to the interpolation function
+from the awesome <code>signal</code> package available to you without
+having to call <code><a href="https://rdrr.io/r/base/library.html" class="external-link">library("signal")</a></code>.</li>
 <li>
-<code>interp2</code> is a wrapper to <code>interp1</code> that
+<code><a href="../reference/interp2.html">interp2()</a></code> is a wrapper to <code><a href="https://rdrr.io/pkg/signal/man/interp1.html" class="external-link">interp1()</a></code> that
 rescales the time for you.</li>
 </ul>
 </li>
 <li>Spatial measures:
 <ul>
 <li>
-<code>starting_angle</code> computes (not only starting)
+<code><a href="../reference/starting_angle.html">starting_angle()</a></code> computes (not only starting)
 angles.</li>
 <li>
-<code>auc</code> computes the (signed) Area Under the Curve
+<code><a href="../reference/auc.html">auc()</a></code> computes the (signed) Area Under the Curve
 (AUC).</li>
 <li>
-<code>max_ad</code> computes the (signed) Maximum Absolute Deviation
-(MAD).</li>
+<code><a href="../reference/max_ad.html">max_ad()</a></code> computes the (signed) Maximum Absolute
+Deviation (MAD).</li>
 <li>
-<code>curvature</code> computes the curvature.</li>
+<code><a href="../reference/curvature.html">curvature()</a></code> computes the curvature.</li>
 <li>
-<code>index_max_velocity</code> computes the time to peak velocity,
-assuming equidistant times between data points.</li>
+<code><a href="../reference/index_max_velocity.html">index_max_velocity()</a></code> computes the time to peak
+velocity, assuming equidistant times between data points.</li>
 <li>
-<code>index_max_acceleration</code> computes the time to peak
+<code><a href="../reference/index_max_acceleration.html">index_max_acceleration()</a></code> computes the time to peak
 acceleration, assuming equidistant times between data points.</li>
 </ul>
 </li>
 <li>Other measures
 <ul>
 <li>
-<code>sampen</code> computes the sample entropy.</li>
+<code><a href="../reference/sampen.html">sampen()</a></code> computes the sample entropy.</li>
 </ul>
 </li>
 </ul>
@@ -206,8 +206,8 @@ results. Let’s inspect the structure of the data:</p>
 <p>In this example, <code>Time</code> reflects the time passed since the
 onset of the imperative stimulus and always increases by 1 arbitrary
 unit. In a real experiment, a sensible first pre-processing step would
-be to double-check the order of your data via <code>is_monotonic</code>
-applied to <code>Time</code>.</p>
+be to double-check the order of your data via
+<code><a href="../reference/is_monotonic.html">is_monotonic()</a></code> applied to <code>Time</code>.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="va">dat</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">Trial</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span></span>
 <span>  is_ok <span class="op">=</span> <span class="fu"><a href="../reference/is_monotonic.html">is_monotonic</a></span><span class="op">(</span><span class="va">Time</span><span class="op">)</span> <span class="co"># will throw a warning if times are not monotonically increasing</span></span>
@@ -243,8 +243,8 @@ amount of data points for each trajectory (column <code>n</code>). This
 is bad news when you want to display average trajectories! One solution
 for this problem is linear interpolation, and it has been proposed that
 this should be done prior to the computation of MAD, AUC, etc. So let’s
-do this via <code>interp2</code>, a convenient wrapper to
-<code><a href="https://rdrr.io/pkg/signal/man/interp1.html" class="external-link">signal::interp1</a></code>:</p>
+do this via <code><a href="../reference/interp2.html">interp2()</a></code>, a convenient wrapper to
+<code><a href="https://rdrr.io/pkg/signal/man/interp1.html" class="external-link">signal::interp1()</a></code>:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dat_int</span> <span class="op">&lt;-</span> <span class="va">dat</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">Trial</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html" class="external-link">summarise</a></span><span class="op">(</span> </span>
 <span>  <span class="co"># note the rather hackish use of summarise here</span></span>
