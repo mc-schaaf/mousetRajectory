@@ -3,9 +3,6 @@
 
 # wuelib: Trajectory Analyses for Cognitive Psychologists
 
-<!-- badges: start -->
-<!-- badges: end -->
-
 The goal of wuelib is to bundle together several functions that are
 useful for analyzing mouse movement (and other 2-D trajectory) data in
 the context of cognitive psychology. ‘wuelib’ is a library that is
@@ -22,6 +19,11 @@ with:
 if(!require("devtools")){install.packages("devtools")}
 devtools::install_github("mc-schaaf/wuelib")
 ```
+
+## Documentation
+
+You can read the documentation at
+[mc-schaaf.github.io/wuelib/](https://mc-schaaf.github.io/wuelib/).
 
 ## Bug Reports
 

@@ -43,22 +43,22 @@ devtools::install_github("mc-schaaf/wuelib")
 Currently, the following functions are featured:
 
 * Preprocessing:
-  * `is_monotonic` checks whether your timestamps make sense and warns you if they don't.
-  * `time_circle_left` tells you the time at which the starting area was left.
-  * `time_circle_entered` tells you the time at which the end area was entered.
-  * `point_crosses` tells you how often a certain value on the x or y axis is crossed. 
-  * `direction_changes` tells you how often the direction along the x or y axis changes.  
-  * `interp1` directs you to the interpolation function from the awesome `signal` package available to you without having to call `library("signal")`.
-  * `interp2` is a wrapper to `interp1` that rescales the time for you.
+  * `is_monotonic()` checks whether your timestamps make sense and warns you if they don't.
+  * `time_circle_left()` tells you the time at which the starting area was left.
+  * `time_circle_entered()` tells you the time at which the end area was entered.
+  * `point_crosses()` tells you how often a certain value on the x or y axis is crossed. 
+  * `direction_changes()` tells you how often the direction along the x or y axis changes.  
+  * `interp1()` directs you to the interpolation function from the awesome `signal` package available to you without having to call `library("signal")`.
+  * `interp2()` is a wrapper to `interp1()` that rescales the time for you.
 * Spatial measures:
-  * `starting_angle` computes (not only starting) angles.
-  * `auc` computes the (signed) Area Under the Curve (AUC).
-  * `max_ad` computes the (signed) Maximum Absolute Deviation (MAD).
-  * `curvature` computes the curvature.
-  * `index_max_velocity` computes the time to peak velocity, assuming equidistant times between data points.
-  * `index_max_acceleration` computes the time to peak acceleration, assuming equidistant times between data points.
+  * `starting_angle()` computes (not only starting) angles.
+  * `auc()` computes the (signed) Area Under the Curve (AUC).
+  * `max_ad()` computes the (signed) Maximum Absolute Deviation (MAD).
+  * `curvature()` computes the curvature.
+  * `index_max_velocity()` computes the time to peak velocity, assuming equidistant times between data points.
+  * `index_max_acceleration()` computes the time to peak acceleration, assuming equidistant times between data points.
 * Other measures
-  * `sampen` computes the sample entropy.
+  * `sampen()` computes the sample entropy.
 
 
 ## A Simple Example
@@ -129,7 +129,7 @@ gg_background + geom_path(data = dat, aes(x_coord, y_coord, group = Trial))
 ```
 
 
-In this example, `Time` reflects the time passed since the onset of the imperative stimulus and always increases by 1 arbitrary unit. In a real experiment, a sensible first pre-processing step would be to double-check the order of your data via `is_monotonic` applied to `Time`.
+In this example, `Time` reflects the time passed since the onset of the imperative stimulus and always increases by 1 arbitrary unit. In a real experiment, a sensible first pre-processing step would be to double-check the order of your data via `is_monotonic()` applied to `Time`.
 
 ```{r recode_x_coords}
 dat <- dat %>% group_by(Trial) %>% mutate(
@@ -154,7 +154,7 @@ gg_background + geom_path(data = dat, aes(x_coord, y_coord, group = Trial))
 ```
 
 
-Note that filtering the data to the relevant part leads to an unequal amount of data points for each trajectory (column `n`). This is bad news when you want to display average trajectories! One solution for this problem is linear interpolation, and it has been proposed that this should be done prior to the computation of MAD, AUC, etc. So let's do this via `interp2`, a convenient wrapper to `signal::interp1`:
+Note that filtering the data to the relevant part leads to an unequal amount of data points for each trajectory (column `n`). This is bad news when you want to display average trajectories! One solution for this problem is linear interpolation, and it has been proposed that this should be done prior to the computation of MAD, AUC, etc. So let's do this via `interp2()`, a convenient wrapper to `signal::interp1()`:
 
 ```{r interpolate, message=FALSE}
 dat_int <- dat %>% group_by(Trial) %>% summarise( 
