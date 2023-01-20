@@ -95,14 +95,14 @@ auc <- function(x_vector,
   }
 
   # check inputs
-  stopifnot(
-    is_xy_v(x_vector, y_vector),
-    is_n_a(x_start),
-    is_n_a(y_start),
-    is_n_a(x_end),
-    is_n_a(y_end),
-    is_l_a(geometric)
-  )
+  # stopifnot(
+  #   is_xy_v(x_vector, y_vector),
+  #   is_n_a(x_start),
+  #   is_n_a(y_start),
+  #   is_n_a(x_end),
+  #   is_n_a(y_end),
+  #   is_l_a(geometric)
+  # )
 
   # shift data
   x_shift <- x_vector - x_start

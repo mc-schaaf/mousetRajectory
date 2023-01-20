@@ -32,6 +32,16 @@ time_circle_left <- function(x_vector,
                              yMid = 0,
                              radius = 1,
                              include_radius = TRUE) {
+  # check inputs
+  # stopifnot(
+  #   is_xy_v(x_vector, y_vector),
+  #   is_xy_v(y_vector, t_vector),
+  #   is_n_a(xMid),
+  #   is_n_a(yMid),
+  #   is_n_a(radius),
+  #   is_l_a(include_radius)
+  # )
+
   dSquare <- (x_vector - xMid) ^ 2 + (y_vector - yMid) ^ 2
   if (include_radius) {
     isOut <- dSquare > radius ^ 2

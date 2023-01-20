@@ -28,7 +28,8 @@ Depends:
     R (>= 3.5.0)
 Imports:
     signal (>= 0.7),
-    methods
+    methods,
+    utils
 Suggests: 
     knitr,
     rmarkdown,

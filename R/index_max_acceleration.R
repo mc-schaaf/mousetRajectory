@@ -29,7 +29,7 @@
 
 index_max_acceleration <- function(x_vector, y_vector, absolute = FALSE) {
   # check inputs
-  stopifnot(is_xy_v(x_vector, y_vector), is_l_a(absolute))
+  # stopifnot(is_xy_v(x_vector, y_vector), is_l_a(absolute))
 
   # distances
   distances <-

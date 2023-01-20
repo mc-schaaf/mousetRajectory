@@ -24,7 +24,7 @@
 
 interp2 <- function(time_old, xy_old, n_xy_new = 101){
   # check inputs
-  stopifnot(is_xy_v(time_old, xy_old), is_n_a(n_xy_new))
+  # stopifnot(is_xy_v(time_old, xy_old), is_n_a(n_xy_new))
 
   time_old <- time_old - min(time_old)
   time_old <- time_old / max(time_old)

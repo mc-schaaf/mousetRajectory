@@ -75,13 +75,13 @@ max_ad <- function(x_vector,
   }
 
   # check inputs
-  stopifnot(
-    is_xy_v(x_vector, y_vector),
-    is_n_a(x_start),
-    is_n_a(y_start),
-    is_n_a(x_end),
-    is_n_a(y_end)
-  )
+  # stopifnot(
+  #   is_xy_v(x_vector, y_vector),
+  #   is_n_a(x_start),
+  #   is_n_a(y_start),
+  #   is_n_a(x_end),
+  #   is_n_a(y_end)
+  # )
 
   # shift data
   x_shift <- x_vector - x_start
