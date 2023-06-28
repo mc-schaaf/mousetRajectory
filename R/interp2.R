@@ -28,6 +28,6 @@ interp2 <- function(time_old, xy_old, n_xy_new = 101){
 
   time_old <- time_old - min(time_old)
   time_old <- time_old / max(time_old)
-  time_old <- time_old * n_xy_new
-  return(interp1(time_old, xy_old, seq(0, n_xy_new-1), method="linear"))
+  time_old <- time_old * (n_xy_new - 1)
+  return(interp1(time_old, xy_old, seq(0, (n_xy_new - 1)), method="linear"))
 }
