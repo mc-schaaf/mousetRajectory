@@ -1,29 +1,29 @@
 #' @title Area Under the Curve
 #'
-#' @description Computes the (cumulative) Area Under the Curve (AUC) of a
-#' trajectory, defined by vectors of x and y coordinates, as compared to an
-#' ideal trajectory, defined by the start and end points.
+#' @description Computes the (signed) Area Under the Curve (AUC) of a
+#' path, defined by vectors of x and y coordinates, as compared to an
+#' ideal line passing through the start and end points.
 #'
-#' @param x_vector x-coordinates of the executed trajectory.
-#' @param y_vector y-coordinates of the executed trajectory.
-#' @param x_start x-coordinate of the start point of the ideal trajectory.
+#' @param x_vector x-coordinates of the executed path.
+#' @param y_vector y-coordinates of the executed path.
+#' @param x_start x-coordinate of the start point of the ideal line.
 #' Defaults to the first value in `x_vector`.
-#' @param y_start y-coordinate of the start point of the ideal trajectory.
+#' @param y_start y-coordinate of the start point of the ideal line.
 #' Defaults to the first value in `y_vector`.
-#' @param x_end x-coordinate of the end point of the ideal trajectory.
+#' @param x_end x-coordinate of the end point of the ideal line.
 #' Defaults to the last value in `x_vector`.
-#' @param y_end y-coordinate of the end point of the ideal trajectory.
+#' @param y_end y-coordinate of the end point of the ideal line.
 #' Defaults to the last value in `y_vector`.
 #' @param geometric Whether the sign of areas that stem from a movement in the
-#' reverse direction of the ideal trajectory should be reversed.
+#' reverse direction of the ideal line should be reversed.
 #' Defaults to `FALSE`, indicating an time-based instead of geometric
 #' interpretation.
 #'
-#' @returns Cumulative AUC as single number (-Inf to +Inf).
+#' @returns AUC as single number (-Inf to +Inf).
 #'
-#' @details The ideal trajectory is thought of as being of infinite length and
-#' the supplied vectors are assumed to be ordered by time.
-#' Counterclockwise deviations from the ideal trajectory are considered
+#' @details The ideal line is a line, not a line segment, i.e., it has
+#' infinite length. The supplied vectors are assumed to be ordered by time.
+#' Counterclockwise deviations from the ideal line are considered
 #' positive, clockwise deviations as negative for the computation of the AUC.
 #' Thus, negative AUCs are possible.
 #'

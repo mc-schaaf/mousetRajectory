@@ -1,8 +1,8 @@
 #' @title Curvature
 #'
-#' @description Computes the curvature of a trajectory, defined by vectors
-#' of x and y coordinates, as compared to an ideal trajectory,
-#' as defined by the start and end points of the trajectory.
+#' @description Computes the curvature of a path, defined by vectors
+#' of x and y coordinates, as compared to an ideal path,
+#' as defined by the start and end points of the path.
 #'
 #' @inheritParams auc
 #'

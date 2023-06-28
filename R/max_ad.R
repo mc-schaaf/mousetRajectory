@@ -1,16 +1,16 @@
 #' @title (signed) Maximum Absolute Deviation
 #'
-#' @description Computes the Maximum Absolute Deviation (MAD) of a trajectory,
-#' defined by vectors of x and y coordinates, from an ideal
-#' trajectory, defined by the coordinates of the start and end points.
+#' @description Computes the (signed) Maximum Absolute Deviation (MAD) of a
+#' path, defined by vectors of x and y coordinates, as compared to an
+#' ideal line passing through the start and end points.
 #'
 #' @inheritParams auc
 #'
 #' @returns (signed) MAD as single number (-Inf to +Inf).
 #'
-#' @details The ideal trajectory is thought of as being of infinite length and
-#' the supplied vectors are assumed to be ordered by time.
-#' Counterclockwise deviations from the ideal trajectory are considered
+#' @details The ideal line is a line, not a line segment, i.e., it has
+#' infinite length. The supplied vectors are assumed to be ordered by time.
+#' Counterclockwise deviations from the ideal line are considered
 #' positive, clockwise deviations as negative for the computation of the MAD.
 #' Thus, negative MADs are possible. If more than one value is
 #' considered maximal, the first maximal value is returned.

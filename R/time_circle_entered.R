@@ -1,6 +1,7 @@
 #' @title Completion Time
 #'
-#' @description Checks when the specified circle was first entered.
+#' @description Checks when the specified circle was first entered by a
+#' trajectory.
 #'
 #' @inheritParams time_circle_left
 #'
