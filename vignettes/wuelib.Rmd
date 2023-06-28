@@ -108,12 +108,11 @@ dat <- data.frame(
               0, 0.6, 1, #2
               0, 0.7, 1, #3
               0, 0.8, 1) #4
-) %>% group_by(Trial, Target) %>% summarise(
+) %>% group_by(Trial, Target) %>% reframe(
   Time = c(0:100),
   x_coord = interp1(Time2, x_coord, Time, method="spline"),
-  y_coord = interp1(Time2, y_coord, Time, method="spline"),
-  .groups="keep"
-)
+  y_coord = interp1(Time2, y_coord, Time, method="spline")
+) %>% group_by(Trial, Target)
 dat <- dat %>% as_tibble()
 
 gg_background <- draw_background()
@@ -157,8 +156,7 @@ gg_background + geom_path(data = dat, aes(x_coord, y_coord, group = Trial))
 Note that filtering the data to the relevant part leads to an unequal amount of data points for each trajectory (column `n`). This is bad news when you want to display average trajectories! One solution for this problem is linear interpolation, and it has been proposed that this should be done prior to the computation of MAD, AUC, etc. So let's do this via `interp2()`, a convenient wrapper to `signal::interp1()`:
 
 ```{r interpolate, message=FALSE}
-dat_int <- dat %>% group_by(Trial) %>% summarise( 
-  # note the rather hackish use of summarise here
+dat_int <- dat %>% group_by(Trial) %>% reframe( 
   Time_new = 0:100,
   x_new = interp2(Time, x_coord, 101),
   y_new = interp2(Time, y_coord, 101),
