@@ -41,9 +41,9 @@ point_crosses <- function(numeric_vector, relevant_point = 0) {
     numeric_vector[numeric_vector != relevant_point] > relevant_point
 
   # compute if consecutive bools differ, and sum up how often this happens
-  bool_sign_differ <-
+  bool_sign_diff <-
     bool_greater[1:(length(bool_greater)-1)] != bool_greater[2:length(bool_greater)]
 
-  return(sum(bool_sign_differ))
+  return(sum(bool_sign_diff))
 
 }

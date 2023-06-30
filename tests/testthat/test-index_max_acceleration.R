@@ -1,5 +1,8 @@
 test_that("TTPA: simple example", {
   expect_equal(index_max_acceleration(c(0, 1, 2, 3, 6, 10, 12, 14, 15), rep(0, 9)), 4)
+  expect_equal(index_max_acceleration(c(0, 1, 2, 3, 6, 9, 9, 9),  rep(0, 8)), 4)
+  expect_equal(index_max_acceleration(c(0, 1, 2, 3, 6, 9, 9, 9),  rep(0, 8), absolute=TRUE), 6)
+
 })
 
 test_that("TTPA: trigonometric example", {

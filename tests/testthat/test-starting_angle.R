@@ -29,3 +29,7 @@ test_that("SA: axis-swap2", {
 test_that("SA: axis-swap3", {
   expect_equal(starting_angle(0, -sqrt(2), 0, -sqrt(2), swap_x_y = FALSE), -135)
 })
+
+test_that("SA: crappy input", {
+  expect_equal(starting_angle(0, -sqrt(2), 0, NA, swap_x_y = FALSE), NA)
+})
