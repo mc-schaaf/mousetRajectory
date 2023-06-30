@@ -7,9 +7,9 @@
 index_max_velocity(x_vector, y_vector)
 }
 \arguments{
-\item{x_vector}{x-coordinates of the executed trajectory.}
+\item{x_vector}{x-coordinates of the executed path.}
 
-\item{y_vector}{y-coordinates of the executed trajectory.}
+\item{y_vector}{y-coordinates of the executed path.}
 }
 \value{
 Single number indicating the index of peak velocity (1 to +Inf).

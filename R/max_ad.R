@@ -88,12 +88,12 @@ max_ad <- function(x_vector,
   y_shift <- y_vector - y_start
 
   # rotate data to ideal trajectory, as defined by start to end points
-  angle <- atan2(y_end - y_start, x_end - x_start)
-  sin1 <- sin(-angle)
-  cos1 <- cos(-angle)
+  angle <- atan2((y_end-y_start), (x_end-x_start))
+  m_sin <- sin(-angle)
+  m_cos <- cos(-angle)
 
-  # x_rot <- x_shift * cos1 - y_shift * sin1         # not needed
-  y_rot <- x_shift * sin1 + y_shift * cos1
+  # x_rot <- (x_shift*m_cos) - (y_shift*m_sin)         # not needed
+  y_rot <- (x_shift*m_sin) + (y_shift*m_cos)
 
   # find the index of maximum deviation from ideal trajectory
   index <- which.max(abs(y_rot))

@@ -15,15 +15,15 @@ interp2(time_old, xy_old, n_xy_new = 101)
 Defaults to 101.}
 }
 \value{
-Vector of length \code{n_xy_new} with interpolated xy-values.
+Vector of length \code{n_xy_new} with interpolated x or y values.
 }
 \description{
 Convenient wrapper to \code{\link[signal:interp1]{signal::interp1()}} for linear
 interpolation. Assumes that you want interpolated values of
-\code{xy_old} at \code{n_xy_new} equidistant data points of \code{time_old}.
+\code{xy_old} at \code{n_xy_new} equidistant data points.
 }
 \examples{
-interp2(0:10, (0:10)^2)
+plot(interp2(0:10, (0:10)^2))
 
 }
 \references{

@@ -54,21 +54,24 @@ is_monotonic <- function(numeric_vector,
   }
 
   # check for monotony
-  diffs <- numeric_vector[2:length(numeric_vector)] - numeric_vector[1:(length(numeric_vector)-1)]
+  diffs <-
+    numeric_vector[2:length(numeric_vector)] -
+    numeric_vector[1:(length(numeric_vector)-1)]
+
   if (decreasing){
     diffs <- -diffs
   }
 
   if (strict){
-    out_flag <- all(diffs > 0)
+    out <- all(diffs > 0)
   } else {
-    out_flag <- all(diffs >= 0)
+    out <- all(diffs >= 0)
   }
 
-  if (warn && !out_flag){
+  if (warn && !out){
     warning("'numeric_vector' is not monotonic!")
   }
 
-  return(out_flag)
+  return(out)
 
 }

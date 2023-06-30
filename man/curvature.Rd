@@ -7,17 +7,17 @@
 curvature(x_vector, y_vector)
 }
 \arguments{
-\item{x_vector}{x-coordinates of the executed trajectory.}
+\item{x_vector}{x-coordinates of the executed path.}
 
-\item{y_vector}{y-coordinates of the executed trajectory.}
+\item{y_vector}{y-coordinates of the executed path.}
 }
 \value{
 Single number indicating the curvature (1 to +Inf).
 }
 \description{
-Computes the curvature of a trajectory, defined by vectors
-of x and y coordinates, as compared to an ideal trajectory,
-as defined by the start and end points of the trajectory.
+Computes the curvature of a path, defined by vectors
+of x and y coordinates, as compared to an ideal path,
+as defined by the start and end points of the path.
 }
 \details{
 The supplied vectors are assumed to be ordered by time.

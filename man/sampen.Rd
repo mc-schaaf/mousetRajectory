@@ -35,7 +35,7 @@ Richman & Moorman (2000), \doi{10.1152/ajpheart.2000.278.6.H2039}.
 }
 \details{
 As suggested by Richman & Moorman (2000),
-\doi{10.1152/ajpheart.2000.278.6.H2039}, the last vector of length
+\doi{10.1152/ajpheart.2000.278.6.H2039}, the last possible vector of length
 \code{dimensions} is not considered because it has no corresponding vector of
 length \code{dimensions + 1}, ensuring a sampen estimation with a low bias
 introduced by the length of the \code{timeseries_array}.

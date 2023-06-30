@@ -15,9 +15,9 @@ time_circle_left(
 )
 }
 \arguments{
-\item{x_vector}{x-coordinates of the executed trajectory.}
+\item{x_vector}{x-coordinates of the executed path.}
 
-\item{y_vector}{y-coordinates of the executed trajectory.}
+\item{y_vector}{y-coordinates of the executed path.}
 
 \item{t_vector}{Timestamps of the executed trajectory.}
 
@@ -35,7 +35,8 @@ Value of \code{t_vector} at the first time at which the trajectory
 is out of the circle.
 }
 \description{
-Checks when the specified circle was first left.
+Checks when the specified circle was first left by a
+trajectory.
 }
 \examples{
 time_circle_left(0:10, rep(0,11), 0:10)

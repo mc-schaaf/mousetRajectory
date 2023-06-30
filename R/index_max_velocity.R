@@ -40,7 +40,7 @@ index_max_velocity <- function(x_vector, y_vector) {
   ds_real <-
     sqrt(
       (x_vector[2:length(x_vector)] - x_vector[1:(length(x_vector)-1)])^2 +
-        (y_vector[2:length(y_vector)] - y_vector[1:(length(y_vector)-1)])^2
+      (y_vector[2:length(y_vector)] - y_vector[1:(length(y_vector)-1)])^2
     )
 
   return(which.max(ds_real))

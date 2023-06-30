@@ -40,12 +40,16 @@ index_max_acceleration <- function(x_vector, y_vector, absolute = FALSE) {
 
   # acceleration = difference in velocity
   #              = differences in distances of time-equidistant timepoints
-  accelerations <- distances[2:length(distances)] -
-    distances[1:(length(distances) - 1)]
+  accelerations <-
+    distances[2:length(distances)] -
+    distances[1:(length(distances)-1)]
 
   if (absolute) {
     accelerations <- abs(accelerations)
   }
 
+  # two data points lost by computing differences twice; offset return value
+  # by 2/2=1 to account for this
   return(which.max(accelerations)+1)
 }
+

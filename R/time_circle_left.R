@@ -43,18 +43,25 @@ time_circle_left <- function(x_vector,
   #   is_l_a(include_radius)
   # )
 
-  dSquare <- (x_vector - xMid) ^ 2 + (y_vector - yMid) ^ 2
+  # For each point: compute distance to center of circle
+  dSquare <- (x_vector-xMid)^2 + (y_vector-yMid)^2
+
+  # check whether distance is larger than the radius
   if (include_radius) {
-    isOut <- dSquare > radius ^ 2
+    isOut <- dSquare > radius^2
   } else {
-    isOut <- dSquare >= radius ^ 2
+    isOut <- dSquare >= radius^2
   }
+
+  # sanity check 1: throw warning if the first point is not in the circle
   if (isOut[1]) {
     warning("The first point was not in the circle! Returning the first entry of t_vector.")
   }
+  # sanity check 2: return NA if no point is outside the circle
   if (all(!isOut)) {
     return(NA)
   }
+  # if everything is ok: return the first time out of the circle
   index <- which.max(isOut)
   return(t_vector[index])
 }

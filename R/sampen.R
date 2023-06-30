@@ -65,7 +65,7 @@ sampen <- function(timeseries_array,
       warning("Insufficient length of timeseries_array!")
       return(NA)
     }
-    y <- y[2:length(y)] - y[1:(length(y) - 1)]
+    y <- y[2:length(y)] - y[1:(length(y)-1)]
   }
 
   # possibly: standardization
@@ -78,25 +78,27 @@ sampen <- function(timeseries_array,
   mat_m <- 0              # counter for matches of length M
   mat_m1 <- 0             # counter for matches of length M+1
 
-  for (i in 1:(N - 1)) {
-    for (j in (i + 1):N) {
+  for (i in 1:(N-1)) {
+    for (j in (i+1):N) {
       # for each possible pair of starting points of a vector of length M+1
-      for (k in 0:(M)) {
+      for (k in 0:M) {
         # test whether the vector of length M and the vector of length M+1
         # are within the tolerance
-        if (abs(y[i + k] - y[j + k]) > r) {
+        if (abs(y[i+k] - y[j+k]) > r) {
           break
         }
-        if ((k + 1) == M) {
+        if ((k+1) == M) {
           mat_m <- mat_m + 1
         }
-        if ((k + 1) > M) {
+        if ((k+1) > M) {
           mat_m1 <- mat_m1 + 1
         }
       }
     }
   }
 
-  if(mat_m == 0){return(NA)}
+  if (mat_m == 0) {
+    return(NA)
+  }
   return(-log(mat_m1 / mat_m))
 }

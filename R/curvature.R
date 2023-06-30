@@ -43,8 +43,11 @@ curvature <- function(x_vector, y_vector) {
   # stopifnot(is_xy_v(x_vector, y_vector))
 
   # distance of the ideal trajectory
-  d_ideal <- sqrt(((x_vector[1] - x_vector[length(x_vector)]) ^ 2) +
-                    ((y_vector[1] - y_vector[length(y_vector)]) ^ 2))
+  d_ideal <-
+    sqrt(
+    (x_vector[1] - x_vector[length(x_vector)])^2 +
+    (y_vector[1] - y_vector[length(y_vector)])^2
+    )
 
   # distance of the real trajectory
   ds_real <-

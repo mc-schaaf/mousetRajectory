@@ -18,7 +18,7 @@
 #'
 #'
 #' @examples
-#' interp2(0:10, (0:10)^2)
+#' plot(interp2(0:10, (0:10)^2))
 #'
 #' @export
 

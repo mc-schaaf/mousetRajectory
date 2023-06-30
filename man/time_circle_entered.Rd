@@ -15,9 +15,9 @@ time_circle_entered(
 )
 }
 \arguments{
-\item{x_vector}{x-coordinates of the executed trajectory.}
+\item{x_vector}{x-coordinates of the executed path.}
 
-\item{y_vector}{y-coordinates of the executed trajectory.}
+\item{y_vector}{y-coordinates of the executed path.}
 
 \item{t_vector}{Timestamps of the executed trajectory.}
 
@@ -35,7 +35,8 @@ Value of \code{t_vector} at the first time at which the trajectory
 is in the circle.
 }
 \description{
-Checks when the specified circle was first entered.
+Checks when the specified circle was first entered by a
+trajectory.
 }
 \examples{
 time_circle_entered(0:10, rep(0,11), 0:10, xMid=10, yMid=0, radius=1)

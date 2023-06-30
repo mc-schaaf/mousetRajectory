@@ -15,39 +15,39 @@ auc(
 )
 }
 \arguments{
-\item{x_vector}{x-coordinates of the executed trajectory.}
+\item{x_vector}{x-coordinates of the executed path.}
 
-\item{y_vector}{y-coordinates of the executed trajectory.}
+\item{y_vector}{y-coordinates of the executed path.}
 
-\item{x_start}{x-coordinate of the start point of the ideal trajectory.
+\item{x_start}{x-coordinate of the start point of the ideal line.
 Defaults to the first value in \code{x_vector}.}
 
-\item{y_start}{y-coordinate of the start point of the ideal trajectory.
+\item{y_start}{y-coordinate of the start point of the ideal line.
 Defaults to the first value in \code{y_vector}.}
 
-\item{x_end}{x-coordinate of the end point of the ideal trajectory.
+\item{x_end}{x-coordinate of the end point of the ideal line.
 Defaults to the last value in \code{x_vector}.}
 
-\item{y_end}{y-coordinate of the end point of the ideal trajectory.
+\item{y_end}{y-coordinate of the end point of the ideal line.
 Defaults to the last value in \code{y_vector}.}
 
 \item{geometric}{Whether the sign of areas that stem from a movement in the
-reverse direction of the ideal trajectory should be reversed.
+reverse direction of the ideal line should be reversed.
 Defaults to \code{FALSE}, indicating an time-based instead of geometric
 interpretation.}
 }
 \value{
-Cumulative AUC as single number (-Inf to +Inf).
+AUC as single number (-Inf to +Inf).
 }
 \description{
-Computes the (cumulative) Area Under the Curve (AUC) of a
-trajectory, defined by vectors of x and y coordinates, as compared to an
-ideal trajectory, defined by the start and end points.
+Computes the (signed) Area Under the Curve (AUC) of a
+path, defined by vectors of x and y coordinates, as compared to an
+ideal line passing through the start and end points.
 }
 \details{
-The ideal trajectory is thought of as being of infinite length and
-the supplied vectors are assumed to be ordered by time.
-Counterclockwise deviations from the ideal trajectory are considered
+The ideal line is a line, not a line segment, i.e., it has
+infinite length. The supplied vectors are assumed to be ordered by time.
+Counterclockwise deviations from the ideal line are considered
 positive, clockwise deviations as negative for the computation of the AUC.
 Thus, negative AUCs are possible.
 }
