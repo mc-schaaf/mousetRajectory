@@ -26,7 +26,8 @@ time_circle_entered <- function(x_vector,
                                 xMid = 0,
                                 yMid = 0,
                                 radius = 1,
-                                include_radius = TRUE) {
+                                include_radius = TRUE,
+                                warn = TRUE) {
   # check inputs
   # stopifnot(
   #   is_xy_v(x_vector, y_vector),
@@ -48,7 +49,7 @@ time_circle_entered <- function(x_vector,
   }
 
   # sanity check 1: throw warning if the first point is not outside the circle
-  if (isIn[1]) {
+  if (isIn[1] & warn) {
     warning("The first point was already in the circle! Returning the first entry of t_vector.")
   }
   # sanity check 2: return NA if no point is outside the circle

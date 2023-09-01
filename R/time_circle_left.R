@@ -10,6 +10,8 @@
 #' @param radius radius of the center of the circle.
 #' @param include_radius Whether points lying exactly on the radius should be
 #' included in the circle. Defaults to `TRUE`.
+#' @param warn whether a warning should be thrown if the first entry of t_vector
+#' is returned. Defaults to `TRUE`.
 #'
 #' @return Value of `t_vector` at the first time at which the trajectory
 #' is out of the circle.
@@ -32,7 +34,8 @@ time_circle_left <- function(x_vector,
                              xMid = 0,
                              yMid = 0,
                              radius = 1,
-                             include_radius = TRUE) {
+                             include_radius = TRUE,
+                             warn = TRUE) {
   # check inputs
   # stopifnot(
   #   is_xy_v(x_vector, y_vector),
@@ -54,7 +57,7 @@ time_circle_left <- function(x_vector,
   }
 
   # sanity check 1: throw warning if the first point is not in the circle
-  if (isOut[1]) {
+  if (isOut[1] & warn) {
     warning("The first point was not in the circle! Returning the first entry of t_vector.")
   }
   # sanity check 2: return NA if no point is outside the circle
