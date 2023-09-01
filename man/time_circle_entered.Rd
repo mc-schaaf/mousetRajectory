@@ -11,7 +11,8 @@ time_circle_entered(
   xMid = 0,
   yMid = 0,
   radius = 1,
-  include_radius = TRUE
+  include_radius = TRUE,
+  warn = TRUE
 )
 }
 \arguments{
@@ -29,6 +30,9 @@ time_circle_entered(
 
 \item{include_radius}{Whether points lying exactly on the radius should be
 included in the circle. Defaults to \code{TRUE}.}
+
+\item{warn}{whether a warning should be thrown if the first entry of t_vector
+is returned. Defaults to \code{TRUE}.}
 }
 \value{
 Value of \code{t_vector} at the first time at which the trajectory
