@@ -64,7 +64,8 @@ trajectory.</p>
 <span>  xMid <span class="op">=</span> <span class="fl">0</span>,</span>
 <span>  yMid <span class="op">=</span> <span class="fl">0</span>,</span>
 <span>  radius <span class="op">=</span> <span class="fl">1</span>,</span>
-<span>  include_radius <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span>  include_radius <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  warn <span class="op">=</span> <span class="cn">TRUE</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -97,6 +98,11 @@ trajectory.</p>
 <dt>include_radius</dt>
 <dd><p>Whether points lying exactly on the radius should be
 included in the circle. Defaults to <code>TRUE</code>.</p></dd>
+
+
+<dt>warn</dt>
+<dd><p>whether a warning should be thrown if the first entry of t_vector
+is returned. Defaults to <code>TRUE</code>.</p></dd>
 
 </dl></div>
     <div class="section level2">
