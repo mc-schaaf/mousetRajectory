@@ -7,6 +7,6 @@
 # * https://testthat.r-lib.org/reference/test_package.html#special-files
 
 library(testthat)
-library(wuelib)
+library(mousetRajectory)
 
-test_check("wuelib")
+test_check("mousetRajectory")

@@ -1,8 +1,8 @@
 ---
-title: "wuelib"
+title: "mousetRajectory"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{wuelib}
+  %\VignetteIndexEntry{mousetRajectory}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -21,19 +21,19 @@ knitr::opts_chunk$set(
 
 Within the community of cognitive scientists, the analysis of movement data is becoming more and more popular. While continuous measurements promise insights that reaction times cannot provide, researchers conducting their first tracking experiment may feel overwhelmed by the novel data handling requirements. Consequently, they often resort to out-of-the-box software restricting their analysis choices or poorly documented code snippets from colleagues. Thus, time is spend learning peculiarities of certain software (or colleagues) that could also be invested in learning overarching principles of data analysis or the development of own analysis routines. 
 
-The aim of `wuelib` is to provide scientists with an easy-to-understand and modular introduction to the analysis of mouse-tracking and other 2D movement data. While `wuelib` should provide most functions needed to analyze your first experiment, we strongly encourage you to extend and/or replace certain modules with own code; a deeper understanding of the analysis process will naturally lead to better interpretations of the results. Therefore, we tried to make the source code as easy to understand as possible even when this leads to slower function execution. We further recommend to inspect and understand the functions you are executing (if you are using RStudio on a Windows Machine, hit `F2` to inspect source code of functions).
+The aim of `mousetRajectory` is to provide scientists with an easy-to-understand and modular introduction to the analysis of mouse-tracking and other 2D movement data. While `mousetRajectory` should provide most functions needed to analyze your first experiment, we strongly encourage you to extend and/or replace certain modules with own code; a deeper understanding of the analysis process will naturally lead to better interpretations of the results. Therefore, we tried to make the source code as easy to understand as possible even when this leads to slower function execution. We further recommend to inspect and understand the functions you are executing (if you are using RStudio on a Windows Machine, hit `F2` to inspect source code of functions).
 
 
 
 
 ## Installation Process
 
-Currently, `wuelib` is not available on CRAN and must be installed from
-[github.com/mc-schaaf/wuelib](https://github.com/mc-schaaf/wuelib) with the devtools package:
+Currently, `mousetRajectory` is not available on CRAN and must be installed from
+[github.com/mc-schaaf/mousetRajectory](https://github.com/mc-schaaf/mousetRajectory) with the devtools package:
 
 ```r
 if(!require("devtools")){install.packages("devtools")}
-devtools::install_github("mc-schaaf/wuelib")
+devtools::install_github("mc-schaaf/mousetRajectory")
 ``` 
 
 
@@ -44,11 +44,12 @@ Currently, the following functions are featured:
 
 * Preprocessing:
   * `is_monotonic()` checks whether your timestamps make sense and warns you if they don't.
+  * `is_monotonic_along_ideal()` checks whether your trajectories make sense and warns you if they don't.
   * `time_circle_left()` tells you the time at which the starting area was left.
   * `time_circle_entered()` tells you the time at which the end area was entered.
   * `point_crosses()` tells you how often a certain value on the x or y axis is crossed. 
   * `direction_changes()` tells you how often the direction along the x or y axis changes.  
-  * `interp1()` directs you to the interpolation function from the awesome `signal` package. Thus, you do not have to call `library("signal")`. Such time-saving, much wow.
+  * `interp1()` directs you to the interpolation function from the awesome `signal` package. Thus, you do not have to call `library("signal")`. Such time-saving, much wow. Also, not having to attach the `signal` package avoids ambiguity between `signal::filter()` and `dplyr::filter()` in your namespace.
   * `interp2()` is a convenience wrapper to `interp1()` that rescales the time for you.
 * Spatial measures:
   * `starting_angle()` computes (not only starting) angles.
@@ -65,7 +66,7 @@ Currently, the following functions are featured:
 
 
 ```{r setup, message=FALSE}
-library(wuelib)
+library(mousetRajectory)
 library(ggplot2)
 library(dplyr)
 ```
@@ -132,7 +133,8 @@ In this example, `Time` reflects the time passed since the onset of the imperati
 
 ```{r recode_x_coords}
 dat <- dat %>% group_by(Trial) %>% mutate(
-  is_ok = is_monotonic(Time) # will throw a warning if times are not monotonically increasing
+  # will throw a warning if times are not monotonically increasing
+  is_ok = is_monotonic(Time)
 )
 ```
 
@@ -189,5 +191,5 @@ gg_background + geom_path(data = dat_avg, aes(x_avg, y_avg)) +
 Congratulations, you worked trough your first mouse-tracking analysis!
 
 
-As a final note: This package is currently under development. If you spot any bugs or have other improvement suggestions, please let us know by filing an issue at  [github.com/mc-schaaf/wuelib/issues](https://github.com/mc-schaaf/wuelib/issues).
+As a final note: This package is currently under development. If you spot any bugs or have other improvement suggestions, please let us know by filing an issue at  [github.com/mc-schaaf/mousetRajectory/issues](https://github.com/mc-schaaf/mousetRajectory/issues).
 

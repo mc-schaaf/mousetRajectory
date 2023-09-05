@@ -1,29 +1,28 @@
 Type: Package
-Package: wuelib
-Title: Trajectory Analyses for Cognitive Psychologists
+Package: mousetRajectory
+Title: Mouse Trajectory Analyses for Cognitive Psychologists
 Version: 0.1.0
 Authors@R: c(
-    person("Robert", "Wirth", , "robert.wirth@uni-wuerzburg.de", role = "aut",
-           comment = c(ORCID = "0000-0001-8446-1880")),
-    person("Moritz", "Schaaf", , "moritz.schaaf@uni-wuerzburg.de", role = c("aut", "cre"),
-           comment = c(ORCID = "0000-0002-9959-2928")),
-    person("Solveig", "Tonn", , "solveig.tonn@uni-wuerzburg.de", role = "aut",
+    person("Roland", "Pfister", , "mail@roland-pfister.net", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-4429-1052")),
+    person("Solveig", "Tonn", , "tonn@uni-trier.de", role = "aut",
            comment = c(ORCID = "0000-0001-5254-8391")),
-    person("Roland", "Pfister", , "mail@roland-pfister.net", role = "aut",
-           comment = c(ORCID = "0000-0002-4429-1052"))
+    person("Moritz", "Schaaf", , "moritz.schaaf@uni-trier.de", role = "aut",
+           comment = c(ORCID = "0000-0002-9959-2928")),
+    person("Robert", "Wirth", , "robert.wirth@uni-wuerzburg.de", role = "aut",
+           comment = c(ORCID = "0000-0001-8446-1880"))
   )
-Author: Robert Wirth [aut], Moritz Schaaf [aut, cre], Solveig Tonn [aut],
-    Roland Pfister [aut]
-Maintainer: Moritz Schaaf <moritz.schaaf@uni-wuerzburg.de>
-Description: Tool helping psychologists and other behavioural scientists
+Author: Roland Pfister [aut, cre], Solveig Tonn [aut], Moritz Schaaf [aut], 
+    Robert Wirth [aut]
+Maintainer: Roland Pfister <mail@roland-pfister.net>
+Description: Tool helping psychologists and other behavioural scientists to
     analyze mouse movement (and other 2-D trajectory) data. Bundles together 
-    several functions that compute spatial measures (MAD, AUC) or provide 
-    a shorthand for often-used procedures. 'wuelib' is maintained by the 
-    Cognition & Behaviour team of the University of Wuerzburg.
+    several functions that compute spatial measures (MAD, AUC, sampen) or 
+    provide a shorthand for often-used procedures.
 License: GPL (>= 3)
-URL: https://github.com/mc-schaaf/wuelib,
-    https://mc-schaaf.github.io/wuelib/
-BugReports: https://github.com/mc-schaaf/wuelib/issues
+URL: https://github.com/mc-schaaf/mousetRajectory,
+    https://mc-schaaf.github.io/mousetRajectory/
+BugReports: https://github.com/mc-schaaf/mousetRajectory/issues
 Depends:
     R (>= 3.5.0)
 Imports:

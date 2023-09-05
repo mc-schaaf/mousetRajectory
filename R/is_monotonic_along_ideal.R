@@ -12,7 +12,8 @@
 #'
 #' @details
 #' Computes the orthogonal projection of the trajectory points onto the ideal
-#' line and checks whether this (one-dimensional) projection is monotonic.
+#' line and checks whether the distances of this projection to the start point
+#' are monotonic.
 #' All objects of length 0 or 1 are monotonic.
 #' Data with missing values will not pass the check.
 #'
@@ -32,17 +33,39 @@
 #' # movement 2:
 #' x_vals2 <- y_vals1
 #' y_vals2 <- x_vals1
-#' # note that the two movements are symmetric to the ideal line:
+#' # movement 3:
+#' x_vals3 <- c(0, -0.1, 0.5, 1)
+#' y_vals3 <- c(0, 0.5, 0, 1)
+#'
+#' # note that the first two movements are symmetric to the ideal line:
 #' plot(x_vals1, y_vals1, type = "l", xlim = c(-0.1,1.3), ylim = c(-0.1,1.3))
 #' lines(x_vals2, y_vals2, type = "l")
+#' lines(x_vals3, y_vals3, type = "l")
 #' lines(c(0,1), c(0,1), lty="dashed", lwd=2) # ideal
-#' wuelib::is_monotonic_along_ideal(x_vals1, y_vals1, warn = FALSE)
-#' wuelib::is_monotonic_along_ideal(x_vals2, y_vals2, warn = FALSE)
-#' # However, excluding movements based on monotony of the y-coordinate would
-#' # only exclude the first movement
-#' wuelib::is_monotonic(y_vals1, warn = FALSE)
-#' wuelib::is_monotonic(y_vals2, warn = FALSE)
+#' is_monotonic_along_ideal(x_vals1, y_vals1, warn = FALSE)
+#' is_monotonic_along_ideal(x_vals2, y_vals2, warn = FALSE)
+#' is_monotonic_along_ideal(x_vals3, y_vals3, warn = FALSE)
+#' # Note that the third movement is regarded as monotonic although both
+#' # x and y coordinates are not.
+#' # In contrast, excluding movements based on monotony of the y-coordinate
+#' # would exclude the first and third movement:
+#' is_monotonic(y_vals1, warn = FALSE)
+#' is_monotonic(y_vals2, warn = FALSE)
+#' is_monotonic(y_vals3, warn = FALSE)
 #'
+#' # Also works if movements go into negative direction:
+#' # movement 1:
+#' x_vals1 <- c(0, -0.95, -1)
+#' y_vals1 <- c(0, 1.3, 1)
+#' # movement 3:
+#' x_vals3 <- c(0, 0.1, -0.5, -1)
+#' y_vals3 <- c(0, 0.5, 0, 1)
+#'
+#' plot(x_vals1, y_vals1, type = "l", xlim = c(-1.3,0.1), ylim = c(-0.1,1.3))
+#' lines(x_vals3, y_vals3, type = "l")
+#' lines(-c(0,1), c(0,1), lty="dashed", lwd=2) # ideal
+#' is_monotonic_along_ideal(x_vals1, y_vals1, warn = FALSE)
+#' is_monotonic_along_ideal(x_vals3, y_vals3, warn = FALSE)
 #' @export
 #'
 
@@ -72,7 +95,12 @@ is_monotonic_along_ideal <- function(x_vector,
   if (length(x_vector) <= 1) {
     return(TRUE)
   }
-
+  if (!is.numeric(x_vector) | !is.numeric(y_vector)){
+    if (warn){
+      warning("The supplied 'numeric_vector' is not of type numeric!")
+    }
+    return(FALSE)
+  }
   # check for NA values
   if (any(is.na(x_vector)) | any(is.na(y_vector))){
     if (warn){

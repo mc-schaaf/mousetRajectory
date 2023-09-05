@@ -42,7 +42,9 @@ is_monotonic <- function(numeric_vector,
     return(TRUE)
   }
   if (!is.numeric(numeric_vector)){
-    warning("The supplied 'numeric_vector' is not of type numeric!")
+    if (warn){
+      warning("The supplied 'numeric_vector' is not of type numeric!")
+    }
     return(FALSE)
   }
   # check for NA values
