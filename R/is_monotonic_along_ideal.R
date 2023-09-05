@@ -25,8 +25,23 @@
 #'
 #'
 #' @examples
-#' is_monotonic_along_ideal(c(0,0,1), c(0,1,1))
-#' is_monotonic_along_ideal(c(0,0,0,1), c(0,1,1,1), strict=TRUE, warn=FALSE)
+#' # common use-case: exclude movements that miss the target area and to go back
+#' # movement 1:
+#' x_vals1 <- c(0, 0.95, 1)
+#' y_vals1 <- c(0, 1.3, 1)
+#' # movement 2:
+#' x_vals2 <- y_vals1
+#' y_vals2 <- x_vals1
+#' # note that the two movements are symmetric to the ideal line:
+#' plot(x_vals1, y_vals1, type = "l", xlim = c(-0.1,1.3), ylim = c(-0.1,1.3))
+#' lines(x_vals2, y_vals2, type = "l")
+#' lines(c(0,1), c(0,1), lty="dashed", lwd=2) # ideal
+#' wuelib::is_monotonic_along_ideal(x_vals1, y_vals1, warn = FALSE)
+#' wuelib::is_monotonic_along_ideal(x_vals2, y_vals2, warn = FALSE)
+#' # However, excluding movements based on monotony of the y-coordinate would
+#' # only exclude the first movement
+#' wuelib::is_monotonic(y_vals1, warn = FALSE)
+#' wuelib::is_monotonic(y_vals2, warn = FALSE)
 #'
 #' @export
 #'

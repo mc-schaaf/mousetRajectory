@@ -17,7 +17,8 @@
 #' @param geometric Whether the sign of areas that stem from a movement in the
 #' reverse direction of the ideal line should be reversed.
 #' Defaults to `FALSE`, indicating an time-based instead of geometric
-#' interpretation.
+#' interpretation. Only impacts the AUC if the trajectory is not monotonically
+#' increasing relative to the ideal line.
 #'
 #' @returns AUC as single number (-Inf to +Inf).
 #'
