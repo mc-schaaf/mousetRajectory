@@ -1,75 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://mc-schaaf.github.io/wuelib/404.html</loc>
+    <loc>https://mc-schaaf.github.io/mousetRajectory/404.html</loc>
   </url>
   <url>
-    <loc>https://mc-schaaf.github.io/wuelib/LICENSE.html</loc>
+    <loc>https://mc-schaaf.github.io/mousetRajectory/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://mc-schaaf.github.io/wuelib/articles/index.html</loc>
+    <loc>https://mc-schaaf.github.io/mousetRajectory/articles/index.html</loc>
   </url>
   <url>
-    <loc>https://mc-schaaf.github.io/wuelib/articles/wuelib.html</loc>
+    <loc>https://mc-schaaf.github.io/mousetRajectory/articles/mousetRajectory.html</loc>
   </url>
   <url>
-    <loc>https://mc-schaaf.github.io/wuelib/authors.html</loc>
+    <loc>https://mc-schaaf.github.io/mousetRajectory/authors.html</loc>
   </url>
   <url>
-    <loc>https://mc-schaaf.github.io/wuelib/index.html</loc>
+    <loc>https://mc-schaaf.github.io/mousetRajectory/index.html</loc>
   </url>
   <url>
-    <loc>https://mc-schaaf.github.io/wuelib/news/index.html</loc>
+    <loc>https://mc-schaaf.github.io/mousetRajectory/news/index.html</loc>
   </url>
   <url>
-    <loc>https://mc-schaaf.github.io/wuelib/reference/auc.html</loc>
+    <loc>https://mc-schaaf.github.io/mousetRajectory/reference/auc.html</loc>
   </url>
   <url>
-    <loc>https://mc-schaaf.github.io/wuelib/reference/curvature.html</loc>
+    <loc>https://mc-schaaf.github.io/mousetRajectory/reference/curvature.html</loc>
   </url>
   <url>
-    <loc>https://mc-schaaf.github.io/wuelib/reference/direction_changes.html</loc>
+    <loc>https://mc-schaaf.github.io/mousetRajectory/reference/direction_changes.html</loc>
   </url>
   <url>
-    <loc>https://mc-schaaf.github.io/wuelib/reference/index.html</loc>
+    <loc>https://mc-schaaf.github.io/mousetRajectory/reference/index.html</loc>
   </url>
   <url>
-    <loc>https://mc-schaaf.github.io/wuelib/reference/index_max_acceleration.html</loc>
+    <loc>https://mc-schaaf.github.io/mousetRajectory/reference/index_max_acceleration.html</loc>
   </url>
   <url>
-    <loc>https://mc-schaaf.github.io/wuelib/reference/index_max_velocity.html</loc>
+    <loc>https://mc-schaaf.github.io/mousetRajectory/reference/index_max_velocity.html</loc>
   </url>
   <url>
-    <loc>https://mc-schaaf.github.io/wuelib/reference/interp2.html</loc>
+    <loc>https://mc-schaaf.github.io/mousetRajectory/reference/interp2.html</loc>
   </url>
   <url>
-    <loc>https://mc-schaaf.github.io/wuelib/reference/is_monotonic.html</loc>
+    <loc>https://mc-schaaf.github.io/mousetRajectory/reference/is_monotonic.html</loc>
   </url>
   <url>
-    <loc>https://mc-schaaf.github.io/wuelib/reference/is_monotonic_along_ideal.html</loc>
+    <loc>https://mc-schaaf.github.io/mousetRajectory/reference/is_monotonic_along_ideal.html</loc>
   </url>
   <url>
-    <loc>https://mc-schaaf.github.io/wuelib/reference/max_ad.html</loc>
+    <loc>https://mc-schaaf.github.io/mousetRajectory/reference/max_ad.html</loc>
   </url>
   <url>
-    <loc>https://mc-schaaf.github.io/wuelib/reference/point_crosses.html</loc>
+    <loc>https://mc-schaaf.github.io/mousetRajectory/reference/mousetRajectory-package.html</loc>
   </url>
   <url>
-    <loc>https://mc-schaaf.github.io/wuelib/reference/reexports.html</loc>
+    <loc>https://mc-schaaf.github.io/mousetRajectory/reference/point_crosses.html</loc>
   </url>
   <url>
-    <loc>https://mc-schaaf.github.io/wuelib/reference/sampen.html</loc>
+    <loc>https://mc-schaaf.github.io/mousetRajectory/reference/reexports.html</loc>
   </url>
   <url>
-    <loc>https://mc-schaaf.github.io/wuelib/reference/starting_angle.html</loc>
+    <loc>https://mc-schaaf.github.io/mousetRajectory/reference/sampen.html</loc>
   </url>
   <url>
-    <loc>https://mc-schaaf.github.io/wuelib/reference/time_circle_entered.html</loc>
+    <loc>https://mc-schaaf.github.io/mousetRajectory/reference/starting_angle.html</loc>
   </url>
   <url>
-    <loc>https://mc-schaaf.github.io/wuelib/reference/time_circle_left.html</loc>
+    <loc>https://mc-schaaf.github.io/mousetRajectory/reference/time_circle_entered.html</loc>
   </url>
   <url>
-    <loc>https://mc-schaaf.github.io/wuelib/reference/wuelib-package.html</loc>
+    <loc>https://mc-schaaf.github.io/mousetRajectory/reference/time_circle_left.html</loc>
   </url>
 </urlset>
