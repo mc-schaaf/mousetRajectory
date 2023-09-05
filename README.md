@@ -29,7 +29,7 @@ devtools::install_github("mc-schaaf/mousetRajectory")
 ## Documentation
 
 You can read the documentation at
-[mc-schaaf.github.io/mousetRajectory/](https://mc-schaaf.github.io/mousetRajectory/).
+[mc-schaaf.github.io/mousetRajectory/](https://mc-schaaf.github.io/mousetRajectory/articles/mousetRajectory.html).
 
 ## Bug Reports
 

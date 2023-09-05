@@ -86,8 +86,8 @@ is_monotonic(y_vals3, warn = FALSE)
 x_vals1 <- c(0, -0.95, -1)
 y_vals1 <- c(0, 1.3, 1)
 # movement 3:
-x_vals3 <- c(0, -0.3, -1)
-y_vals3 <- c(0, 0.6, 1)
+x_vals3 <- c(0, 0.1, -0.5, -1)
+y_vals3 <- c(0, 0.5, 0, 1)
 
 plot(x_vals1, y_vals1, type = "l", xlim = c(-1.3,0.1), ylim = c(-0.1,1.3))
 lines(x_vals3, y_vals3, type = "l")
