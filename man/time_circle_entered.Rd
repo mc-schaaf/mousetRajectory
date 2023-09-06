@@ -44,10 +44,12 @@ trajectory.
 }
 \examples{
 time_circle_entered(0:10, rep(0, 11), 0:10,
-                    x_mid = 10, y_mid = 0, radius = 1)
+  x_mid = 10, y_mid = 0, radius = 1
+)
 time_circle_entered(0:10, rep(0, 11), 0:10,
-                    x_mid = 10, y_mid = 0, radius = 1,
-                    include_radius = FALSE)
+  x_mid = 10, y_mid = 0, radius = 1,
+  include_radius = FALSE
+)
 
 }
 \references{
