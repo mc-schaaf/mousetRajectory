@@ -35,8 +35,10 @@
 #' x_vals <- rep(c(0, 0, 0, 0, 0, 1), 20)
 #' sampen(x_vals, dimensions = 1, tolerance = 1 / 2, standardize = FALSE)
 #' sampen(x_vals, dimensions = 3, tolerance = 1 / 2, standardize = FALSE)
-#' sampen(x_vals, dimensions = 3, tolerance = 1 / 2, standardize = FALSE,
-#'        use_diff = TRUE)
+#' sampen(x_vals,
+#'   dimensions = 3, tolerance = 1 / 2, standardize = FALSE,
+#'   use_diff = TRUE
+#' )
 #' sampen(x_vals, dimensions = 3, tolerance = 1, standardize = FALSE)
 #'
 #' @export
@@ -47,7 +49,6 @@ sampen <- function(timeseries_array,
                    tolerance = 0.2,
                    standardize = TRUE,
                    use_diff = FALSE) {
-
   # input conversion for shorter variable names
   y <- timeseries_array
   m <- dimensions

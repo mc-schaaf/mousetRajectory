@@ -23,7 +23,6 @@
 #' @export
 
 interp2 <- function(time_old, xy_old, n_xy_new = 101) {
-
   time_old <- time_old - min(time_old)
   time_old <- time_old / max(time_old)
   time_old <- time_old * (n_xy_new - 1)

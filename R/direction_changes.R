@@ -28,7 +28,6 @@
 #'
 
 direction_changes <- function(numeric_vector) {
-
   # input check
   if (length(numeric_vector) < 2) {
     return(NA)

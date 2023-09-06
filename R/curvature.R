@@ -39,7 +39,6 @@
 #'
 
 curvature <- function(x_vector, y_vector) {
-
   # distance of the ideal trajectory
   d_ideal <-
     sqrt(

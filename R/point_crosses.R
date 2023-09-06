@@ -27,9 +27,8 @@
 #'
 
 point_crosses <- function(numeric_vector, relevant_point = 0) {
-
   if (length(numeric_vector) < 3 ||
-        length(numeric_vector[numeric_vector != relevant_point]) < 3) {
+    length(numeric_vector[numeric_vector != relevant_point]) < 3) {
     return(NA)
   }
 

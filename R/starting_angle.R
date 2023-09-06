@@ -39,7 +39,7 @@
 starting_angle <- function(x0, x1, y0, y1, swap_x_y = TRUE) {
   # check inputs
   if (any(is.na(c(x0, x1, y0, y1))) ||
-        min(c(length(x0), length(x1), length(y0), length(y1))) < 1) {
+    min(c(length(x0), length(x1), length(y0), length(y1))) < 1) {
     return(NA)
   }
 

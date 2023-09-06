@@ -29,7 +29,6 @@
 #'
 
 index_max_acceleration <- function(x_vector, y_vector, absolute = FALSE) {
-
   # distances
   distances <-
     sqrt(

@@ -36,7 +36,6 @@ time_circle_left <- function(x_vector,
                              radius = 1,
                              include_radius = TRUE,
                              warn = TRUE) {
-
   # For each point: compute distance to center of circle
   d_square <- (x_vector - x_mid)^2 + (y_vector - y_mid)^2
 
@@ -49,8 +48,10 @@ time_circle_left <- function(x_vector,
 
   # sanity check 1: throw warning if the first point is not in the circle
   if (is_out[1] && warn) {
-    warning(paste("The first point was not in the circle!",
-                  "Returning the first entry of t_vector."))
+    warning(paste(
+      "The first point was not in the circle!",
+      "Returning the first entry of t_vector."
+    ))
   }
   # sanity check 2: return NA if no point is outside the circle
   if (all(!is_out)) {

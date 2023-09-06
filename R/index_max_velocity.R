@@ -34,7 +34,6 @@
 #'
 
 index_max_velocity <- function(x_vector, y_vector) {
-
   # distances = velocity if time-difference stays constant
   ds_real <-
     sqrt(
