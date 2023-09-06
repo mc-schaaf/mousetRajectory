@@ -39,8 +39,6 @@
 #'
 
 curvature <- function(x_vector, y_vector) {
-  # check inputs
-  # stopifnot(is_xy_v(x_vector, y_vector))
 
   # distance of the ideal trajectory
   d_ideal <-

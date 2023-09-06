@@ -26,21 +26,21 @@ test_that("change some parameters", {
   )
   expect_equal(
     time_circle_left(0:10, rep(0, 11), 0:10,
-      xMid = 2, radius = 3,
+      x_mid = 2, radius = 3,
       include_radius = TRUE
     ),
     6
   )
   expect_equal(
     time_circle_left(0:10, rep(0, 11), 0:10,
-      xMid = 2, radius = 3,
+      x_mid = 2, radius = 3,
       include_radius = FALSE
     ),
     5
   )
   expect_equal(
     time_circle_left(0:10, rep(0, 11), 0:10,
-      xMid = 2, radius = 2,
+      x_mid = 2, radius = 2,
       include_radius = TRUE
     ),
     5
@@ -50,7 +50,7 @@ test_that("change some parameters", {
 test_that("warnings and NA", {
   expect_warning(
     time_circle_left(0:10, rep(0, 11), 0:10,
-      xMid = 2, radius = 2,
+      x_mid = 2, radius = 2,
       include_radius = FALSE
     )
   )

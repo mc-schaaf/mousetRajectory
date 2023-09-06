@@ -28,8 +28,8 @@
 #'
 
 direction_changes <- function(numeric_vector) {
+
   # input check
-  # stopifnot(is_n_v(numeric_vector))
   if (length(numeric_vector) < 2) {
     return(NA)
   }

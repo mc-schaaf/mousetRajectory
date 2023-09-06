@@ -8,8 +8,8 @@ time_circle_left(
   x_vector,
   y_vector,
   t_vector,
-  xMid = 0,
-  yMid = 0,
+  x_mid = 0,
+  y_mid = 0,
   radius = 1,
   include_radius = TRUE,
   warn = TRUE
@@ -22,9 +22,9 @@ time_circle_left(
 
 \item{t_vector}{Timestamps of the executed trajectory.}
 
-\item{xMid}{x-coordinate of the center of the circle.}
+\item{x_mid}{x-coordinate of the center of the circle.}
 
-\item{yMid}{y-coordinate of the center of the circle.}
+\item{y_mid}{y-coordinate of the center of the circle.}
 
 \item{radius}{radius of the center of the circle.}
 

@@ -35,7 +35,8 @@
 #' x_vals <- rep(c(0, 0, 0, 0, 0, 1), 20)
 #' sampen(x_vals, dimensions = 1, tolerance = 1 / 2, standardize = FALSE)
 #' sampen(x_vals, dimensions = 3, tolerance = 1 / 2, standardize = FALSE)
-#' sampen(x_vals, dimensions = 3, tolerance = 1 / 2, standardize = FALSE, use_diff = TRUE)
+#' sampen(x_vals, dimensions = 3, tolerance = 1 / 2, standardize = FALSE,
+#'        use_diff = TRUE)
 #' sampen(x_vals, dimensions = 3, tolerance = 1, standardize = FALSE)
 #'
 #' @export
@@ -46,18 +47,10 @@ sampen <- function(timeseries_array,
                    tolerance = 0.2,
                    standardize = TRUE,
                    use_diff = FALSE) {
-  # check inputs
-  # stopifnot(
-  #   is_n_v(timeseries_array),
-  #   is_n_a(dimensions),
-  #   is_n_a(tolerance),
-  #   is_l_a(standardize),
-  #   is_l_a(use_diff)
-  # )
 
   # input conversion for shorter variable names
   y <- timeseries_array
-  M <- dimensions
+  m <- dimensions
   r <- tolerance
 
   if (use_diff) {
@@ -74,23 +67,23 @@ sampen <- function(timeseries_array,
     y <- y / stats::sd(y)
   }
 
-  N <- length(y) - M
-  mat_m <- 0 # counter for matches of length M
-  mat_m1 <- 0 # counter for matches of length M+1
+  n <- length(y) - m
+  mat_m <- 0 # counter for matches of length m
+  mat_m1 <- 0 # counter for matches of length m+1
 
-  for (i in 1:(N - 1)) {
-    for (j in (i + 1):N) {
-      # for each possible pair of starting points of a vector of length M+1
-      for (k in 0:M) {
-        # test whether the vector of length M and the vector of length M+1
+  for (i in 1:(n - 1)) {
+    for (j in (i + 1):n) {
+      # for each possible pair of starting points of a vector of length m+1
+      for (k in 0:m) {
+        # test whether the vector of length m and the vector of length m+1
         # are within the tolerance
         if (abs(y[i + k] - y[j + k]) > r) {
           break
         }
-        if ((k + 1) == M) {
+        if ((k + 1) == m) {
           mat_m <- mat_m + 1
         }
-        if ((k + 1) > M) {
+        if ((k + 1) > m) {
           mat_m1 <- mat_m1 + 1
         }
       }

@@ -86,10 +86,10 @@ draw_background <- function() {
     theme_void() +
     coord_equal()
 
-  p1 <- p1 + geom_path(data = rectangle, aes(2 * x, 0.5 + y))
-  p1 <- p1 + geom_path(data = circle, aes(0 + 0.2 * x, 0 + 0.2 * y)) # home
-  p1 <- p1 + geom_path(data = circle, aes(1 + 0.2 * x, 1 + 0.2 * y)) # right target
-  p1 <- p1 + geom_path(data = circle, aes(-1 + 0.2 * x, 1 + 0.2 * y)) # left target
+  p1 <- p1 + geom_path(aes(2 * x, 0.5 + y), rectangle)
+  p1 <- p1 + geom_path(aes(0 + 0.2 * x, 0 + 0.2 * y), circle) # home
+  p1 <- p1 + geom_path(aes(1 + 0.2 * x, 1 + 0.2 * y), circle) # right target
+  p1 <- p1 + geom_path(aes(-1 + 0.2 * x, 1 + 0.2 * y), circle) # left target
 
   return(p1)
 }
@@ -108,14 +108,14 @@ dat <- data.frame(
     0, -0.5, -1, # 1
     0, -0.7, -1, # 2
     0, 0.55, 1, # 3
-    0, 0.45, 1
-  ), # 4
+    0, 0.45, 1 # 4
+  ),
   y_coord = c(
     0, 0.6, 1, # 1
     0, 0.6, 1, # 2
     0, 0.7, 1, # 3
-    0, 0.8, 1
-  ) # 4
+    0, 0.8, 1 # 4
+  )
 ) %>%
   group_by(Trial, Target) %>%
   reframe(
@@ -133,7 +133,7 @@ gg_background <- draw_background()
 head(dat)
 
 # gg_background has been created previously and is a ggplot object
-gg_background + geom_path(data = dat, aes(x_coord, y_coord, group = Trial))
+gg_background + geom_path(aes(x_coord, y_coord, group = Trial), dat)
 ```
 
 
@@ -156,8 +156,8 @@ dat <- dat %>%
   group_by(Trial) %>%
   mutate(
     x_coord = ifelse(Target == "left", -x_coord, x_coord),
-    InitiationTime = time_circle_left(x_coord, y_coord, Time, xMid = 0, yMid = 0, radius = 0.2),
-    CompletionTime = time_circle_entered(x_coord, y_coord, Time, xMid = 1, yMid = 1, radius = 0.2),
+    InitiationTime = time_circle_left(x_coord, y_coord, Time, x_mid = 0, y_mid = 0, radius = 0.2),
+    CompletionTime = time_circle_entered(x_coord, y_coord, Time, x_mid = 1, y_mid = 1, radius = 0.2),
     MovementTime = CompletionTime - InitiationTime
   ) %>%
   filter(Time >= InitiationTime & Time < CompletionTime)
@@ -166,7 +166,7 @@ dat %>%
   group_by(Trial, InitiationTime, CompletionTime, MovementTime) %>%
   count()
 
-gg_background + geom_path(data = dat, aes(x_coord, y_coord, group = Trial))
+gg_background + geom_path(aes(x_coord, y_coord, group = Trial), dat)
 ```
 
 
@@ -204,7 +204,8 @@ dat_avg <- dat_int %>%
     y_avg = mean(y_new)
   )
 
-gg_background + geom_path(data = dat_avg, aes(x_avg, y_avg)) +
+gg_background + 
+  geom_path(aes(x_avg, y_avg), dat_avg) +
   geom_path(aes(c(0, 1), c(0, 1)), linetype = "dashed") # ideal trajectory
 ```
 

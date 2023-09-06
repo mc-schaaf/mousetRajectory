@@ -5,8 +5,8 @@
 #'
 #' @inheritParams auc
 #' @param t_vector Timestamps of the executed trajectory.
-#' @param xMid x-coordinate of the center of the circle.
-#' @param yMid y-coordinate of the center of the circle.
+#' @param x_mid x-coordinate of the center of the circle.
+#' @param y_mid y-coordinate of the center of the circle.
 #' @param radius radius of the center of the circle.
 #' @param include_radius Whether points lying exactly on the radius should be
 #' included in the circle. Defaults to `TRUE`.
@@ -31,40 +31,32 @@
 time_circle_left <- function(x_vector,
                              y_vector,
                              t_vector,
-                             xMid = 0,
-                             yMid = 0,
+                             x_mid = 0,
+                             y_mid = 0,
                              radius = 1,
                              include_radius = TRUE,
                              warn = TRUE) {
-  # check inputs
-  # stopifnot(
-  #   is_xy_v(x_vector, y_vector),
-  #   is_xy_v(y_vector, t_vector),
-  #   is_n_a(xMid),
-  #   is_n_a(yMid),
-  #   is_n_a(radius),
-  #   is_l_a(include_radius)
-  # )
 
   # For each point: compute distance to center of circle
-  dSquare <- (x_vector - xMid)^2 + (y_vector - yMid)^2
+  d_square <- (x_vector - x_mid)^2 + (y_vector - y_mid)^2
 
   # check whether distance is larger than the radius
   if (include_radius) {
-    isOut <- dSquare > radius^2
+    is_out <- d_square > radius^2
   } else {
-    isOut <- dSquare >= radius^2
+    is_out <- d_square >= radius^2
   }
 
   # sanity check 1: throw warning if the first point is not in the circle
-  if (isOut[1] & warn) {
-    warning("The first point was not in the circle! Returning the first entry of t_vector.")
+  if (is_out[1] && warn) {
+    warning(paste("The first point was not in the circle!",
+                  "Returning the first entry of t_vector."))
   }
   # sanity check 2: return NA if no point is outside the circle
-  if (all(!isOut)) {
+  if (all(!is_out)) {
     return(NA)
   }
   # if everything is ok: return the first time out of the circle
-  index <- which.max(isOut)
+  index <- which.max(is_out)
   return(t_vector[index])
 }

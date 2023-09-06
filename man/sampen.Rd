@@ -49,7 +49,8 @@ compilation, see Chen et al. (2019), \doi{10.1093/biomethods/bpz016}.
 x_vals <- rep(c(0, 0, 0, 0, 0, 1), 20)
 sampen(x_vals, dimensions = 1, tolerance = 1 / 2, standardize = FALSE)
 sampen(x_vals, dimensions = 3, tolerance = 1 / 2, standardize = FALSE)
-sampen(x_vals, dimensions = 3, tolerance = 1 / 2, standardize = FALSE, use_diff = TRUE)
+sampen(x_vals, dimensions = 3, tolerance = 1 / 2, standardize = FALSE,
+       use_diff = TRUE)
 sampen(x_vals, dimensions = 3, tolerance = 1, standardize = FALSE)
 
 }

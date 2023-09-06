@@ -120,8 +120,6 @@ is_monotonic_along_ideal <- function(x_vector,
   cos1 <- cos(-angle)
 
   x_rot <- x_shift * cos1 - y_shift * sin1
-  y_rot <- x_shift * sin1 + y_shift * cos1
-
 
   # check for monotony
   diffs <- x_rot[2:length(x_rot)] - x_rot[1:(length(x_rot) - 1)]

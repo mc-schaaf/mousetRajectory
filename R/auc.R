@@ -95,16 +95,6 @@ auc <- function(x_vector,
     y_end <- y_vector[length(x_vector)]
   }
 
-  # check inputs
-  # stopifnot(
-  #   is_xy_v(x_vector, y_vector),
-  #   is_n_a(x_start),
-  #   is_n_a(y_start),
-  #   is_n_a(x_end),
-  #   is_n_a(y_end),
-  #   is_l_a(geometric)
-  # )
-
   # shift data
   x_shift <- x_vector - x_start
   y_shift <- y_vector - y_start
@@ -126,11 +116,11 @@ auc <- function(x_vector,
   }
 
   # compute square under the curve and triangle under the curve
-  AUC_increment <-
+  auc_increment <-
     d_x * y_rot[1:(length(y_rot)) - 1] + d_x * d_y * 0.5
 
   # cumulate over it
-  c_AUC <- cumsum(AUC_increment)
+  c_auc <- cumsum(auc_increment)
 
-  return(c_AUC[length(c_AUC)])
+  return(c_auc[length(c_auc)])
 }
