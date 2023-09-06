@@ -1,9 +1,9 @@
 Type: Package
 Package: mousetRajectory
-Title: Mouse Trajectory Analyses for Cognitive Psychologists
+Title: Mouse Trajectory Analyses for Behavioural Scientists
 Version: 0.1.0
 Authors@R: c(
-    person("Roland", "Pfister", , "mail@roland-pfister.net", role = c("aut", "cre"),
+    person("Roland", "Pfister", , "moritz.schaaf@uni-trier.de", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-4429-1052")),
     person("Solveig", "Tonn", , "tonn@uni-trier.de", role = "aut",
            comment = c(ORCID = "0000-0001-5254-8391")),
@@ -12,13 +12,16 @@ Authors@R: c(
     person("Robert", "Wirth", , "robert.wirth@uni-wuerzburg.de", role = "aut",
            comment = c(ORCID = "0000-0001-8446-1880"))
   )
-Author: Roland Pfister [aut, cre], Solveig Tonn [aut], Moritz Schaaf [aut], 
-    Robert Wirth [aut]
-Maintainer: Roland Pfister <mail@roland-pfister.net>
-Description: Tool helping psychologists and other behavioural scientists to
-    analyze mouse movement (and other 2-D trajectory) data. Bundles together 
-    several functions that compute spatial measures (MAD, AUC, sampen) or 
-    provide a shorthand for often-used procedures.
+Author: Roland Pfister [aut, cre] (<https://orcid.org/0000-0002-4429-1052>), 
+    Solveig Tonn [aut] (<https://orcid.org/0000-0001-5254-8391>), 
+    Moritz Schaaf [aut] (<https://orcid.org/0000-0002-9959-2928>), 
+    Robert Wirth [aut] (<https://orcid.org/0000-0001-8446-1880>)
+Maintainer: Roland Pfister <moritz.schaaf@uni-trier.de>
+Description: Tool helping psychologists and other behavioural scientists
+    to analyze mouse movement (and other 2-D trajectory) data. Bundles
+    together several functions that compute spatial measures (maximum
+    absolute deviation, area under the curve, sample entropy) or provide a
+    shorthand for often-used procedures.
 License: GPL (>= 3)
 URL: https://github.com/mc-schaaf/mousetRajectory,
     https://mc-schaaf.github.io/mousetRajectory/
@@ -26,18 +29,19 @@ BugReports: https://github.com/mc-schaaf/mousetRajectory/issues
 Depends:
     R (>= 3.5.0)
 Imports:
-    signal (>= 0.7),
     methods,
+    signal (>= 0.7),
     utils
 Suggests: 
+    dplyr,
+    ggplot2,
     knitr,
     rmarkdown,
-    ggplot2,
-    dplyr,
     testthat (>= 3.0.0)
+VignetteBuilder: 
+    knitr
 Config/testthat/edition: 3
 Encoding: UTF-8
 Language: en-US
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
-VignetteBuilder: knitr

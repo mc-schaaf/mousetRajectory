@@ -13,4 +13,3 @@ test_that("CURV: downward triangle", {
 test_that("CURV: areas add to 0", {
   expect_equal(curvature(c(0, 0, 1, 2, 2), c(0, 1, 1, 1, 2)), sqrt(2))
 })
-

@@ -36,17 +36,17 @@
 #' @export
 #'
 
-starting_angle <- function(x0, x1, y0, y1, swap_x_y = TRUE){
+starting_angle <- function(x0, x1, y0, y1, swap_x_y = TRUE) {
   # check inputs
   if (any(is.na(c(x0, x1, y0, y1))) |
-      min(c(length(x0), length(x1), length(y0), length(y1))) < 1){
+    min(c(length(x0), length(x1), length(y0), length(y1))) < 1) {
     return(NA)
   }
 
   if (!swap_x_y) {
-    atan2_in_rad <- atan2(y1-y0, x1-x0)
+    atan2_in_rad <- atan2(y1 - y0, x1 - x0)
   } else {
-    atan2_in_rad <- atan2(x1-x0, y1-y0)
+    atan2_in_rad <- atan2(x1 - x0, y1 - y0)
   }
-  return(atan2_in_rad * (180/pi))
+  return(atan2_in_rad * (180 / pi))
 }

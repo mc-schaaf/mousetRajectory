@@ -17,7 +17,8 @@
 #' All objects of length 0 or 1 are monotonic.
 #' Data with missing values will not pass the check.
 #'
-#' @returns A length-one logical, indicating whether the trajectory is monotonic.
+#' @returns A length-one logical, indicating whether the trajectory is
+#' monotonic.
 #'
 #' @references Wirth, R., Foerster, A., Kunde, W., & Pfister, R. (2020).
 #' Design choices: Empirical recommendations for designing two-dimensional
@@ -38,10 +39,10 @@
 #' y_vals3 <- c(0, 0.5, 0, 1)
 #'
 #' # note that the first two movements are symmetric to the ideal line:
-#' plot(x_vals1, y_vals1, type = "l", xlim = c(-0.1,1.3), ylim = c(-0.1,1.3))
+#' plot(x_vals1, y_vals1, type = "l", xlim = c(-0.1, 1.3), ylim = c(-0.1, 1.3))
 #' lines(x_vals2, y_vals2, type = "l")
 #' lines(x_vals3, y_vals3, type = "l")
-#' lines(c(0,1), c(0,1), lty="dashed", lwd=2) # ideal
+#' lines(c(0, 1), c(0, 1), lty = "dashed", lwd = 2) # ideal
 #' is_monotonic_along_ideal(x_vals1, y_vals1, warn = FALSE)
 #' is_monotonic_along_ideal(x_vals2, y_vals2, warn = FALSE)
 #' is_monotonic_along_ideal(x_vals3, y_vals3, warn = FALSE)
@@ -61,22 +62,22 @@
 #' x_vals3 <- c(0, 0.1, -0.5, -1)
 #' y_vals3 <- c(0, 0.5, 0, 1)
 #'
-#' plot(x_vals1, y_vals1, type = "l", xlim = c(-1.3,0.1), ylim = c(-0.1,1.3))
+#' plot(x_vals1, y_vals1, type = "l", xlim = c(-1.3, 0.1), ylim = c(-0.1, 1.3))
 #' lines(x_vals3, y_vals3, type = "l")
-#' lines(-c(0,1), c(0,1), lty="dashed", lwd=2) # ideal
+#' lines(-c(0, 1), c(0, 1), lty = "dashed", lwd = 2) # ideal
 #' is_monotonic_along_ideal(x_vals1, y_vals1, warn = FALSE)
 #' is_monotonic_along_ideal(x_vals3, y_vals3, warn = FALSE)
 #' @export
 #'
 
 is_monotonic_along_ideal <- function(x_vector,
-                         y_vector,
-                         x_start = NULL,
-                         y_start = NULL,
-                         x_end = NULL,
-                         y_end = NULL,
-                         strict = TRUE,
-                         warn = TRUE) {
+                                     y_vector,
+                                     x_start = NULL,
+                                     y_start = NULL,
+                                     x_end = NULL,
+                                     y_end = NULL,
+                                     strict = TRUE,
+                                     warn = TRUE) {
   # check for optional parameters
   if (is.null(x_start)) {
     x_start <- x_vector[1]
@@ -95,15 +96,15 @@ is_monotonic_along_ideal <- function(x_vector,
   if (length(x_vector) <= 1) {
     return(TRUE)
   }
-  if (!is.numeric(x_vector) | !is.numeric(y_vector)){
-    if (warn){
+  if (!is.numeric(x_vector) || !is.numeric(y_vector)) {
+    if (warn) {
       warning("The supplied 'numeric_vector' is not of type numeric!")
     }
     return(FALSE)
   }
   # check for NA values
-  if (any(is.na(x_vector)) | any(is.na(y_vector))){
-    if (warn){
+  if (any(is.na(x_vector)) || any(is.na(y_vector))) {
+    if (warn) {
       warning("'numeric_vector' contains NA values!")
     }
     return(FALSE)
@@ -123,18 +124,17 @@ is_monotonic_along_ideal <- function(x_vector,
 
 
   # check for monotony
-  diffs <- x_rot[2:length(x_rot)] - x_rot[1:(length(x_rot)-1)]
+  diffs <- x_rot[2:length(x_rot)] - x_rot[1:(length(x_rot) - 1)]
 
-  if (strict){
+  if (strict) {
     out <- all(diffs > 0)
   } else {
     out <- all(diffs >= 0)
   }
 
-  if (warn && !out){
+  if (warn && !out) {
     warning("'numeric_vector' is not monotonic!")
   }
 
   return(out)
-
 }

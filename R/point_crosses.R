@@ -31,19 +31,18 @@ point_crosses <- function(numeric_vector, relevant_point = 0) {
   # stopifnot(is_n_v(numeric_vector), is_n_a(relevant_point))
 
   if (length(numeric_vector) < 3 |
-      length(numeric_vector[numeric_vector != relevant_point]) < 3) {
+    length(numeric_vector[numeric_vector != relevant_point]) < 3) {
     return(NA)
   }
 
 
   # compute array of booleans indicating if value is greater than relevant_point
-  bool_greater <-
+  is_greater <-
     numeric_vector[numeric_vector != relevant_point] > relevant_point
 
   # compute if consecutive bools differ, and sum up how often this happens
-  bool_sign_diff <-
-    bool_greater[1:(length(bool_greater)-1)] != bool_greater[2:length(bool_greater)]
+  is_sign_diff <-
+    is_greater[1:(length(is_greater) - 1)] != is_greater[2:length(is_greater)]
 
-  return(sum(bool_sign_diff))
-
+  return(sum(is_sign_diff))
 }

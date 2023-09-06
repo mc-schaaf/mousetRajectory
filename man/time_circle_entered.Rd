@@ -43,8 +43,8 @@ Checks when the specified circle was first entered by a
 trajectory.
 }
 \examples{
-time_circle_entered(0:10, rep(0,11), 0:10, xMid=10, yMid=0, radius=1)
-time_circle_entered(0:10, rep(0,11), 0:10, xMid=10, yMid=0, radius=1, include_radius = FALSE)
+time_circle_entered(0:10, rep(0, 11), 0:10, xMid = 10, yMid = 0, radius = 1)
+time_circle_entered(0:10, rep(0, 11), 0:10, xMid = 10, yMid = 0, radius = 1, include_radius = FALSE)
 
 }
 \references{

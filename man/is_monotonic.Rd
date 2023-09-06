@@ -32,10 +32,10 @@ values will not pass the check.
 }
 \examples{
 
-is_monotonic(c(1,2,3,4), warn = FALSE)
-is_monotonic(c(1,2,2,3), warn = FALSE)
-is_monotonic(c(1,2,2,3), strict = FALSE, warn = FALSE)
-is_monotonic(c(4,0,-1,-1,-5), decreasing = TRUE, strict = FALSE, warn = FALSE)
+is_monotonic(c(1, 2, 3, 4), warn = FALSE)
+is_monotonic(c(1, 2, 2, 3), warn = FALSE)
+is_monotonic(c(1, 2, 2, 3), strict = FALSE, warn = FALSE)
+is_monotonic(c(4, 0, -1, -1, -5), decreasing = TRUE, strict = FALSE, warn = FALSE)
 
 }
 \references{

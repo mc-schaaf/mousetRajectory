@@ -56,28 +56,28 @@ Thus, negative AUCs are possible.
 x_vals <- c(0, 0, 0, 1, 2)
 y_vals <- c(0, 1, 2, 2, 2)
 plot(x_vals, y_vals, type = "l")
-lines(c(0,2), c(0,2), lty="dashed", lwd=2) # ideal
+lines(c(0, 2), c(0, 2), lty = "dashed", lwd = 2) # ideal
 auc(x_vals, y_vals) # counterclockwise deviation: positive
 
 x_vals <- c(0, 1, 2, 2, 2)
 y_vals <- c(0, 0, 0, 1, 2)
 auc(x_vals, y_vals) # clockwise deviation: negative
 plot(x_vals, y_vals, type = "l")
-lines(c(0,2), c(0,2), lty="dashed", lwd=2) # ideal
+lines(c(0, 2), c(0, 2), lty = "dashed", lwd = 2) # ideal
 x_vals <- -x_vals
 auc(x_vals, y_vals) # now it is counterclockwise again
 
 x_vals <- c(0, 0, 1, 2, 2)
 y_vals <- c(0, 1, 1, 1, 2)
 plot(x_vals, y_vals, type = "l")
-lines(c(0,2), c(0,2), lty="dashed", lwd=2) # ideal
+lines(c(0, 2), c(0, 2), lty = "dashed", lwd = 2) # ideal
 auc(x_vals, y_vals) # might create small rounding errors; this should be 0
 all.equal(0, auc(x_vals, y_vals)) # indeed interpreted by R as basically 0
 
 x_vals <- c(0, 1, 2, 1)
 y_vals <- c(0, 1, 1, 0)
 plot(x_vals, y_vals, type = "l")
-lines(c(0,1), c(0,0), lty="dashed", lwd=2) # ideal
+lines(c(0, 1), c(0, 0), lty = "dashed", lwd = 2) # ideal
 auc(x_vals, y_vals)
 auc(x_vals, y_vals, geometric = TRUE) # note the difference
 
@@ -85,7 +85,7 @@ auc(x_vals, y_vals, geometric = TRUE) # note the difference
 x_vals <- c(0, 0, 1, 0, 1, 0, 0.5, 1, 1)
 y_vals <- c(0, 1, 1, 0, 0, 1, 1.5, 1, 0)
 plot(x_vals, y_vals, type = "l")
-lines(c(0,1), c(0,0), lty="dashed", lwd=2) # ideal
+lines(c(0, 1), c(0, 0), lty = "dashed", lwd = 2) # ideal
 auc(x_vals, y_vals)
 auc(x_vals, y_vals, geometric = TRUE)
 

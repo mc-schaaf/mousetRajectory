@@ -28,8 +28,9 @@ time differences.
 }
 \examples{
 x_vals <- c(0, 1, 2, 3, 6, 10, 12, 14, 15)
-y_vals <- c(0, 0, 0, 0, 0,  0,  0,  0,  0)
-index_max_acceleration(x_vals, y_vals) # acceleration maximal between x_vals[4] and x_vals[5]
+y_vals <- c(0, 0, 0, 0, 0, 0, 0, 0, 0)
+index_max_acceleration(x_vals, y_vals)
+# acceleration maximal between x_vals[4] and x_vals[5]
 
 }
 \references{

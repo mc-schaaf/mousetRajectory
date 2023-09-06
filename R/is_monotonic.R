@@ -25,10 +25,10 @@
 #'
 #' @examples
 #'
-#' is_monotonic(c(1,2,3,4), warn = FALSE)
-#' is_monotonic(c(1,2,2,3), warn = FALSE)
-#' is_monotonic(c(1,2,2,3), strict = FALSE, warn = FALSE)
-#' is_monotonic(c(4,0,-1,-1,-5), decreasing = TRUE, strict = FALSE, warn = FALSE)
+#' is_monotonic(c(1, 2, 3, 4), warn = FALSE)
+#' is_monotonic(c(1, 2, 2, 3), warn = FALSE)
+#' is_monotonic(c(1, 2, 2, 3), strict = FALSE, warn = FALSE)
+#' is_monotonic(c(4, 0, -1, -1, -5), decreasing = TRUE, strict = FALSE, warn = FALSE)
 #'
 #' @export
 #'
@@ -41,15 +41,15 @@ is_monotonic <- function(numeric_vector,
   if (length(numeric_vector) <= 1) {
     return(TRUE)
   }
-  if (!is.numeric(numeric_vector)){
-    if (warn){
+  if (!is.numeric(numeric_vector)) {
+    if (warn) {
       warning("The supplied 'numeric_vector' is not of type numeric!")
     }
     return(FALSE)
   }
   # check for NA values
-  if (any(is.na(numeric_vector))){
-    if (warn){
+  if (any(is.na(numeric_vector))) {
+    if (warn) {
       warning("'numeric_vector' contains NA values!")
     }
     return(FALSE)
@@ -58,22 +58,21 @@ is_monotonic <- function(numeric_vector,
   # check for monotony
   diffs <-
     numeric_vector[2:length(numeric_vector)] -
-    numeric_vector[1:(length(numeric_vector)-1)]
+    numeric_vector[1:(length(numeric_vector) - 1)]
 
-  if (decreasing){
+  if (decreasing) {
     diffs <- -diffs
   }
 
-  if (strict){
+  if (strict) {
     out <- all(diffs > 0)
   } else {
     out <- all(diffs >= 0)
   }
 
-  if (warn && !out){
+  if (warn && !out) {
     warning("'numeric_vector' is not monotonic!")
   }
 
   return(out)
-
 }

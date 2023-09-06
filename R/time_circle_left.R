@@ -23,8 +23,8 @@
 #'
 #'
 #' @examples
-#' time_circle_left(0:10, rep(0,11), 0:10)
-#' time_circle_left(0:10, rep(0,11), 0:10, include_radius = FALSE)
+#' time_circle_left(0:10, rep(0, 11), 0:10)
+#' time_circle_left(0:10, rep(0, 11), 0:10, include_radius = FALSE)
 #'
 #' @export
 
@@ -47,7 +47,7 @@ time_circle_left <- function(x_vector,
   # )
 
   # For each point: compute distance to center of circle
-  dSquare <- (x_vector-xMid)^2 + (y_vector-yMid)^2
+  dSquare <- (x_vector - xMid)^2 + (y_vector - yMid)^2
 
   # check whether distance is larger than the radius
   if (include_radius) {

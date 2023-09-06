@@ -39,7 +39,8 @@ indicating that a weak, not a strict definition of monotony is applied.}
 (relative to the ideal line)? Defaults to \code{TRUE}.}
 }
 \value{
-A length-one logical, indicating whether the trajectory is monotonic.
+A length-one logical, indicating whether the trajectory is
+monotonic.
 }
 \description{
 Checks if a trajectory, defined by vectors of x and y
@@ -66,10 +67,10 @@ x_vals3 <- c(0, -0.1, 0.5, 1)
 y_vals3 <- c(0, 0.5, 0, 1)
 
 # note that the first two movements are symmetric to the ideal line:
-plot(x_vals1, y_vals1, type = "l", xlim = c(-0.1,1.3), ylim = c(-0.1,1.3))
+plot(x_vals1, y_vals1, type = "l", xlim = c(-0.1, 1.3), ylim = c(-0.1, 1.3))
 lines(x_vals2, y_vals2, type = "l")
 lines(x_vals3, y_vals3, type = "l")
-lines(c(0,1), c(0,1), lty="dashed", lwd=2) # ideal
+lines(c(0, 1), c(0, 1), lty = "dashed", lwd = 2) # ideal
 is_monotonic_along_ideal(x_vals1, y_vals1, warn = FALSE)
 is_monotonic_along_ideal(x_vals2, y_vals2, warn = FALSE)
 is_monotonic_along_ideal(x_vals3, y_vals3, warn = FALSE)
@@ -89,9 +90,9 @@ y_vals1 <- c(0, 1.3, 1)
 x_vals3 <- c(0, 0.1, -0.5, -1)
 y_vals3 <- c(0, 0.5, 0, 1)
 
-plot(x_vals1, y_vals1, type = "l", xlim = c(-1.3,0.1), ylim = c(-0.1,1.3))
+plot(x_vals1, y_vals1, type = "l", xlim = c(-1.3, 0.1), ylim = c(-0.1, 1.3))
 lines(x_vals3, y_vals3, type = "l")
-lines(-c(0,1), c(0,1), lty="dashed", lwd=2) # ideal
+lines(-c(0, 1), c(0, 1), lty = "dashed", lwd = 2) # ideal
 is_monotonic_along_ideal(x_vals1, y_vals1, warn = FALSE)
 is_monotonic_along_ideal(x_vals3, y_vals3, warn = FALSE)
 }

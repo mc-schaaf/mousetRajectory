@@ -21,8 +21,9 @@
 #'
 #' @examples
 #' x_vals <- c(0, 1, 2, 3, 6, 10, 12, 14, 15)
-#' y_vals <- c(0, 0, 0, 0, 0,  0,  0,  0,  0)
-#' index_max_acceleration(x_vals, y_vals) # acceleration maximal between x_vals[4] and x_vals[5]
+#' y_vals <- c(0, 0, 0, 0, 0, 0, 0, 0, 0)
+#' index_max_acceleration(x_vals, y_vals)
+#' # acceleration maximal between x_vals[4] and x_vals[5]
 #'
 #' @export
 #'
@@ -34,15 +35,15 @@ index_max_acceleration <- function(x_vector, y_vector, absolute = FALSE) {
   # distances
   distances <-
     sqrt(
-      (x_vector[2:length(x_vector)] - x_vector[1:(length(x_vector)-1)])^2 +
-      (y_vector[2:length(y_vector)] - y_vector[1:(length(y_vector)-1)])^2
-      )
+      (x_vector[2:length(x_vector)] - x_vector[1:(length(x_vector) - 1)])^2 +
+        (y_vector[2:length(y_vector)] - y_vector[1:(length(y_vector) - 1)])^2
+    )
 
   # acceleration = difference in velocity
   #              = differences in distances of time-equidistant timepoints
   accelerations <-
     distances[2:length(distances)] -
-    distances[1:(length(distances)-1)]
+    distances[1:(length(distances) - 1)]
 
   if (absolute) {
     accelerations <- abs(accelerations)
@@ -50,6 +51,5 @@ index_max_acceleration <- function(x_vector, y_vector, absolute = FALSE) {
 
   # two data points lost by computing differences twice; offset return value
   # by 2/2=1 to account for this
-  return(which.max(accelerations)+1)
+  return(which.max(accelerations) + 1)
 }
-

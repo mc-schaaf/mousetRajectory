@@ -43,8 +43,8 @@ Checks when the specified circle was first left by a
 trajectory.
 }
 \examples{
-time_circle_left(0:10, rep(0,11), 0:10)
-time_circle_left(0:10, rep(0,11), 0:10, include_radius = FALSE)
+time_circle_left(0:10, rep(0, 11), 0:10)
+time_circle_left(0:10, rep(0, 11), 0:10, include_radius = FALSE)
 
 }
 \references{

@@ -36,7 +36,7 @@ direction_changes <- function(numeric_vector) {
 
   # compute first derivative
   d1 <- numeric_vector[2:length(numeric_vector)] -
-    numeric_vector[1:(length(numeric_vector)-1)]
+    numeric_vector[1:(length(numeric_vector) - 1)]
 
   # throw out cases where consecutive values are the same
   d1 <- d1[d1 != 0]
@@ -44,12 +44,11 @@ direction_changes <- function(numeric_vector) {
     return(0)
   }
 
-  # compute array of booleans indicating if numeric_vector increases or decreases
+  # compute array of booleans indicating if numeric_vector in- or decreases
   bool1 <- d1 > 0
 
   # compute if consecutive bools differ, and sum up how often this happens
-  n_changes <- sum(bool1[1:(length(bool1)-1)] != bool1[2:length(bool1)])
+  n_changes <- sum(bool1[1:(length(bool1) - 1)] != bool1[2:length(bool1)])
 
   return(n_changes)
-
 }

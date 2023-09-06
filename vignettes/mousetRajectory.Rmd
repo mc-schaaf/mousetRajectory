@@ -49,7 +49,7 @@ Currently, the following functions are featured:
   * `time_circle_entered()` tells you the time at which the end area was entered.
   * `point_crosses()` tells you how often a certain value on the x or y axis is crossed. 
   * `direction_changes()` tells you how often the direction along the x or y axis changes.  
-  * `interp1()` directs you to the interpolation function from the awesome `signal` package. Thus, you do not have to call `library("signal")`. Such time-saving, much wow. Also, not having to attach the `signal` package avoids ambiguity between `signal::filter()` and `dplyr::filter()` in your namespace.
+  * `interp1()` directs you to the interpolation function from the awesome `signal` package. Thus, you do not have to call `library("signal")`. Such time-saving, much wow. Also, not having to attach the `signal` package avoids ambiguity between `signal::filter()` and `dplyr::filter()` in your search path.
   * `interp2()` is a convenience wrapper to `interp1()` that rescales the time for you.
 * Spatial measures:
   * `starting_angle()` computes (not only starting) angles.
@@ -77,47 +77,56 @@ Let us assume we are conducting a simple experiment. In our setup, participants 
 draw_background <- function() {
   pi_seq <- seq(0, 2 * pi, length.out = 360)
   circle <- data.frame(x = sin(pi_seq), y = cos(pi_seq))
-  rectangle <- data.frame(x <- c(-1, 1, 1,-1,-1),
-                       y <- c(-1,-1, 1, 1,-1))
-  
-  p1 <- ggplot() + theme_void() + coord_equal()
-  
-  p1 <- p1 + geom_path(data = rectangle, aes(2*x, 0.5+y)) 
-  p1 <- p1 + geom_path(data = circle, aes(0  + 0.2*x, 0 + 0.2*y))  # home 
-  p1 <- p1 + geom_path(data = circle, aes(1  + 0.2*x, 1 + 0.2*y))  # right target
-  p1 <- p1 + geom_path(data = circle, aes(-1 + 0.2*x, 1 + 0.2*y))  # left target
-  
+  rectangle <- data.frame(
+    x <- c(-1, 1, 1, -1, -1),
+    y <- c(-1, -1, 1, 1, -1)
+  )
+
+  p1 <- ggplot() +
+    theme_void() +
+    coord_equal()
+
+  p1 <- p1 + geom_path(data = rectangle, aes(2 * x, 0.5 + y))
+  p1 <- p1 + geom_path(data = circle, aes(0 + 0.2 * x, 0 + 0.2 * y)) # home
+  p1 <- p1 + geom_path(data = circle, aes(1 + 0.2 * x, 1 + 0.2 * y)) # right target
+  p1 <- p1 + geom_path(data = circle, aes(-1 + 0.2 * x, 1 + 0.2 * y)) # left target
+
   return(p1)
 }
 
 draw_background() + geom_path(aes(x = c(0, 1, 1, 1, 0.9), y = c(0, 1, 0.9, 1, 1)))
-
 ```
 
 `dat` stores simple toy data that may reflect our pilot results. Let's inspect the structure of the data: 
 
 ```{r define_trajectories, echo=FALSE}
 dat <- data.frame(
-  Trial = rep(1:4, each=3),
+  Trial = rep(1:4, each = 3),
   Time2 = rep(c(0, 50, 100), 4),
   Target = c(rep("left", 6), rep("right", 6)),
-  x_coord = c(0, -0.5, -1, #1  
-              0, -0.7, -1, #2 
-              0, 0.55, 1,  #3
-              0, 0.45, 1), #4
-  y_coord = c(0, 0.6, 1,   #1
-              0, 0.6, 1,   #2
-              0, 0.7, 1,   #3
-              0, 0.8, 1)   #4
-) %>% group_by(Trial, Target) %>% reframe(
-  Time = c(0:100),
-  x_coord = interp1(Time2, x_coord, Time, method="spline"),
-  y_coord = interp1(Time2, y_coord, Time, method="spline")
-) %>% group_by(Trial, Target)
+  x_coord = c(
+    0, -0.5, -1, # 1
+    0, -0.7, -1, # 2
+    0, 0.55, 1, # 3
+    0, 0.45, 1
+  ), # 4
+  y_coord = c(
+    0, 0.6, 1, # 1
+    0, 0.6, 1, # 2
+    0, 0.7, 1, # 3
+    0, 0.8, 1
+  ) # 4
+) %>%
+  group_by(Trial, Target) %>%
+  reframe(
+    Time = c(0:100),
+    x_coord = interp1(Time2, x_coord, Time, method = "spline"),
+    y_coord = interp1(Time2, y_coord, Time, method = "spline")
+  ) %>%
+  group_by(Trial, Target)
 dat <- dat %>% as_tibble()
 
 gg_background <- draw_background()
-
 ```
 
 ```{r show data}
@@ -125,31 +134,37 @@ head(dat)
 
 # gg_background has been created previously and is a ggplot object
 gg_background + geom_path(data = dat, aes(x_coord, y_coord, group = Trial))
-
 ```
 
 
 In this example, `Time` reflects the time passed since the onset of the imperative stimulus and always increases by 1 arbitrary unit. In a real experiment, a sensible first pre-processing step would be to double-check the order of your data via `is_monotonic()` applied to `Time`. Further, in a real experiment you would likely group by not only by `Time`, but also other variables like a subject or block identifier.
 
 ```{r recode_x_coords}
-dat <- dat %>% group_by(Trial) %>% mutate(
-  # will throw a warning if times are not monotonically increasing
-  is_ok = is_monotonic(Time)
-)
+dat <- dat %>%
+  group_by(Trial) %>%
+  mutate(
+    # will throw a warning if times are not monotonically increasing
+    is_ok = is_monotonic(Time)
+  )
 ```
 
 
 As a next step, we will recode the coordinates so we can treat movements to the left and to the right in the same way. This enables us to restrict the trajectories to their relevant parts, i.e., after the home was left and before the target has been reached. This also allows us to extract our first dependent measures, `InitiationTime` and `MovementTime`:
 
 ```{r filter_data}
-dat <- dat %>% group_by(Trial) %>% mutate(
-  x_coord = ifelse(Target == "left", -x_coord, x_coord),
-  InitiationTime = time_circle_left(x_coord, y_coord, Time, xMid = 0, yMid = 0, radius = 0.2),
-  CompletionTime = time_circle_entered(x_coord, y_coord, Time, xMid = 1, yMid = 1, radius = 0.2),
-  MovementTime = CompletionTime - InitiationTime
-) %>% filter(Time >= InitiationTime & Time < CompletionTime)
+dat <- dat %>%
+  group_by(Trial) %>%
+  mutate(
+    x_coord = ifelse(Target == "left", -x_coord, x_coord),
+    InitiationTime = time_circle_left(x_coord, y_coord, Time, xMid = 0, yMid = 0, radius = 0.2),
+    CompletionTime = time_circle_entered(x_coord, y_coord, Time, xMid = 1, yMid = 1, radius = 0.2),
+    MovementTime = CompletionTime - InitiationTime
+  ) %>%
+  filter(Time >= InitiationTime & Time < CompletionTime)
 
-dat %>% group_by(Trial, InitiationTime, CompletionTime, MovementTime) %>% count()
+dat %>%
+  group_by(Trial, InitiationTime, CompletionTime, MovementTime) %>%
+  count()
 
 gg_background + geom_path(data = dat, aes(x_coord, y_coord, group = Trial))
 ```
@@ -158,34 +173,39 @@ gg_background + geom_path(data = dat, aes(x_coord, y_coord, group = Trial))
 Note that filtering the data to the relevant part leads to an unequal amount of data points for each trajectory (column `n`). This is bad news when you want to display average trajectories! One solution for this problem is "time-normalization," i.e., a separate linear interpolation of the x and y coordinates at certain time points. It has been proposed that this process should be done prior to the computation of MAD, AUC, etc. So let's do this via `interp2()`, a convenient wrapper to `signal::interp1()`:
 
 ```{r interpolate, message=FALSE}
-dat_int <- dat %>% group_by(Trial) %>% reframe( 
-  Time_new = 0:100,
-  x_new = interp2(Time, x_coord, 101),
-  y_new = interp2(Time, y_coord, 101),
-)
+dat_int <- dat %>%
+  group_by(Trial) %>%
+  reframe(
+    Time_new = 0:100,
+    x_new = interp2(Time, x_coord, 101),
+    y_new = interp2(Time, y_coord, 101),
+  )
 ```
 
 Now we are ready to compute dependent measures like AUC and MAD: 
 
 ```{r compute_DVs}
-dat_int %>% group_by(Trial) %>% summarise(
-  MAD = max_ad(x_new, y_new),
-  AUC = auc(x_new, y_new),
-  CUR = curvature(x_new, y_new)
-)
+dat_int %>%
+  group_by(Trial) %>%
+  summarise(
+    MAD = max_ad(x_new, y_new),
+    AUC = auc(x_new, y_new),
+    CUR = curvature(x_new, y_new)
+  )
 ```
 
 As a last step, you may want to plot your average trajectory:
 
 ```{r plot_avg}
-dat_avg <- dat_int %>% group_by(Time_new) %>% summarise(
-  x_avg = mean(x_new),
-  y_avg = mean(y_new)
-)
+dat_avg <- dat_int %>%
+  group_by(Time_new) %>%
+  summarise(
+    x_avg = mean(x_new),
+    y_avg = mean(y_new)
+  )
 
 gg_background + geom_path(data = dat_avg, aes(x_avg, y_avg)) +
-  geom_path(aes(c(0,1), c(0,1)), linetype = "dashed") # ideal trajectory
-
+  geom_path(aes(c(0, 1), c(0, 1)), linetype = "dashed") # ideal trajectory
 ```
 
 Congratulations, you worked trough your first mouse-tracking analysis!

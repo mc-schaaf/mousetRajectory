@@ -13,4 +13,3 @@ test_that("PC: upper bound", {
 test_that("PC: stay on point", {
   expect_equal(point_crosses(rep(0, 100)), NA)
 })
-
