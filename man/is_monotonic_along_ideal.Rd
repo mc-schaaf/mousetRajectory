@@ -7,10 +7,10 @@
 is_monotonic_along_ideal(
   x_vector,
   y_vector,
-  x_start = NULL,
-  y_start = NULL,
-  x_end = NULL,
-  y_end = NULL,
+  x_start,
+  y_start,
+  x_end,
+  y_end,
   strict = TRUE,
   warn = TRUE
 )
@@ -43,6 +43,7 @@ A length-one logical, indicating whether the trajectory is
 monotonic.
 }
 \description{
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
 Checks if a trajectory, defined by vectors of x and y
 coordinates, is monotonically increasing relative to an
 ideal line passing through the start and end points.

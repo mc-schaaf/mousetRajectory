@@ -4,15 +4,7 @@
 \alias{auc}
 \title{Area Under the Curve}
 \usage{
-auc(
-  x_vector,
-  y_vector,
-  x_start = NULL,
-  y_start = NULL,
-  x_end = NULL,
-  y_end = NULL,
-  geometric = FALSE
-)
+auc(x_vector, y_vector, x_start, y_start, x_end, y_end, geometric = FALSE)
 }
 \arguments{
 \item{x_vector}{x-coordinates of the executed path.}
@@ -80,14 +72,6 @@ plot(x_vals, y_vals, type = "l")
 lines(c(0, 1), c(0, 0), lty = "dashed", lwd = 2) # ideal
 auc(x_vals, y_vals)
 auc(x_vals, y_vals, geometric = TRUE) # note the difference
-
-# Inspired by a German kids' riddle:
-x_vals <- c(0, 0, 1, 0, 1, 0, 0.5, 1, 1)
-y_vals <- c(0, 1, 1, 0, 0, 1, 1.5, 1, 0)
-plot(x_vals, y_vals, type = "l")
-lines(c(0, 1), c(0, 0), lty = "dashed", lwd = 2) # ideal
-auc(x_vals, y_vals)
-auc(x_vals, y_vals, geometric = TRUE)
 
 }
 \references{

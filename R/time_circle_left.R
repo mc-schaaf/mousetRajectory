@@ -1,7 +1,8 @@
 #' @title Initiation Time
 #'
-#' @description Checks when the specified circle was first left by a
-#' trajectory.
+#' @description
+#' `r lifecycle::badge('experimental')`
+#' Checks when the specified circle was first left by a trajectory.
 #'
 #' @inheritParams auc
 #' @param t_vector Timestamps of the executed trajectory.

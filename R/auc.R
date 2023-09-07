@@ -63,35 +63,27 @@
 #' auc(x_vals, y_vals)
 #' auc(x_vals, y_vals, geometric = TRUE) # note the difference
 #'
-#' # Inspired by a German kids' riddle:
-#' x_vals <- c(0, 0, 1, 0, 1, 0, 0.5, 1, 1)
-#' y_vals <- c(0, 1, 1, 0, 0, 1, 1.5, 1, 0)
-#' plot(x_vals, y_vals, type = "l")
-#' lines(c(0, 1), c(0, 0), lty = "dashed", lwd = 2) # ideal
-#' auc(x_vals, y_vals)
-#' auc(x_vals, y_vals, geometric = TRUE)
-#'
 #' @export
 #'
 
 auc <- function(x_vector,
                 y_vector,
-                x_start = NULL,
-                y_start = NULL,
-                x_end = NULL,
-                y_end = NULL,
+                x_start,
+                y_start,
+                x_end,
+                y_end,
                 geometric = FALSE) {
   # check for optional parameters
-  if (is.null(x_start)) {
+  if (missing(x_start)) {
     x_start <- x_vector[1]
   }
-  if (is.null(y_start)) {
+  if (missing(y_start)) {
     y_start <- y_vector[1]
   }
-  if (is.null(x_end)) {
+  if (missing(x_end)) {
     x_end <- x_vector[length(x_vector)]
   }
-  if (is.null(y_end)) {
+  if (missing(y_end)) {
     y_end <- y_vector[length(x_vector)]
   }
 

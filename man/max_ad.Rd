@@ -4,14 +4,7 @@
 \alias{max_ad}
 \title{(signed) Maximum Absolute Deviation}
 \usage{
-max_ad(
-  x_vector,
-  y_vector,
-  x_start = NULL,
-  y_start = NULL,
-  x_end = NULL,
-  y_end = NULL
-)
+max_ad(x_vector, y_vector, x_start, y_start, x_end, y_end)
 }
 \arguments{
 \item{x_vector}{x-coordinates of the executed path.}

@@ -39,8 +39,8 @@ Value of \code{t_vector} at the first time at which the trajectory
 is in the circle.
 }
 \description{
-Checks when the specified circle was first entered by a
-trajectory.
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
+Checks when the specified circle was first entered by a trajectory.
 }
 \examples{
 time_circle_entered(0:10, rep(0, 11), 0:10,

@@ -39,8 +39,8 @@ Value of \code{t_vector} at the first time at which the trajectory
 is out of the circle.
 }
 \description{
-Checks when the specified circle was first left by a
-trajectory.
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
+Checks when the specified circle was first left by a trajectory.
 }
 \examples{
 time_circle_left(0:10, rep(0, 11), 0:10)

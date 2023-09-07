@@ -14,6 +14,7 @@ test_that("TTPA: simple example", {
 })
 
 test_that("TTPA: trigonometric example", {
+  skip_on_cran()
   numbers <- seq(-(1 / 4) * pi, (3 / 4) * pi, by = 0.001)
   should <- which.max(abs(-sin(numbers)))
   actual <-

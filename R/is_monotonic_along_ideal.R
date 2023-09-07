@@ -1,6 +1,8 @@
 #' @title Test if vector is monotonically increasing along the ideal trajectory
 #'
-#' @description Checks if a trajectory, defined by vectors of x and y
+#' @description
+#' `r lifecycle::badge('experimental')`
+#' Checks if a trajectory, defined by vectors of x and y
 #' coordinates, is monotonically increasing relative to an
 #' ideal line passing through the start and end points.
 #'
@@ -72,23 +74,23 @@
 
 is_monotonic_along_ideal <- function(x_vector,
                                      y_vector,
-                                     x_start = NULL,
-                                     y_start = NULL,
-                                     x_end = NULL,
-                                     y_end = NULL,
+                                     x_start,
+                                     y_start,
+                                     x_end,
+                                     y_end,
                                      strict = TRUE,
                                      warn = TRUE) {
   # check for optional parameters
-  if (is.null(x_start)) {
+  if (missing(x_start)) {
     x_start <- x_vector[1]
   }
-  if (is.null(y_start)) {
+  if (missing(y_start)) {
     y_start <- y_vector[1]
   }
-  if (is.null(x_end)) {
+  if (missing(x_end)) {
     x_end <- x_vector[length(x_vector)]
   }
-  if (is.null(y_end)) {
+  if (missing(y_end)) {
     y_end <- y_vector[length(x_vector)]
   }
 

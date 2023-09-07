@@ -6,6 +6,9 @@
     "mousetRajectory is currently under development.\n",
     "The version you are using is: ", utils::packageVersion("mousetRajectory"),
     ", ", "last updated ", utils::packageDate("mousetRajectory"), ".\n",
-    "Package is usable but the function interfaces may be subject to change.\n"
+    "Package is usable but the function interfaces may change.\n",
+    "If you aim to make results replicable in the future, indicate the current",
+    " version number in your script and use position-based argument ",
+    "matching only with care."
   )
 }

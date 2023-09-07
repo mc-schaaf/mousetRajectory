@@ -1,7 +1,7 @@
 Type: Package
 Package: mousetRajectory
 Title: Mouse Trajectory Analyses for Behavioural Scientists
-Version: 0.1.0
+Version: 0.2.0.9000
 Authors@R: c(
     person("Roland", "Pfister", , "moritz.schaaf@uni-trier.de", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-4429-1052")),
@@ -29,6 +29,7 @@ BugReports: https://github.com/mc-schaaf/mousetRajectory/issues
 Depends:
     R (>= 3.5.0)
 Imports:
+    lifecycle,
     methods,
     signal (>= 0.7),
     utils

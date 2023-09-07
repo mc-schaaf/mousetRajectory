@@ -15,6 +15,7 @@ test_that("interp2: output accuracy", {
   for (i in 2:10) {
     expect_equal((interp2(0:(2^i), 0:(2^i), (2^i) + 1)), 0:((2^i)))
   }
+  skip_on_cran()
   random_vals <- sample(2:(2^10), 10)
   for (i in random_vals) {
     curr_mult <- runif(n = 1, min = 1, max = i)
