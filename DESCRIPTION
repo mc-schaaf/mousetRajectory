@@ -1,29 +1,31 @@
 Type: Package
 Package: mousetRajectory
 Title: Mouse Trajectory Analyses for Behavioural Scientists
-Version: 0.2.0.9000
+Version: 0.2.0.0
 Authors@R: c(
-    person("Roland", "Pfister", , "moritz.schaaf@uni-trier.de", role = c("aut", "cre"),
+    person("Roland", "Pfister", , "moritz.schaaf@uni-trier.de", 
+           role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0002-4429-1052")),
-    person("Solveig", "Tonn", , "tonn@uni-trier.de", role = "aut",
+    person("Solveig", "Tonn", , "tonn@uni-trier.de", 
+           role = "aut",
            comment = c(ORCID = "0000-0001-5254-8391")),
-    person("Moritz", "Schaaf", , "moritz.schaaf@uni-trier.de", role = "aut",
+    person("Moritz", "Schaaf", , "moritz.schaaf@uni-trier.de", 
+           role = "aut",
            comment = c(ORCID = "0000-0002-9959-2928")),
-    person("Robert", "Wirth", , "robert.wirth@uni-wuerzburg.de", role = "aut",
+    person("Robert", "Wirth", , "robert.wirth@uni-wuerzburg.de", 
+           role = "aut",
            comment = c(ORCID = "0000-0001-8446-1880"))
   )
-Author: Roland Pfister [aut, cre] (<https://orcid.org/0000-0002-4429-1052>), 
-    Solveig Tonn [aut] (<https://orcid.org/0000-0001-5254-8391>), 
-    Moritz Schaaf [aut] (<https://orcid.org/0000-0002-9959-2928>), 
-    Robert Wirth [aut] (<https://orcid.org/0000-0001-8446-1880>)
-Maintainer: Roland Pfister <moritz.schaaf@uni-trier.de>
-Description: Tool helping psychologists and other behavioural scientists
+Description: Helping psychologists and other behavioural scientists
     to analyze mouse movement (and other 2-D trajectory) data. Bundles
-    together several functions that compute spatial measures (maximum
+    together several functions that compute spatial measures (e.g., maximum
     absolute deviation, area under the curve, sample entropy) or provide a
-    shorthand for often-used procedures.
+    shorthand for procedures that are frequently used (e.g., time 
+    normalization, linear interpolation, extracting initiation and movement 
+    times). For more information on these dependent measures, see Wirth et al. 
+    (2020) <doi:10.3758/s13428-020-01409-0>.
 License: GPL (>= 3)
-URL: https://github.com/mc-schaaf/mousetRajectory,
+URL: https://github.com/mc-schaaf/mousetRajectory, 
     https://mc-schaaf.github.io/mousetRajectory/
 BugReports: https://github.com/mc-schaaf/mousetRajectory/issues
 Depends:
@@ -38,7 +40,8 @@ Suggests:
     ggplot2,
     knitr,
     rmarkdown,
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    V8
 VignetteBuilder: 
     knitr
 Config/testthat/edition: 3

@@ -14,7 +14,9 @@ test_that("MON-id: strong/weak monotonic increase - basic monotony tests", {
 })
 
 test_that("MON: check warning functionality", {
-  expect_warning(is_monotonic_along_ideal(c(1, 2, 1, 2), rep(0, 4), warn = TRUE))
+  expect_warning(
+    is_monotonic_along_ideal(c(1, 2, 1, 2), rep(0, 4), warn = TRUE)
+    )
 })
 
 test_that("MON: only one value supplied", {

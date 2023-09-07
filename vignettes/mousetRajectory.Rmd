@@ -25,16 +25,20 @@ The aim of `mousetRajectory` is to provide scientists with an easy-to-understand
 
 
 
+## Installation
 
-## Installation Process
+You can install mousetRajectory from CRAN with
 
-Currently, `mousetRajectory` is not available on CRAN and must be installed from
-[github.com/mc-schaaf/mousetRajectory](https://github.com/mc-schaaf/mousetRajectory) with the devtools package:
+``` r
+install.packages("devtools")
+```
 
-```r
+Alternatively, you can keep up to date and install the latest development version of mousetRajectory from [github.com/mc-schaaf/mousetRajectory](https://github.com/mc-schaaf/mousetRajectory) with:
+
+``` r
 if(!require("devtools")){install.packages("devtools")}
 devtools::install_github("mc-schaaf/mousetRajectory")
-``` 
+```
 
 
 
@@ -157,8 +161,22 @@ dat <- dat %>%
   group_by(Trial) %>%
   mutate(
     x_coord = ifelse(Target == "left", -x_coord, x_coord),
-    InitiationTime = time_circle_left(x_coord, y_coord, Time, x_mid = 0, y_mid = 0, radius = 0.2),
-    CompletionTime = time_circle_entered(x_coord, y_coord, Time, x_mid = 1, y_mid = 1, radius = 0.2),
+    InitiationTime = time_circle_left(
+      x_coord,
+      y_coord,
+      Time,
+      x_mid = 0,
+      y_mid = 0,
+      radius = 0.2
+    ),
+    CompletionTime = time_circle_entered(
+      x_coord,
+      y_coord,
+      Time,
+      x_mid = 1,
+      y_mid = 1,
+      radius = 0.2
+    ), 
     MovementTime = CompletionTime - InitiationTime
   ) %>%
   filter(Time >= InitiationTime & Time < CompletionTime)

@@ -6,7 +6,7 @@
 \alias{mousetRajectory-package}
 \title{mousetRajectory: Mouse Trajectory Analyses for Behavioural Scientists}
 \description{
-Tool helping psychologists and other behavioural scientists to analyze mouse movement (and other 2-D trajectory) data. Bundles together several functions that compute spatial measures (maximum absolute deviation, area under the curve, sample entropy) or provide a shorthand for often-used procedures.
+Helping psychologists and other behavioural scientists to analyze mouse movement (and other 2-D trajectory) data. Bundles together several functions that compute spatial measures (e.g., maximum absolute deviation, area under the curve, sample entropy) or provide a shorthand for procedures that are frequently used (e.g., time normalization, linear interpolation, extracting initiation and movement times). For more information on these dependent measures, see Wirth et al. (2020) \doi{10.3758/s13428-020-01409-0}.
 }
 \seealso{
 Useful links:
@@ -18,7 +18,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Roland Pfister \email{moritz.schaaf@uni-trier.de} (\href{https://orcid.org/0000-0002-4429-1052}{ORCID})
+\strong{Maintainer}: Roland Pfister \email{moritz.schaaf@uni-trier.de} (\href{https://orcid.org/0000-0002-4429-1052}{ORCID}) [copyright holder]
 
 Authors:
 \itemize{

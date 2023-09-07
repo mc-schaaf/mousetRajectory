@@ -9,7 +9,8 @@ test_that("default circle and example", {
   )
 
   expect_equal(
-    time_circle_entered(0:10, rep(0, 11), 0:10, x_mid = 10, y_mid = 0, radius = 1),
+    time_circle_entered(0:10, rep(0, 11), 0:10,
+                        x_mid = 10, y_mid = 0, radius = 1),
     9
   )
   expect_equal(
@@ -35,7 +36,8 @@ test_that("change some parameters", {
   )
 
   expect_equal(
-    time_circle_entered(0:10, rep(0, 11), 0:10, x_mid = 10, y_mid = 0, radius = 9),
+    time_circle_entered(0:10, rep(0, 11), 0:10,
+                        x_mid = 10, y_mid = 0, radius = 9),
     1
   )
   expect_equal(

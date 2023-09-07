@@ -28,10 +28,22 @@ test_that("AUC: ideal line parameters", {
   expect_equal(auc(x, y, x_end = 1, y_end = 0), 1)
 
   # same ideal line, but differently written down
-  expect_equal(auc(x, y, x_start = -1, y_start = -1, x_end = 0, y_end = 0), auc(x, y))
-  expect_equal(auc(x, y, x_start = 1, y_start = 1, x_end = 2, y_end = 2), auc(x, y))
+  expect_equal(
+    auc(x, y, x_start = -1, y_start = -1, x_end = 0, y_end = 0),
+    auc(x, y)
+    )
+  expect_equal(
+    auc(x, y, x_start = 1, y_start = 1, x_end = 2, y_end = 2),
+    auc(x, y)
+    )
 
   # shift up/down
-  expect_equal(auc(x, y, x_start = 0, y_start = -1, x_end = 1, y_end = 0), 3 / 2)
-  expect_equal(auc(x, y, x_start = 0, y_start = 1, x_end = 1, y_end = 2), -1 / 2)
+  expect_equal(
+    auc(x, y, x_start = 0, y_start = -1, x_end = 1, y_end = 0),
+    3 / 2
+    )
+  expect_equal(
+    auc(x, y, x_start = 0, y_start = 1, x_end = 1, y_end = 2),
+    -1 / 2
+    )
 })

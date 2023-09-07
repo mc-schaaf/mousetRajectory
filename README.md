@@ -17,8 +17,14 @@ procedures.
 
 ## Installation
 
-You can keep up to date and install the development version of
-mousetRajectory from
+You can install mousetRajectory from CRAN with
+
+``` r
+install.packages("devtools")
+```
+
+Alternatively, you can keep up to date and install the latest
+development version of mousetRajectory from
 [github.com/mc-schaaf/mousetRajectory](https://github.com/mc-schaaf/mousetRajectory)
 with:
 

@@ -25,8 +25,13 @@ Tool helping psychologists and other behavioural scientists to analyze mouse mov
 
 ## Installation
 
-You can keep up to date and install the development version of mousetRajectory from 
-[github.com/mc-schaaf/mousetRajectory](https://github.com/mc-schaaf/mousetRajectory) with:
+You can install mousetRajectory from CRAN with
+
+``` r
+install.packages("devtools")
+```
+
+Alternatively, you can keep up to date and install the latest development version of mousetRajectory from [github.com/mc-schaaf/mousetRajectory](https://github.com/mc-schaaf/mousetRajectory) with:
 
 ``` r
 if(!require("devtools")){install.packages("devtools")}
