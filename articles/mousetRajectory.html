@@ -26,7 +26,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">mousetRajectory</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.0.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -104,12 +104,15 @@ you are executing (if you are using RStudio on a Windows Machine, hit
 <code>F2</code> to inspect source code of functions).</p>
 </div>
 <div class="section level2">
-<h2 id="installation-process">Installation Process<a class="anchor" aria-label="anchor" href="#installation-process"></a>
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>Currently, <code>mousetRajectory</code> is not available on CRAN and
-must be installed from <a href="https://github.com/mc-schaaf/mousetRajectory" class="external-link">github.com/mc-schaaf/mousetRajectory</a>
-with the devtools package:</p>
+<p>You can install mousetRajectory from CRAN with</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"devtools"</span><span class="op">)</span></span></code></pre></div>
+<p>Alternatively, you can keep up to date and install the latest
+development version of mousetRajectory from <a href="https://github.com/mc-schaaf/mousetRajectory" class="external-link">github.com/mc-schaaf/mousetRajectory</a>
+with:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw">if</span><span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="st"><a href="https://devtools.r-lib.org/" class="external-link">"devtools"</a></span><span class="op">)</span><span class="op">)</span><span class="op">{</span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"devtools"</span><span class="op">)</span><span class="op">}</span></span>
 <span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"mc-schaaf/mousetRajectory"</span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -183,7 +186,7 @@ acceleration, assuming equidistant times between data points.</li>
 <div class="section level2">
 <h2 id="a-simple-example">A Simple Example<a class="anchor" aria-label="anchor" href="#a-simple-example"></a>
 </h2>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/mc-schaaf/mousetRajectory" class="external-link">mousetRajectory</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span></code></pre></div>
@@ -194,7 +197,7 @@ position (bottom circle, coordinates (0,0)) to one of two end positions
 <p><img src="mousetRajectory_files/figure-html/draw_exp_layout-1.png" width="700"></p>
 <p><code>dat</code> stores simple toy data that may reflect our pilot
 results. Let’s inspect the structure of the data:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">dat</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 5</span></span></span>
 <span><span class="co">#&gt;   Trial Target  Time x_coord y_coord</span></span>
@@ -216,7 +219,7 @@ be to double-check the order of your data via
 <code><a href="../reference/is_monotonic.html">is_monotonic()</a></code> applied to <code>Time</code>. Further, in a
 real experiment you would likely group by not only by <code>Time</code>,
 but also other variables like a subject or block identifier.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="va">dat</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">Trial</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span></span>
@@ -229,13 +232,27 @@ to restrict the trajectories to their relevant parts, i.e., after the
 home was left and before the target has been reached. This also allows
 us to extract our first dependent measures, <code>InitiationTime</code>
 and <code>MovementTime</code>:</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="va">dat</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">Trial</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span></span>
 <span>    x_coord <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html" class="external-link">ifelse</a></span><span class="op">(</span><span class="va">Target</span> <span class="op">==</span> <span class="st">"left"</span>, <span class="op">-</span><span class="va">x_coord</span>, <span class="va">x_coord</span><span class="op">)</span>,</span>
-<span>    InitiationTime <span class="op">=</span> <span class="fu"><a href="../reference/time_circle_left.html">time_circle_left</a></span><span class="op">(</span><span class="va">x_coord</span>, <span class="va">y_coord</span>, <span class="va">Time</span>, x_mid <span class="op">=</span> <span class="fl">0</span>, y_mid <span class="op">=</span> <span class="fl">0</span>, radius <span class="op">=</span> <span class="fl">0.2</span><span class="op">)</span>,</span>
-<span>    CompletionTime <span class="op">=</span> <span class="fu"><a href="../reference/time_circle_entered.html">time_circle_entered</a></span><span class="op">(</span><span class="va">x_coord</span>, <span class="va">y_coord</span>, <span class="va">Time</span>, x_mid <span class="op">=</span> <span class="fl">1</span>, y_mid <span class="op">=</span> <span class="fl">1</span>, radius <span class="op">=</span> <span class="fl">0.2</span><span class="op">)</span>,</span>
+<span>    InitiationTime <span class="op">=</span> <span class="fu"><a href="../reference/time_circle_left.html">time_circle_left</a></span><span class="op">(</span></span>
+<span>      <span class="va">x_coord</span>,</span>
+<span>      <span class="va">y_coord</span>,</span>
+<span>      <span class="va">Time</span>,</span>
+<span>      x_mid <span class="op">=</span> <span class="fl">0</span>,</span>
+<span>      y_mid <span class="op">=</span> <span class="fl">0</span>,</span>
+<span>      radius <span class="op">=</span> <span class="fl">0.2</span></span>
+<span>    <span class="op">)</span>,</span>
+<span>    CompletionTime <span class="op">=</span> <span class="fu"><a href="../reference/time_circle_entered.html">time_circle_entered</a></span><span class="op">(</span></span>
+<span>      <span class="va">x_coord</span>,</span>
+<span>      <span class="va">y_coord</span>,</span>
+<span>      <span class="va">Time</span>,</span>
+<span>      x_mid <span class="op">=</span> <span class="fl">1</span>,</span>
+<span>      y_mid <span class="op">=</span> <span class="fl">1</span>,</span>
+<span>      radius <span class="op">=</span> <span class="fl">0.2</span></span>
+<span>    <span class="op">)</span>, </span>
 <span>    MovementTime <span class="op">=</span> <span class="va">CompletionTime</span> <span class="op">-</span> <span class="va">InitiationTime</span></span>
 <span>  <span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">Time</span> <span class="op">&gt;=</span> <span class="va">InitiationTime</span> <span class="op">&amp;</span> <span class="va">Time</span> <span class="op">&lt;</span> <span class="va">CompletionTime</span><span class="op">)</span></span>
@@ -262,7 +279,7 @@ interpolation of the x and y coordinates at certain time points. It has
 been proposed that this process should be done prior to the computation
 of MAD, AUC, etc. So let’s do this via <code><a href="../reference/interp2.html">interp2()</a></code>, a
 convenient wrapper to <code><a href="https://rdrr.io/pkg/signal/man/interp1.html" class="external-link">signal::interp1()</a></code>:</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dat_int</span> <span class="op">&lt;-</span> <span class="va">dat</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">Trial</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/reframe.html" class="external-link">reframe</a></span><span class="op">(</span></span>
@@ -271,7 +288,7 @@ convenient wrapper to <code><a href="https://rdrr.io/pkg/signal/man/interp1.html
 <span>    y_new <span class="op">=</span> <span class="fu"><a href="../reference/interp2.html">interp2</a></span><span class="op">(</span><span class="va">Time</span>, <span class="va">y_coord</span>, <span class="fl">101</span><span class="op">)</span>,</span>
 <span>  <span class="op">)</span></span></code></pre></div>
 <p>Now we are ready to compute dependent measures like AUC and MAD:</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dat_int</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">Trial</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html" class="external-link">summarise</a></span><span class="op">(</span></span>
@@ -287,7 +304,7 @@ convenient wrapper to <code><a href="https://rdrr.io/pkg/signal/man/interp1.html
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>     3  0.046<span style="text-decoration: underline;">2</span>  0.031<span style="text-decoration: underline;">4</span>  1.01</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>     4  0.126   0.090<span style="text-decoration: underline;">7</span>  1.04</span></span></code></pre></div>
 <p>As a last step, you may want to plot your average trajectory:</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dat_avg</span> <span class="op">&lt;-</span> <span class="va">dat_int</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">Time_new</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html" class="external-link">summarise</a></span><span class="op">(</span></span>
