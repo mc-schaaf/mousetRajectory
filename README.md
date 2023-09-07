@@ -20,7 +20,7 @@ procedures.
 You can install mousetRajectory from CRAN with
 
 ``` r
-install.packages("devtools")
+install.packages("mousetRajectory")
 ```
 
 Alternatively, you can keep up to date and install the latest
