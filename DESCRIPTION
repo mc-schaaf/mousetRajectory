@@ -3,7 +3,7 @@ Package: mousetRajectory
 Title: Mouse Trajectory Analyses for Behavioural Scientists
 Version: 0.2.0.0
 Authors@R: c(
-    person("Roland", "Pfister", , "moritz.schaaf@uni-trier.de", 
+    person("Roland", "Pfister", , "mail@roland-pfister.net", 
            role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0002-4429-1052")),
     person("Solveig", "Tonn", , "tonn@uni-trier.de", 
