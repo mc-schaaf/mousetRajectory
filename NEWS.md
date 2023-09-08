@@ -1,3 +1,5 @@
+# mousetRajectory (development version)
+
 # mousetRajectory 0.2.1
 
 * Initial CRAN submission.
