@@ -5,6 +5,9 @@
 [![R-CMD-check](https://github.com/mc-schaaf/mousetRajectory/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/mc-schaaf/mousetRajectory/actions/workflows/R-CMD-check.yaml)
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/mousetRajectory)](https://CRAN.R-project.org/package=mousetRajectory)
+[![DOI](https://zenodo.org/badge/567672427.svg)](https://zenodo.org/badge/latestdoi/567672427)
 <!-- badges: end -->
 
 # mousetRajectory: Trajectory Analyses for Behavioural Scientists

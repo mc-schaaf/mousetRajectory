@@ -18,7 +18,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Roland Pfister \email{moritz.schaaf@uni-trier.de} (\href{https://orcid.org/0000-0002-4429-1052}{ORCID}) [copyright holder]
+\strong{Maintainer}: Roland Pfister \email{mail@roland-pfister.net} (\href{https://orcid.org/0000-0002-4429-1052}{ORCID}) [copyright holder]
 
 Authors:
 \itemize{
