@@ -1,75 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://mc-schaaf.github.io/mousetRajectory/404.html</loc>
-  </url>
-  <url>
-    <loc>https://mc-schaaf.github.io/mousetRajectory/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>https://mc-schaaf.github.io/mousetRajectory/articles/index.html</loc>
-  </url>
-  <url>
-    <loc>https://mc-schaaf.github.io/mousetRajectory/articles/mousetRajectory.html</loc>
-  </url>
-  <url>
-    <loc>https://mc-schaaf.github.io/mousetRajectory/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://mc-schaaf.github.io/mousetRajectory/index.html</loc>
-  </url>
-  <url>
-    <loc>https://mc-schaaf.github.io/mousetRajectory/news/index.html</loc>
-  </url>
-  <url>
-    <loc>https://mc-schaaf.github.io/mousetRajectory/reference/auc.html</loc>
-  </url>
-  <url>
-    <loc>https://mc-schaaf.github.io/mousetRajectory/reference/curvature.html</loc>
-  </url>
-  <url>
-    <loc>https://mc-schaaf.github.io/mousetRajectory/reference/direction_changes.html</loc>
-  </url>
-  <url>
-    <loc>https://mc-schaaf.github.io/mousetRajectory/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://mc-schaaf.github.io/mousetRajectory/reference/index_max_acceleration.html</loc>
-  </url>
-  <url>
-    <loc>https://mc-schaaf.github.io/mousetRajectory/reference/index_max_velocity.html</loc>
-  </url>
-  <url>
-    <loc>https://mc-schaaf.github.io/mousetRajectory/reference/interp2.html</loc>
-  </url>
-  <url>
-    <loc>https://mc-schaaf.github.io/mousetRajectory/reference/is_monotonic.html</loc>
-  </url>
-  <url>
-    <loc>https://mc-schaaf.github.io/mousetRajectory/reference/is_monotonic_along_ideal.html</loc>
-  </url>
-  <url>
-    <loc>https://mc-schaaf.github.io/mousetRajectory/reference/max_ad.html</loc>
-  </url>
-  <url>
-    <loc>https://mc-schaaf.github.io/mousetRajectory/reference/mousetRajectory-package.html</loc>
-  </url>
-  <url>
-    <loc>https://mc-schaaf.github.io/mousetRajectory/reference/point_crosses.html</loc>
-  </url>
-  <url>
-    <loc>https://mc-schaaf.github.io/mousetRajectory/reference/reexports.html</loc>
-  </url>
-  <url>
-    <loc>https://mc-schaaf.github.io/mousetRajectory/reference/sampen.html</loc>
-  </url>
-  <url>
-    <loc>https://mc-schaaf.github.io/mousetRajectory/reference/starting_angle.html</loc>
-  </url>
-  <url>
-    <loc>https://mc-schaaf.github.io/mousetRajectory/reference/time_circle_entered.html</loc>
-  </url>
-  <url>
-    <loc>https://mc-schaaf.github.io/mousetRajectory/reference/time_circle_left.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://mc-schaaf.github.io/mousetRajectory/404.html</loc></url>
+<url><loc>https://mc-schaaf.github.io/mousetRajectory/LICENSE.html</loc></url>
+<url><loc>https://mc-schaaf.github.io/mousetRajectory/articles/index.html</loc></url>
+<url><loc>https://mc-schaaf.github.io/mousetRajectory/articles/mousetRajectory.html</loc></url>
+<url><loc>https://mc-schaaf.github.io/mousetRajectory/authors.html</loc></url>
+<url><loc>https://mc-schaaf.github.io/mousetRajectory/index.html</loc></url>
+<url><loc>https://mc-schaaf.github.io/mousetRajectory/news/index.html</loc></url>
+<url><loc>https://mc-schaaf.github.io/mousetRajectory/reference/auc.html</loc></url>
+<url><loc>https://mc-schaaf.github.io/mousetRajectory/reference/curvature.html</loc></url>
+<url><loc>https://mc-schaaf.github.io/mousetRajectory/reference/direction_changes.html</loc></url>
+<url><loc>https://mc-schaaf.github.io/mousetRajectory/reference/index.html</loc></url>
+<url><loc>https://mc-schaaf.github.io/mousetRajectory/reference/index_max_acceleration.html</loc></url>
+<url><loc>https://mc-schaaf.github.io/mousetRajectory/reference/index_max_velocity.html</loc></url>
+<url><loc>https://mc-schaaf.github.io/mousetRajectory/reference/interp2.html</loc></url>
+<url><loc>https://mc-schaaf.github.io/mousetRajectory/reference/is_monotonic.html</loc></url>
+<url><loc>https://mc-schaaf.github.io/mousetRajectory/reference/is_monotonic_along_ideal.html</loc></url>
+<url><loc>https://mc-schaaf.github.io/mousetRajectory/reference/max_ad.html</loc></url>
+<url><loc>https://mc-schaaf.github.io/mousetRajectory/reference/mousetRajectory-package.html</loc></url>
+<url><loc>https://mc-schaaf.github.io/mousetRajectory/reference/point_crosses.html</loc></url>
+<url><loc>https://mc-schaaf.github.io/mousetRajectory/reference/reexports.html</loc></url>
+<url><loc>https://mc-schaaf.github.io/mousetRajectory/reference/sampen.html</loc></url>
+<url><loc>https://mc-schaaf.github.io/mousetRajectory/reference/starting_angle.html</loc></url>
+<url><loc>https://mc-schaaf.github.io/mousetRajectory/reference/time_circle_entered.html</loc></url>
+<url><loc>https://mc-schaaf.github.io/mousetRajectory/reference/time_circle_left.html</loc></url>
 </urlset>
+
