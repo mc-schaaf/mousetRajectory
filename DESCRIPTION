@@ -22,11 +22,12 @@ Description: Helping psychologists and other behavioural scientists
     absolute deviation, area under the curve, sample entropy) or provide a
     shorthand for procedures that are frequently used (e.g., time 
     normalization, linear interpolation, extracting initiation and movement 
-    times). For more information on these dependent measures, see Wirth et al. 
-    (2020) <doi:10.3758/s13428-020-01409-0>.
+    times). For more informationsee Pfister et al. 
+    (2024) <doi:10.20982/tqmp.20.3.p217>.
 License: GPL (>= 3)
 URL: https://github.com/mc-schaaf/mousetRajectory, 
-    https://mc-schaaf.github.io/mousetRajectory/
+    https://mc-schaaf.github.io/mousetRajectory/,
+    https://doi.org/10.20982/tqmp.20.3.p217
 BugReports: https://github.com/mc-schaaf/mousetRajectory/issues
 Depends:
     R (>= 3.5.0)

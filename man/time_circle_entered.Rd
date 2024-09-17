@@ -53,8 +53,8 @@ time_circle_entered(0:10, rep(0, 11), 0:10,
 
 }
 \references{
-Wirth, R., Foerster, A., Kunde, W., & Pfister, R. (2020).
-Design choices: Empirical recommendations for designing two-dimensional
-finger tracking experiments. Behavior Research Methods, 52, 2394 - 2416.
-\doi{10.3758/s13428-020-01409-0}
+Pfister, R., Tonn, S., Schaaf, M., Wirth, R. (2024).
+mousetRajectory: Mouse tracking analyses for behavioral scientists.
+The Quantitative Methods for Psychology, 20(3), 217-229.
+\doi{10.20982/tqmp.20.3.p217}
 }

@@ -1,5 +1,10 @@
 # mousetRajectory (development version)
 
+* A paper for a canonical citation format is now available:
+
+Pfister, R., Tonn, S., Schaaf, M., & Wirth, R. (2024). Mousetrajectory: 
+Mouse tracking analyses for behavioral scientists. The Quantitative Methods for Psychology, 20(3), 217–237. https://doi.org/10.20982/tqmp.20.3.p217
+
 ---
 
 # mousetRajectory 0.2.1

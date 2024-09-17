@@ -1,12 +1,11 @@
 bibentry(
   bibtype  = "Article",
-  header   = "Currently, the most relevant paper to use as citation is:\n",
-  title    = "Design choices: Empirical recommendations for designing two-dimensional finger tracking experiments",
-  author   = "Robert Wirth, Anna Foerster, Wilfried Kunde, Roland Pfister",
-  journal  = "Behavior Research Methods",
-  year     = 2020,
-  volume   = 52,
-  number   = 6,
-  pages    = "2394–-2416",
-  doi      = "10.3758/s13428-020-01409-0"
+  title    = "mousetRajectory: Mouse tracking analyses for behavioral scientists",
+  author   = "Roland Pfister, Solveig Tonn, Moritz Schaaf, Robert Wirth",
+  journal  = "The Quantitative Methods for Psychology",
+  year     = 2024,
+  volume   = 20,
+  number   = 3,
+  pages    = "217–-229",
+  doi      = "10.20982/tqmp.20.3.p217"
 )

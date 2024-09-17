@@ -7,7 +7,6 @@
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/mousetRajectory)](https://CRAN.R-project.org/package=mousetRajectory)
-[![DOI](https://zenodo.org/badge/567672427.svg)](https://zenodo.org/badge/latestdoi/567672427)
 <!-- badges: end -->
 
 # mousetRajectory: Trajectory Analyses for Behavioural Scientists
@@ -76,6 +75,8 @@ Currently, the following functions are featured:
 
 You can find an example application as well as the full documentation at
 [mc-schaaf.github.io/mousetRajectory/](https://mc-schaaf.github.io/mousetRajectory/articles/mousetRajectory.html).
+Do you prefer the good, old paper format? Check out [Pfister et
+al. (2024)](https://doi.org/10.20982/tqmp.20.3.p217)!
 
 ## Bug Reports
 
